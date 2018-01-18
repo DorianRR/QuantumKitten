@@ -5,8 +5,10 @@ using UnityEngine;
 public class gravityForce : MonoBehaviour {
 
     public int gravityModifier;
+    private float differentialDist;
+
     // Use this for initialization
-	void Start () {
+    void Start () {
 	}
 	
 	
@@ -16,7 +18,8 @@ public class gravityForce : MonoBehaviour {
     private void OnTriggerStay(Collider other)
     {
         Vector3 forceDirection = gameObject.transform.position - other.transform.position;
-        Debug.Log(forceDirection);
-        other.GetComponent<Rigidbody>().AddForce(gravityModifier*forceDirection, ForceMode.Force);
+        differentialDist = forceDirection.magnitude;
+        Debug.Log(differentialDist);
+        other.GetComponent<Rigidbody>().AddForce(gravityModifier/differentialDist*forceDirection, ForceMode.Force);
     }
 }

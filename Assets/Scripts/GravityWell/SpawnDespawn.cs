@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnDespawn : MonoBehaviour {
+public class SpawnDespawn : MonoBehaviour
+{
 
     public GameObject GravityWell;
     Ray touchRay;
     RaycastHit touchHit;
     private GameObject spawnedWell;
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("Pressed left click");
@@ -18,7 +20,7 @@ public class SpawnDespawn : MonoBehaviour {
             Physics.Raycast(touchRay, out touchHit);
             Debug.Log(touchHit.transform);
             spawnedWell = Instantiate(GravityWell, touchHit.point, Quaternion.identity);
-            
+
         }
         if (Input.GetMouseButtonUp(0))
         {
