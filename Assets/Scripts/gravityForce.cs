@@ -19,7 +19,6 @@ public class gravityForce : MonoBehaviour {
     {
         Vector3 forceDirection = gameObject.transform.position - other.transform.position;
         differentialDist = forceDirection.magnitude;
-        Debug.Log(differentialDist);
         other.GetComponent<Rigidbody>().AddForce(gravityModifier/differentialDist*forceDirection, ForceMode.Force);
     }
 }

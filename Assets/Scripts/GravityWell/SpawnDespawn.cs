@@ -15,16 +15,13 @@ public class SpawnDespawn : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Pressed left click");
             touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             Physics.Raycast(touchRay, out touchHit);
-            Debug.Log(touchHit.transform);
             spawnedWell = Instantiate(GravityWell, touchHit.point, Quaternion.identity);
 
         }
         if (Input.GetMouseButtonUp(0))
         {
-            Debug.Log("mouse up");
             Destroy(spawnedWell);
         }
     }
