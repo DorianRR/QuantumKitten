@@ -11,97 +11,86 @@ public class CameraController : MonoBehaviour
     private Vector3 offset;
     private Vector2 dimensions;
     private Vector3 BottomLeft; 
+    
 
-
-
-    // Use this for initialization
     void Start()
     {
-
+        
+        //This takes the initial positions of the camera and player and finds the offset which we use later.
         offset = transform.position - player.transform.position;
-        dimensions = CalculateScreenSizeInWorldCoords();
 
-    }
+        //This gives us the dimensions of the camera's field of view in Unity units as a vector2. Something like 60,20
+        CalculateScreenSizeInWorldCoords();
 
-    // Update is called once per frame
-    void LateUpdate()
-    {
         Vector3 v1 = new Vector3(0, 0, Camera.main.nearClipPlane);
         BottomLeft = Camera.main.ViewportToWorldPoint(v1);
-        //Debug.Log(BottomLeft);
+    }
 
+    void LateUpdate()
+    {
+        //These lines reset the BottomLeft variable as the camera moves, which should be important for detecting if the player is off the playfield.
+        Vector3 v1 = new Vector3(0, 0, Camera.main.nearClipPlane);
+        BottomLeft = Camera.main.ViewportToWorldPoint(v1);
 
-        if (Mathf.Abs(transform.position.x - player.transform.position.x) > dimensions.x / 5 || Mathf.Abs(transform.position.y - player.transform.position.y) > dimensions.y / 5)
+        //This is statement detects if the player is within a range of the screen edge and calls smoothCamera to move the camera accordingly.
+        if (Mathf.Abs(transform.position.x - player.transform.position.x) > dimensions.x / 5 || Mathf.Abs(transform.position.y - player.transform.position.y) > dimensions.y / 5 && CheckPlayerBounds())
         {
             //SmoothCamera();
         }
         else
         {
-            if (CheckPlayerBounds())
+            this.GetComponent<Rigidbody>().velocity = this.GetComponent<Rigidbody>().velocity * .99f ;
+            if (!CheckPlayerBounds())
             {
-                this.GetComponent<Rigidbody>().velocity = this.GetComponent<Rigidbody>().velocity * .99f ;
-            }
-            else
-            {
+                Debug.Log("offscreen");
                 transform.position = player.transform.position + offset;
             }
-            
         }
-
     }
 
-    Vector2 CalculateScreenSizeInWorldCoords()
+    void CalculateScreenSizeInWorldCoords()
     {
-
+        /*
+         * The following lines get the coordinated for the near clipping plane, 
+         * and then use viewport to world point to get the world coordinates of
+         * three of those corners which are used to find the dimensions of the play field.
+         */
         Vector3 v1 = new Vector3(0, 0, Camera.main.nearClipPlane);
         Vector3 v2 = new Vector3(1, 0, Camera.main.nearClipPlane);
         Vector3 v3 = new Vector3(1, 1, Camera.main.nearClipPlane);
 
-        BottomLeft = Camera.main.ViewportToWorldPoint(v1);
+        v1 = Camera.main.ViewportToWorldPoint(v1);
         v2 = Camera.main.ViewportToWorldPoint(v2);
         v3 = Camera.main.ViewportToWorldPoint(v3);
 
-        float width = (v2.x - BottomLeft.x);
-        float height = (v3.y - v2.y);
-        Vector2 dimensions = new Vector2(width, height);
-
-        return dimensions;
+        dimensions = new Vector2((v2.x - v1.x), (v3.y - v2.y));
     }
 
     void SmoothCamera()
     {
-        //Vector3 preTarget;
-        //Vector3 velocity = new Vector3(0, 0, 0);
-
-        //preTarget = player.GetComponent<Rigidbody>().velocity * cameraSpeed;
-        //preTarget.z = -21.79f;
-        //transform.position = Vector3.SmoothDamp(transform.position, preTarget, ref velocity, 0.30f, Mathf.Infinity, Time.deltaTime);
         this.GetComponent<Rigidbody>().velocity = player.GetComponent<Rigidbody>().velocity * 2.0f;
     }
 
     bool CheckPlayerBounds()
     {
-        if (player.transform.position.x > BottomLeft.x + dimensions.x)
+        if (player.transform.position.x >= BottomLeft.x + dimensions.x)
         {
-            Debug.Log("Broken1");
+            Debug.Log("Broken3");
             return false;
         }
-        if (player.transform.position.x < BottomLeft.x)
+        if (player.transform.position.x <= BottomLeft.x)
         {
-            Debug.Log("Broken2");
-
+            Debug.Log("Broken4");
             return false;
         }
         if (player.transform.position.y > BottomLeft.y + dimensions.y)
         {
             Debug.Log("Broken3");
-
             return false;
         }
         if (player.transform.position.y < BottomLeft.y)
         {
             Debug.Log("Broken4");
-
             return false;
         }
         return true;
