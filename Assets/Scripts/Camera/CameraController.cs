@@ -35,7 +35,7 @@ public class CameraController : MonoBehaviour
         //This is statement detects if the player is within a range of the screen edge and calls smoothCamera to move the camera accordingly.
         if (Mathf.Abs(transform.position.x - player.transform.position.x) > dimensions.x / 5 || Mathf.Abs(transform.position.y - player.transform.position.y) > dimensions.y / 5 && CheckPlayerBounds())
         {
-            //SmoothCamera();
+            SmoothCamera();
         }
         else
         {
