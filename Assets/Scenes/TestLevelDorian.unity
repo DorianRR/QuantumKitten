@@ -587,6 +587,7 @@ GameObject:
   - component: {fileID: 989494335}
   - component: {fileID: 989494334}
   - component: {fileID: 989494336}
+  - component: {fileID: 989494337}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -630,15 +631,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cube: {fileID: 1787566983428160, guid: 1ee5e6da0d3af7a40bc2cc7c0d486927, type: 2}
-  numberOfObjects: 20
-  upperXBounds: 188
-  lowerXBounds: -188
-  upperYBounds: 96
-  lowerYBounds: -96
+  numberOfObjects: 25
+  upperXBounds: 366
+  lowerXBounds: -366
+  upperYBounds: 192
+  lowerYBounds: -192
   upperRotationBounds: 3000
   lowerRotationBounds: -3000
-  upperSizeBounds: 15
+  upperSizeBounds: 30
   lowerSizeBounds: 3
+--- !u!114 &989494337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 989494333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ccd1e8e992ce44d90d39004fd46b61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cube: {fileID: 1203621457715140, guid: bb56d55e25e5b914e91ad1745cde575d, type: 2}
+  numberOfObjects: 25
+  upperXBounds: 366
+  lowerXBounds: -366
+  upperYBounds: 192
+  lowerYBounds: -192
+  upperRotationBounds: 3000
+  lowerRotationBounds: -3000
+  upperSizeBounds: 3
+  lowerSizeBounds: 30
 --- !u!1 &1220422698
 GameObject:
   m_ObjectHideFlags: 0
@@ -864,7 +886,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 25
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

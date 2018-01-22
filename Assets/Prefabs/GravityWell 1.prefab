@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4693870039068808}
-  - component: {fileID: 33834182924774996}
   - component: {fileID: 135859095442785860}
   - component: {fileID: 23181472635403520}
   - component: {fileID: 114131492184442852}
@@ -139,13 +138,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33834182924774996
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1540569359541092}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33841961491136844
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -164,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1079fc2461baa7445840b777f7708448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityModifier: 100
+  gravityModifier: 150
 --- !u!135 &135179432640406538
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -187,5 +179,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
