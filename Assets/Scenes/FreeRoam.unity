@@ -536,7 +536,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &856652848
 MonoBehaviour:
@@ -823,7 +823,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1597630779
 GameObject:
@@ -837,8 +837,8 @@ GameObject:
   - component: {fileID: 1597630782}
   - component: {fileID: 1597630781}
   - component: {fileID: 1597630780}
-  - component: {fileID: 1597630785}
   - component: {fileID: 1597630786}
+  - component: {fileID: 1597630785}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -924,11 +924,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1597630779}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2f9a1a0d1ad48e45b20a539bd64e1a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a40c57141695b94791efdebf959f771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 856652843}
-  cameraSpeed: 5
 --- !u!54 &1597630786
 Rigidbody:
   m_ObjectHideFlags: 0
