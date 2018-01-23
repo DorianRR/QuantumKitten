@@ -156,7 +156,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1079fc2461baa7445840b777f7708448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   gravityModifier: 150
+=======
+  gravityModifier: 30
+>>>>>>> hoooooot
 --- !u!135 &135179432640406538
 SphereCollider:
   m_ObjectHideFlags: 1
