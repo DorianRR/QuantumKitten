@@ -549,7 +549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3cb89a7807085e4ab852e138fdf046d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GravityWell: {fileID: 1960339922129688, guid: 2afa2210135dd484f879e47cc4b3559b,
+  GravityWell: {fileID: 1278437140319426, guid: 2afa2210135dd484f879e47cc4b3559b,
     type: 2}
 --- !u!54 &856652849
 Rigidbody:
@@ -577,6 +577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d00eb36eaa7cc46458d6530572b2f205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialForce: {x: 10, y: 7, z: 0}
 --- !u!1 &989494333
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,7 +887,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 25
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
