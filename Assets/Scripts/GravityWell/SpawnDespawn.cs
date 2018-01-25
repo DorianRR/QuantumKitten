@@ -26,7 +26,9 @@ public class SpawnDespawn : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0))
         {
+
             Destroy(spawnedWell);
+
         }
     }
 }
