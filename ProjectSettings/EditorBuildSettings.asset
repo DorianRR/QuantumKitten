@@ -4,4 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/FreeRoam.unity
+    guid: 6080fcb554b8d04488740f36456bf166
+  - enabled: 1
+    path: Assets/Scenes/testLevel2.unity
+    guid: acf046e421d3b1848b688ce8cd5eca4d
+  - enabled: 1
+    path: Assets/Scenes/testLevel1.unity
+    guid: 4b64c213eb556944a8cde622bd44a582

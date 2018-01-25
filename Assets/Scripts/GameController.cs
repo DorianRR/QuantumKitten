@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
@@ -11,6 +12,23 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (Input.GetKeyUp(KeyCode.A))
+            puzzle1();
+        if (Input.GetKeyUp(KeyCode.S))
+            puzzle2();
+        if (Input.GetKeyUp(KeyCode.D))
+            freeRoam();
+    }
+    public void puzzle1()
+    {
+        SceneManager.LoadScene("testLevel1");
+    }
+    public void puzzle2()
+    {
+        SceneManager.LoadScene("testLevel2");
+    }
+    public void freeRoam()
+    {
+        SceneManager.LoadScene("FreeRoam");
+    }
 }

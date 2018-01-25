@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimpleCamera: MonoBehaviour
+public class simpleCamera : MonoBehaviour
 {
 
     public GameObject player;
@@ -24,6 +24,6 @@ public class SimpleCamera: MonoBehaviour
         transform.position = player.GetComponent<Rigidbody>().transform.position + offset;
     }
 
-   
+
 }
 
