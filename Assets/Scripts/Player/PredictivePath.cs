@@ -7,9 +7,9 @@ using UnityEngine;
 public class PredictivePath :  MonoBehaviour {
 
 
+    public GameObject player;
     private LineRenderer lineRenderer;
     private GameObject gravityWell;
-    //private Vector3[] linePos;
 
 
 	// Use this for initialization
@@ -21,13 +21,19 @@ public class PredictivePath :  MonoBehaviour {
 	void Update () {
         
 
-      //  if (Input.GetMouseButtonDown(0))
-       // {
+        if (Input.GetMouseButtonDown(0))
+        {
             Vector3[] linePos = PredictLine();
 
             lineRenderer.SetPositions(linePos);
+        }
 
-       //}
+        //if (Input.GetMouseButtonUp(0))
+        //{
+        //    //Destroy(spawnedWell);
+        //}
+
+
 
 
 
@@ -37,29 +43,27 @@ public class PredictivePath :  MonoBehaviour {
     {
 
         lineRenderer = gameObject.GetComponent<LineRenderer>();
-        //lineRenderer.startWidth = 5;
-        //lineRenderer.endWidth = 5;
-        lineRenderer.positionCount = 10;
         gravityWell = GameObject.Find("GravWell");
 
-        Vector3 playerVel = gameObject.GetComponent<Rigidbody>().velocity;
+        Vector3 playerVel = player.GetComponent<Rigidbody>().velocity;
 
         //Vector3 gravityWellPosition = gravityWell.GetComponent<Rigidbody>().transform.position;
 
-        Vector3[] linePos = new Vector3[10];
+        Vector3[] linePos = new Vector3[100];
         Vector3 dynamicPos = Vector3.zero;
-        Vector3 tempVec = new Vector3(5, 5, 0);
 
-        for (int i = 9; i > 0; i--)
+        for (int i = 0; i < 100; i++)
         {
 
-            Vector3 forceDirection = gameObject.transform.position - gameObject.GetComponent<Rigidbody>().transform.position;
+            Vector3 forceDirection = gameObject.transform.position - player.GetComponent<Rigidbody>().transform.position;
             float differentialDist = forceDirection.magnitude;
+            Debug.Log("poop");
 
-            linePos[9-i] = (playerVel * Time.deltaTime) + gameObject.GetComponent<Rigidbody>().transform.position;
-            //linePos[1] = gameObject.GetComponent<Rigidbody>().transform.position + tempVec;
-            //+ (0.5f * (30f / differentialDist * forceDirection) * Time.deltaTime * Time.deltaTime)
+            linePos[i] = (playerVel * Time.deltaTime) + player.GetComponent<Rigidbody>().transform.position +
+                (0.5f * (30f / differentialDist * forceDirection) * Time.deltaTime * Time.deltaTime);
+
         }
+        Debug.Log(linePos);
         return linePos;
 
     }
