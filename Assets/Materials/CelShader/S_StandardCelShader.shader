@@ -1,10 +1,4 @@
-﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
-// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
-// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
-// WATCH FULL EXPLANATION ON YOUTUBE-VIDEO: https://www.youtube.com/watch?v=3qBDTh9zWrQ
- 
-Shader "Our Toonshader Vol. 3" {
+﻿Shader "CelShader w/ Emissive" {
    Properties {
     _Color ("Diffuse Material Color", Color) = (1,1,1,1)
     _UnlitColor ("Unlit Color", Color) = (0.5,0.5,0.5,1)
@@ -95,19 +89,14 @@ Shader "Our Toonshader Vol. 3" {
             output.pos = UnityObjectToClipPos( input.vertex );  
            
             //UV-Map
-            output.uv =input.texcoord;
+            output.uv =input.texcoord;	
 
-			//Emissive Map
-			
-			
-           
             return output;
          
         }
        
-        float4 frag(vertexOutput input) : COLOR
-        {
- 
+        float4 frag(vertexOutput input) : COLOR{
+
     float nDotL = saturate(dot(input.normalDir, input.lightDir.xyz));
            
     //Diffuse threshold calculation
@@ -120,18 +109,17 @@ Shader "Our Toonshader Vol. 3" {
     float outlineStrength = saturate( (dot(input.normalDir, input.viewDir ) - _OutlineThickness) * 1000 );
 
 	//Emissive 
-	//float4 texE = tex2D( _EmitMap, input.tex.xy * _EmitMap_ST.xy + _EmitMap_ST.zw )
+	float4 texE = tex2D( _EmitMap, input.uv.xy * _EmitMap_ST.xy + _EmitMap_ST.zw );
 
            
     float3 ambientLight = (1-diffuseCutoff) * _UnlitColor.xyz; //adds general ambient illumination
     float3 diffuseReflection = (1-specularCutoff) * _Color.xyz * diffuseCutoff;
     float3 specularReflection = _SpecColor.xyz * specularCutoff;
-	//float4 texE = tex2D( _EmitMap, i.tex.xy * _EmitMap_ST.xy + _EmitMap_ST.zw );
        
-    float3 combinedLight = (ambientLight + diffuseReflection) * outlineStrength + specularReflection;
+    float3 combinedLight = (ambientLight + diffuseReflection) * outlineStrength + specularReflection + (texE.xyz * _EmitStrength);
            
-    return float4(combinedLight, 1.0) * tex2D(_MainTex, input.uv); // DELETE LINE COMMENTS & ';' TO ENABLE TEXTURE
-       
+    return float4(combinedLight, 1.0) * tex2D(_MainTex, input.uv); //Combines celshading light & 2d albedo texture.
+	       
  
         }
        
