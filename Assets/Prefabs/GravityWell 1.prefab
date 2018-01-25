@@ -165,6 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravityModifier: 30
+  gravityWell: {fileID: 0}
 --- !u!135 &135519446560116402
 SphereCollider:
   m_ObjectHideFlags: 1

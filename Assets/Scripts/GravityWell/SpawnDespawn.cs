@@ -10,6 +10,9 @@ public class SpawnDespawn : MonoBehaviour
     RaycastHit touchHit;
     private GameObject spawnedWell;
 
+
+
+
     // Update is called once per frame
     void Update()
     {
@@ -18,6 +21,7 @@ public class SpawnDespawn : MonoBehaviour
             touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             Physics.Raycast(touchRay, out touchHit);
             spawnedWell = Instantiate(GravityWell, touchHit.point, Quaternion.identity);
+
 
         }
         if (Input.GetMouseButtonUp(0))

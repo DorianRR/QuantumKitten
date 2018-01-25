@@ -31,6 +31,8 @@ public class SpinningCube : MonoBehaviour {
             scale = new Vector3(Random.Range(upperSizeBounds, lowerSizeBounds), Random.Range(upperSizeBounds, lowerSizeBounds), Random.Range(upperSizeBounds, lowerSizeBounds));
 
             GameObject newCube = Instantiate(cube, position, Quaternion.identity);
+            newCube.transform.SetParent(GameObject.Find("FloatingObjects").transform);
+
 
             newCube.transform.localScale = scale;
             newCube.GetComponent<Rigidbody>().AddTorque(transform.up * Random.Range(upperRotationBounds, lowerRotationBounds));
