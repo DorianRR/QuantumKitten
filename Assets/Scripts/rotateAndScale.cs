@@ -17,17 +17,17 @@ public class rotateAndScale : MonoBehaviour {
     void FixedUpdate () {
         if (scaleTemp.x <= 5f)
         {
-            scaleTemp.x += .1f;
-            scaleTemp.y += .1f;
-            scaleTemp.z += .1f;
+            scaleTemp.x += .5f;
+            scaleTemp.y += .5f;
+            scaleTemp.z += .5f;
         }
         else if (scaleTemp.x <= 13f)
         {
-            scaleTemp.x += .2f;
-            scaleTemp.y += .2f;
-            scaleTemp.z += .2f;
+            scaleTemp.x += .75f;
+            scaleTemp.y += .75f;
+            scaleTemp.z += .75f;
         }
         particleOwner.transform.localScale = scaleTemp;
-        particleOwner.transform.Rotate(Vector3.right * 1.01f);
+        particleOwner.transform.Rotate(Vector3.right * 2f);
     }
 }
