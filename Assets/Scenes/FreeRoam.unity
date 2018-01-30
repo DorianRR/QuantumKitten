@@ -624,7 +624,6 @@ GameObject:
   - component: {fileID: 856652848}
   - component: {fileID: 856652849}
   - component: {fileID: 856652850}
-  - component: {fileID: 856652851}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -710,7 +709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3cb89a7807085e4ab852e138fdf046d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GravityWell: {fileID: 1226896552544750, guid: 69c3dc20b3c7ef54985898ca89dccbdc,
+  GravityWell: {fileID: 1226305051516828, guid: 589e5367367eb9440a90cbaf090d247d,
     type: 2}
 --- !u!54 &856652849
 Rigidbody:
@@ -738,19 +737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d00eb36eaa7cc46458d6530572b2f205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialForce: {x: 0, y: 0, z: 0}
---- !u!114 &856652851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 856652843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56cdcf88f59145542ae8c962238e6aac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  initialForce: {x: 10, y: 7, z: 0}
 --- !u!1 &989494333
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,7 +746,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 989494335}
-  - component: {fileID: 989494334}
   - component: {fileID: 989494336}
   - component: {fileID: 989494337}
   m_Layer: 0
@@ -769,17 +755,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &989494334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 989494333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b11cd7e4d53fc6548bf07913e77e78cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &989494335
 Transform:
   m_ObjectHideFlags: 0

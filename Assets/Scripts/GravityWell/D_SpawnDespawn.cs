@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnDespawn : MonoBehaviour
+public class D_SpawnDespawn : MonoBehaviour
 {
 
     public GameObject GravityWell;
