@@ -621,9 +621,9 @@ GameObject:
   - component: {fileID: 856652846}
   - component: {fileID: 856652845}
   - component: {fileID: 856652844}
-  - component: {fileID: 856652848}
   - component: {fileID: 856652849}
   - component: {fileID: 856652850}
+  - component: {fileID: 856652848}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -711,6 +711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GravityWell: {fileID: 1226305051516828, guid: 589e5367367eb9440a90cbaf090d247d,
     type: 2}
+  player: {fileID: 0}
 --- !u!54 &856652849
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -738,6 +739,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialForce: {x: 10, y: 7, z: 0}
+  gravityModifier: 100
+  startedWhirl: 0
 --- !u!1 &989494333
 GameObject:
   m_ObjectHideFlags: 0
