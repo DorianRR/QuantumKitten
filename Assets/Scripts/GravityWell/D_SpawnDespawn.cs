@@ -6,7 +6,6 @@ public class D_SpawnDespawn : MonoBehaviour
 {
 
     public GameObject GravityWell;
-    public GameObject player;
     Ray touchRay;
     RaycastHit touchHit;
     private GameObject spawnedWell;
@@ -30,6 +29,10 @@ public class D_SpawnDespawn : MonoBehaviour
 
         {
             gameObject.GetComponent<D_PlayerController>().startedWhirl = false;
+            gameObject.GetComponent<D_PlayerController>().clockwise = false;
+
+            gameObject.GetComponent<D_PlayerController>().counterclockwise = false;
+
             gameObject.GetComponent<D_PlayerController>().Launch();
             Destroy(spawnedWell);
         }
