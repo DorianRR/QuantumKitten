@@ -28,7 +28,7 @@ public class D2_PlayerController : MonoBehaviour {
         {
             gameObject.GetComponent<Rigidbody>().AddForce
                 (whirlBoost * gameObject.GetComponent<Rigidbody>().velocity.magnitude * gravityModifier/distanceToWell.magnitude*directionTowardsWell, ForceMode.Force);
-            //whirlBoost += Time.deltaTime / 9;
+            whirlBoost += Time.deltaTime / 7;
         }
         else if (pullButNotWhirl)
         {

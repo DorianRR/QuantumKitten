@@ -16,10 +16,7 @@ public class D2_SpawnDespawn : MonoBehaviour
     {
         MainCamera = GameObject.Find("Main Camera");
     }
-
-
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -27,7 +24,6 @@ public class D2_SpawnDespawn : MonoBehaviour
             touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             Physics.Raycast(touchRay, out touchHit);
             spawnedWell = Instantiate(GravityWell, touchHit.point, Quaternion.identity);
-            //gameObject.GetComponent<D2_PlayerController>().direction = transform.position - touchHit.point;
 
             MainCamera.GetComponent<D_Camera>().CenterOnSpawnedGW(touchHit.point);
 
