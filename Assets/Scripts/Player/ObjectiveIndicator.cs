@@ -11,7 +11,6 @@ public class ObjectiveIndicator : MonoBehaviour {
 	private bool objectiveHelp = true;
 	private GameObject privateInd;
 
-	// Use this for initialization
 	void Start () 
 	{
 		objDirection = objective.transform.position - transform.position;
@@ -20,17 +19,18 @@ public class ObjectiveIndicator : MonoBehaviour {
 		
 	}
 	
-	// Update is called once per frame
 	void LateUpdate () 
 	{
 		if(objectiveHelp)
 		{
 			objDirection = objective.transform.position - transform.position;
 			objDirection.Normalize();
+			
 			StartCoroutine(ShrinkAndGrow());
 		}
 		
-			privateInd.transform.position = transform.position + (objDirection * 20);
+		privateInd.transform.position = transform.position + (objDirection * 20);
+
 
 		
 	}

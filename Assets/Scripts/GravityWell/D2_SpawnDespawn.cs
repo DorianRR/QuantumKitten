@@ -19,7 +19,7 @@ public class D2_SpawnDespawn : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && gameObject.GetComponent<D2_PlayerController>().canSpawn)
         {
             touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             Physics.Raycast(touchRay, out touchHit);
@@ -33,7 +33,6 @@ public class D2_SpawnDespawn : MonoBehaviour
 
         {
             gameObject.GetComponent<D2_PlayerController>().startedWhirl = false;
-            gameObject.GetComponent<D2_PlayerController>().pullButNotWhirl = false;
 
 
             Destroy(spawnedWell);
