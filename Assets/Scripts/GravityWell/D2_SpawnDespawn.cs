@@ -11,6 +11,7 @@ public class D2_SpawnDespawn : MonoBehaviour
 
     private GameObject spawnedWell;
     private GameObject MainCamera;
+    private bool onSpawn = true;
 
     private void Start()
     {
@@ -19,8 +20,9 @@ public class D2_SpawnDespawn : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && gameObject.GetComponent<D2_PlayerController>().canSpawn)
+        if (Input.GetMouseButtonDown(0) && gameObject.GetComponent<D2_PlayerController>().canSpawn && onSpawn)
         {
+            onSpawn = false;
             touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             Physics.Raycast(touchRay, out touchHit);
             spawnedWell = Instantiate(GravityWell, touchHit.point, Quaternion.identity);
@@ -29,9 +31,10 @@ public class D2_SpawnDespawn : MonoBehaviour
 
 
         }
-        if (Input.GetMouseButtonUp(0))
-
+        //if (Input.GetMouseButtonUp(0))
+        else if (Input.GetMouseButtonDown(0) && !onSpawn)
         {
+            onSpawn = true;
             gameObject.GetComponent<D2_PlayerController>().startedWhirl = false;
 
 
