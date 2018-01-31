@@ -1,14 +1,17 @@
 ﻿
-Shader "Hidden/BlackHoldShader"
+Shader "BlackHoldShader"
 {
 	Properties
 	{
 		_MainTex ("Texture", 2D) = "white" {}
+		_BlackHoleTexture ("Albedo (RGB)", 2D) = " " {}
 	}
 	SubShader
 	{
 		// No culling or depth
 		Cull Off ZWrite Off ZTest Always
+
+		Tags { "RenderType" = "Opaque"}
 
 		Pass
 		{
@@ -16,14 +19,19 @@ Shader "Hidden/BlackHoldShader"
 			#pragma vertex vert
 			#pragma fragment frag
 			#pragma fragmentoption ARB_precision_hint_fastest
+
 			
 			#include "UnityCG.cginc"
 												
 			uniform sampler2D _MainTex;
+			uniform sampler2D _BlackHoleTexture;
 			uniform float2 _Position;
 			uniform float _Rad;
 			uniform float _Ratio;
 			uniform float _Distance;
+			uniform float _GravFieldSize;
+
+			
 
 			struct v2f 
 			{
@@ -44,24 +52,27 @@ Shader "Hidden/BlackHoldShader"
 				float2 offset = i.uv - _Position;
 				float2 ratio = {_Ratio, 1};
 				float rad = length(offset/ratio);
-				float deformation = 1 / pow(rad * pow(_Distance, 0.5), 2) * _Rad * 0.1;
+
+				//float deformation = 1 / pow(rad * pow(_Distance, 0.5), 2) * _Rad * 0.1;
+				float deformation = _GravFieldSize / pow(rad * pow(_Distance, 0.5), 2) * _Rad * 0.1;
 
 				offset = offset * (1 - deformation);
 				offset += _Position;
-				
+
 				half4 res = tex2D(_MainTex, offset);
+				//half4 res = tex2D(_BlackHoleTexture, offset);
+
 
 				if (rad * _Distance < _Rad) 
 				{ 
-					res = half4(0, 0, 0, 1);
-
+					//res = half4(0, 0, 0, 1);
+					res = tex2D(_BlackHoleTexture, offset);
+					
 				}
-
 				return res;
 			}
-
-			
 			ENDCG
 		}
 	}
+	FallBack "Diffuse"
 }

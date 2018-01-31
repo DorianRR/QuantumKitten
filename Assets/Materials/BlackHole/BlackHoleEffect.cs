@@ -12,8 +12,10 @@ public class BlackHoleEffect : MonoBehaviour
     //public settings
     public Shader shader;
     public Transform blackHole;
+    public Texture2D blackHoleTexture;
     public float ratio; // aspect ratio of the screen
-    public float radius; //size of black hole in scene
+    public float blackHoleSize = 0.1f; //size of black hole in scene
+    public float gravFieldSize = 1.0f;  //how large of an area the distortion of the gravitational field will be moving outward from the center of the gameobject.
 
     //private settings
     Camera cam;
@@ -30,6 +32,13 @@ public class BlackHoleEffect : MonoBehaviour
             }
             return _material;
         }
+    }
+
+    private void Update()
+    {
+        Shader.SetGlobalFloat("_GravFieldSize", gravFieldSize);
+        Shader.SetGlobalTexture ("_BlackHoleTexture", blackHoleTexture);
+
     }
 
     void OnEnable()
@@ -52,7 +61,7 @@ public class BlackHoleEffect : MonoBehaviour
     Vector2 pos;
 
     void OnRenderImage(RenderTexture source, RenderTexture destination)
-        //processing happnes here
+        //processing happens here
     {
         if(shader && material && blackHole)
         {
@@ -65,7 +74,7 @@ public class BlackHoleEffect : MonoBehaviour
                 //apply shader parameters
                 _material.SetVector("_Position", pos);
                 _material.SetFloat("_Ratio", ratio);
-                _material.SetFloat("_Rad", radius);
+                _material.SetFloat("_Rad", blackHoleSize);
                 _material.SetFloat("_Distance", Vector3.Distance(blackHole.position, transform.position));
 
                 //apply the shader to the image
