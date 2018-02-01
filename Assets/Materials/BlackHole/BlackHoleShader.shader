@@ -31,7 +31,7 @@ Shader "BlackHoldShader"
 			uniform float _Distance;
 			uniform float _GravFieldSize;
 
-			
+
 
 			struct v2f 
 			{
