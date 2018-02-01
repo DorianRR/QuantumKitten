@@ -9,6 +9,7 @@ public class D_PlayerController : MonoBehaviour {
     public float gravityModifier;
     public bool startedWhirl = false;
     public Vector2 direction;
+    public bool clockwise, counterclockwise = false;
 
 
     private Vector2 playerDirection;
@@ -26,12 +27,24 @@ public class D_PlayerController : MonoBehaviour {
         
         if(startedWhirl)
         {
-            float angle = Vector2.Angle(directionTowardsWell, playerDirection);
-
-            //angle = angle - Time.deltaTime;
-            direction = Quaternion.Euler(0, 0, -1) * direction;
-            transform.position = direction + gWPosition;
-            //transform.position = Vector2.Lerp(transform.position, direction + gWPosition, 0.25f * Time.deltaTime);
+            if(GetComponent<Rigidbody>().velocity.x > 0 && transform.position.y > gWPosition.y && !counterclockwise || clockwise)
+            {
+                clockwise = true;
+                //float angle = Vector2.Angle(directionTowardsWell, playerDirection);
+                float rotationSpeed = GetComponent<Rigidbody>().velocity.magnitude;
+                direction = Quaternion.Euler(0, 0, -rotationSpeed / 5) * direction;
+                transform.position = Vector2.Lerp(transform.position, direction + gWPosition, 0.5f);
+                
+            }
+            else
+            {
+                counterclockwise = true;
+                //float angle = Vector2.Angle(directionTowardsWell, playerDirection);
+                float rotationSpeed = GetComponent<Rigidbody>().velocity.magnitude;
+                direction = Quaternion.Euler(0, 0, rotationSpeed / 5) * direction;
+                transform.position = Vector2.Lerp(transform.position, direction + gWPosition, 0.5f);
+            }
+           
         }
 
     }
@@ -49,6 +62,7 @@ public class D_PlayerController : MonoBehaviour {
             float angle = Vector2.Angle(directionTowardsWell, playerDirection);
             if (angle % 90 < 5f)
             {
+
                 Debug.Log("Perp");
                 startedWhirl = true;
                 gWPosition = other.transform.position;
@@ -59,9 +73,11 @@ public class D_PlayerController : MonoBehaviour {
     }
 
     public void Launch()
-    { 
-}
+    {
+        GetComponent<Rigidbody>().velocity = Vector2.zero;
+        gameObject.GetComponent<Rigidbody>().AddForce(Quaternion.Euler(0, 0, 90) * directionTowardsWell * 20, ForceMode.Impulse);
+    }
 
-   
-    
+
+
 }

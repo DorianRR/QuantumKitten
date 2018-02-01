@@ -24,7 +24,7 @@ public class D_gravityForce : MonoBehaviour {
         Vector3 distanceToWell = gameObject.transform.position - player.transform.position;
         directionTowardsWell = distanceToWell.normalized;
         float angle = Vector3.Angle(directionTowardsWell, playerDirection);
-        Debug.Log("Hi");
+
         if(angle == 90)
         {
             Debug.Log("Perp");
