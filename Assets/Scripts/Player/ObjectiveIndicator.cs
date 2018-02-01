@@ -6,6 +6,7 @@ public class ObjectiveIndicator : MonoBehaviour {
 
 	public GameObject objective;
 	public GameObject indicator;
+	public bool externalPause;
 
 	private Vector3 objDirection;
 	private bool objectiveHelp = true;
@@ -22,14 +23,23 @@ public class ObjectiveIndicator : MonoBehaviour {
 	void LateUpdate () 
 	{
 		if(objectiveHelp)
-		{
+		{			
 			objDirection = objective.transform.position - transform.position;
 			objDirection.Normalize();
 			
 			StartCoroutine(ShrinkAndGrow());
 		}
 		
-		privateInd.transform.position = transform.position + (objDirection * 20);
+		if(!externalPause)
+		{
+			privateInd.transform.position = transform.position + (objDirection * Mathf.Clamp(gameObject.GetComponent<Rigidbody>().velocity.magnitude/2, 10, 30));
+			privateInd.SetActive(true);
+
+		}
+		else
+		{
+			privateInd.SetActive(false);
+		}
 
 
 		

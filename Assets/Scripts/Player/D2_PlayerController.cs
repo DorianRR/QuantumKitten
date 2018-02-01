@@ -8,7 +8,6 @@ public class D2_PlayerController : MonoBehaviour {
     public Vector3 initialForce = new Vector3(10,7,0);
     public float gravityModifier;
     public bool startedWhirl = false;
-    //public bool pullButNotWhirl = false;
     public bool canSpawn = true;
     public GameObject stoppedUI;
     public float ImpulsePower = 20;
@@ -38,12 +37,6 @@ public class D2_PlayerController : MonoBehaviour {
                 (whirlBoost * gameObject.GetComponent<Rigidbody>().velocity.magnitude * gravityModifier/distanceToWell.magnitude*directionTowardsWell, ForceMode.Force);
             whirlBoost += Time.deltaTime / 7;
         }
-        //else if (pullButNotWhirl)
-        //{
-
-        //    Vector3 temp = (Quaternion.Euler(0, 0, 90) * directionTowardsWell);
-        //    gameObject.GetComponent<Rigidbody>().AddForce(gravityModifier * temp);
-        //}
         else
         {
             GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * .9999f;
@@ -53,6 +46,12 @@ public class D2_PlayerController : MonoBehaviour {
                 stoppedUI.SetActive(true);
             }
         }
+    }
+
+    private void OnCollisionEnter(Collision coll)
+    {
+        //This controls the bounce when you hit something. Don't get lost in the mess.
+        gameObject.GetComponent<Rigidbody>().AddForce(-(gameObject.GetComponent<Rigidbody>().velocity) * 1.5f, ForceMode.Impulse);
     }
 
     private void OnTriggerStay(Collider other)
@@ -65,17 +64,24 @@ public class D2_PlayerController : MonoBehaviour {
             distanceToWell = other.transform.position - transform.position;
             directionTowardsWell = distanceToWell.normalized;
             float angle = Vector2.Angle(directionTowardsWell, playerDirection);
-            if (angle % 90 < 5f && gameObject.GetComponent<Rigidbody>().velocity.magnitude > 3.0f)
+
+            if (angle % 90 < 5f && gameObject.GetComponent<Rigidbody>().velocity.magnitude > 3.0f || startedWhirl)
             {
                 startedWhirl = true;
-                //gWPosition = other.transform.position;
             }
-            //else if(gameObject.GetComponent<Rigidbody>().velocity.magnitude < 3.0f)
-            //{
-            //    pullButNotWhirl = true;
-            //}
-
+            else
+            {
+                gameObject.GetComponent<Rigidbody>().AddForce
+                    (whirlBoost * gameObject.GetComponent<Rigidbody>().velocity.magnitude*(gravityModifier/2)/distanceToWell.magnitude*directionTowardsWell, ForceMode.Force);
+            }
+            
         }
+    }
+
+    private void OnTriggerExit()
+    {
+        gameObject.GetComponent<D2_SpawnDespawn>().ForcedDeSpawn();
+
     }
 
     private void OnTriggerExit(Collider other)
