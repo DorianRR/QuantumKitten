@@ -25,7 +25,7 @@ public class D_Camera: MonoBehaviour
 
     void LateUpdate()
     {
-        Mathf.Clamp(screenOrth, 10, 30);
+        Mathf.Clamp(screenOrth, 20, 30);
 
         if (!centeredOnGW)
         {
@@ -54,11 +54,19 @@ public class D_Camera: MonoBehaviour
         //transform.position = Vector3.Lerp(transform.position, player.GetComponent<Rigidbody>().transform.position + offset, lerpRatio* Time.deltaTime);
         transform.position = player.GetComponent<Rigidbody>().transform.position + offset;
 
-        screenOrth = Mathf.Clamp(player.GetComponent<Rigidbody>().velocity.magnitude/2, 10, 30);
-        Mathf.Clamp(screenOrth, 10, 30);
+        screenOrth = Mathf.Clamp(player.GetComponent<Rigidbody>().velocity.magnitude/2, 20, 30);
+        Mathf.Clamp(screenOrth, 20, 30);
         //screenOrth = 10;
+        if (Mathf.Abs(screenOrth - gameObject.GetComponent<Camera>().orthographicSize) < 3)
+        {
+            gameObject.GetComponent<Camera>().orthographicSize = screenOrth;
 
-        gameObject.GetComponent<Camera>().orthographicSize = Mathf.Lerp(gameObject.GetComponent<Camera>().orthographicSize, screenOrth, lerpRatio* Time.deltaTime);
+        }
+        else
+        {
+            gameObject.GetComponent<Camera>().orthographicSize = Mathf.Lerp(gameObject.GetComponent<Camera>().orthographicSize, screenOrth, lerpRatio * Time.deltaTime);
+        }
+
         centeredOnGW = false;
     }
 }

@@ -6,37 +6,29 @@ public class D_gravityForce : MonoBehaviour {
 
     public GameObject player;
     public int gravityModifier;
-    //private float differentialDist;
 
-    private Vector3 playerDirection;
+    private float differentialDist;
     private Vector3 distanceToWell;
     private Vector3 directionTowardsWell;
 
     // Use this for initialization
     void Start () {
-        playerDirection = (player.GetComponent<Rigidbody>().velocity);
-        playerDirection.Normalize();
-	}
-	
-	
-	void LateUpdate () {
+    
+        distanceToWell = gameObject.transform.position - player.transform.position;
 
-        Vector3 distanceToWell = gameObject.transform.position - player.transform.position;
-        directionTowardsWell = distanceToWell.normalized;
-        float angle = Vector3.Angle(directionTowardsWell, playerDirection);
-
-        if(angle == 90)
-        {
-            Debug.Log("Perp");
-        }
+    }
 
 
+    void LateUpdate () {
+
+        distanceToWell = gameObject.transform.position - player.transform.position;
+        directionTowardsWell = distanceToWell.normalized;      
     }
 
     private void OnTriggerStay(Collider other)
     {
+        differentialDist = distanceToWell.magnitude;
 
-
-        //other.GetComponent<Rigidbody>().AddForce(gravityModifier/differentialDist*forceDirection, ForceMode.Force);
+        other.GetComponent<Rigidbody>().AddForce(gravityModifier/differentialDist*directionTowardsWell, ForceMode.Force);
     }
 }
