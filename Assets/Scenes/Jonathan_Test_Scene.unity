@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657886, g: 0.49641466, b: 0.57481724, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657856, g: 0.4964143, b: 0.5748164, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -210,8 +210,8 @@ MonoBehaviour:
   blackHole: {fileID: 672227830}
   blackHoleTexture: {fileID: 2800000, guid: 65938e7c890813147b6d59b252625efb, type: 3}
   ratio: 0.5625
-  blackHoleSize: 0.1
-  gravFieldSize: 1
+  blackHoleSize: 0.17
+  gravFieldSize: 2.27
 --- !u!1 &448100468
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,7 +562,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.9862069, g: 1, b: 0, a: 1}
+      maxColor: {r: 0.8235294, g: 0.7372549, b: 0.50980395, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1542,6 +1542,18 @@ ParticleSystem:
           inSlope: 0
           outSlope: 0
           tangentMode: 0
+        - serializedVersion: 2
+          time: 0.31993157
+          value: 0.64974385
+          inSlope: 0.003906898
+          outSlope: 0.003906898
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: 0.003911342
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 0
@@ -1578,6 +1590,12 @@ ParticleSystem:
           outSlope: 0
           tangentMode: 0
         - serializedVersion: 2
+          time: 0.12403762
+          value: -0.9152542
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
           time: 1
           value: 0
           inSlope: 0
@@ -1585,7 +1603,7 @@ ParticleSystem:
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 4
+        m_RotationOrder: 0
       minCurve:
         serializedVersion: 2
         m_Curve:
@@ -4146,7 +4164,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.9862069, g: 1, b: 0, a: 1}
+      maxColor: {r: 0.8235294, g: 0.7372549, b: 0.50980395, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -7692,7 +7710,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.9862069, g: 1, b: 0, a: 1}
+      maxColor: {r: 0.8235294, g: 0.7372549, b: 0.50980395, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -8672,6 +8690,18 @@ ParticleSystem:
           inSlope: 0
           outSlope: 0
           tangentMode: 0
+        - serializedVersion: 2
+          time: 0.3524379
+          value: -0.5954763
+          inSlope: -0.0050733797
+          outSlope: -0.0050733797
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 1
+          value: -0.004120305
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 0
@@ -8708,14 +8738,20 @@ ParticleSystem:
           outSlope: 0
           tangentMode: 0
         - serializedVersion: 2
+          time: 0.6843101
+          value: -0.4171992
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
           time: 1
-          value: 0
+          value: 0.0025939941
           inSlope: 0
           outSlope: 0
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 4
+        m_RotationOrder: 0
       minCurve:
         serializedVersion: 2
         m_Curve:
