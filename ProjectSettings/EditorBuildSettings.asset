@@ -5,6 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+<<<<<<< HEAD
   - enabled: 1
     path: Assets/Scenes/FreeRoam.unity
     guid: 6080fcb554b8d04488740f36456bf166
@@ -14,3 +15,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/testLevel1.unity
     guid: 4b64c213eb556944a8cde622bd44a582
+=======
+  - enabled: 0
+    path: Assets/Scenes/FreeRoam/FreeRoam3RealisticGrav.unity
+    guid: 23962617111aee142a4a297ed7eb1397
+  - enabled: 0
+    path: Assets/Scenes/FreeRoam/FreeRoam2SetCircle.unity
+    guid: 96b9b91a6829b054cad54850fe1daf65
+  - enabled: 1
+    path: Assets/Scenes/FreeRoam/FreeRoamWhirlpool.unity
+    guid: 6080fcb554b8d04488740f36456bf166
+>>>>>>> DorianDevAtWork

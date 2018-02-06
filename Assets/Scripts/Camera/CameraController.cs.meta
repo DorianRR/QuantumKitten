@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/Camera/SimpleCamera.cs.meta
+guid: 35c1d1be0829b1645a877cca7b73c368
+timeCreated: 1516897535
+=======
+guid: 5f93b11eb5ccbda4fbea7a94e94c1fc0
+timeCreated: 1516487657
+>>>>>>> DorianDevAtWork:Assets/Scripts/Camera/CameraController.cs.meta
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
