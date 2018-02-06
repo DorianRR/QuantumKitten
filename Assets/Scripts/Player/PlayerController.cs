@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class D2_PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 
 
     public Vector3 initialForce = new Vector3(10,7,0);
@@ -77,7 +77,7 @@ public class D2_PlayerController : MonoBehaviour {
 
     private void OnTriggerExit()
     {
-        gameObject.GetComponent<D2_SpawnDespawn>().ForcedDeSpawn();
+        gameObject.GetComponent<SpawnDespawn>().ForcedDeSpawn();
 
     }
 

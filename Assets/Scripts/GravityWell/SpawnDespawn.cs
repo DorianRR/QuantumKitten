@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class D2_SpawnDespawn : MonoBehaviour
+public class SpawnDespawn : MonoBehaviour
 {
 
     public GameObject GravityWell;
@@ -22,7 +22,7 @@ public class D2_SpawnDespawn : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetMouseButtonDown(0) && gameObject.GetComponent<D2_PlayerController>().canSpawn && onSpawn)
+        if (Input.GetMouseButtonDown(0) && gameObject.GetComponent<PlayerController>().canSpawn && onSpawn)
         {
             gameObject.GetComponent<ObjectiveIndicator>().externalPause = true;
             onSpawn = false;
@@ -30,7 +30,7 @@ public class D2_SpawnDespawn : MonoBehaviour
             Physics.Raycast(touchRay, out touchHit);
             spawnedWell = Instantiate(GravityWell, touchHit.point, Quaternion.identity);
 
-            MainCamera.GetComponent<D_Camera>().CenterOnSpawnedGW(touchHit.point);
+            MainCamera.GetComponent<CameraController>().CenterOnSpawnedGW(touchHit.point);
 
 
         }
@@ -40,12 +40,12 @@ public class D2_SpawnDespawn : MonoBehaviour
             gameObject.GetComponent<ObjectiveIndicator>().externalPause = false;
 
             onSpawn = true;
-            gameObject.GetComponent<D2_PlayerController>().startedWhirl = false;
+            gameObject.GetComponent<PlayerController>().startedWhirl = false;
 
 
             Destroy(spawnedWell);
-            gameObject.GetComponent<D2_PlayerController>().Launch();
-            MainCamera.GetComponent<D_Camera>().reCenter();
+            gameObject.GetComponent<PlayerController>().Launch();
+            MainCamera.GetComponent<CameraController>().reCenter();
 
         }
 
@@ -57,12 +57,12 @@ public class D2_SpawnDespawn : MonoBehaviour
                 gameObject.GetComponent<ObjectiveIndicator>().externalPause = false;
 
                 onSpawn = true;
-                gameObject.GetComponent<D2_PlayerController>().startedWhirl = false;
+                gameObject.GetComponent<PlayerController>().startedWhirl = false;
 
 
                 Destroy(spawnedWell);
-                gameObject.GetComponent<D2_PlayerController>().Launch();
-                MainCamera.GetComponent<D_Camera>().reCenter();
+                gameObject.GetComponent<PlayerController>().Launch();
+                MainCamera.GetComponent<CameraController>().reCenter();
 
 
             }
@@ -72,11 +72,11 @@ public class D2_SpawnDespawn : MonoBehaviour
     public void ForcedDeSpawn()
     {
         onSpawn = true;
-        gameObject.GetComponent<D2_PlayerController>().startedWhirl = false;
+        gameObject.GetComponent<PlayerController>().startedWhirl = false;
 
 
         Destroy(spawnedWell);
-        gameObject.GetComponent<D2_PlayerController>().Launch();
-        MainCamera.GetComponent<D_Camera>().reCenter();
+        gameObject.GetComponent<PlayerController>().Launch();
+        MainCamera.GetComponent<CameraController>().reCenter();
     }
 }
