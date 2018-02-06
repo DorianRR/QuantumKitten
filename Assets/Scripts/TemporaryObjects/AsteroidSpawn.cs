@@ -21,7 +21,7 @@ public class AsteroidSpawn : MonoBehaviour {
     void Start()
     {
         Vector3 position;
-        Vector3 scale;
+        //Vector3 scale;
 
         for (int i = 0; i < numberOfObjects; i++)
         {
