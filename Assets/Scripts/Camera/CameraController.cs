@@ -15,6 +15,7 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
+        transform.position =(player.GetComponent<Rigidbody>().transform.position + offset);
         offset = transform.position - player.transform.position;
     }
 
