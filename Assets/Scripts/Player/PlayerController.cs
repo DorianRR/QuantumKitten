@@ -15,7 +15,8 @@ public class PlayerController : MonoBehaviour {
     private Vector2 distanceToWell;
     private Vector2 directionTowardsWell;
     private float whirlBoost = 1.0f;
-    
+    private bool canBounce = true;
+    private float bounceCD = 0.2f;
     void Start ()
     {
         gameObject.GetComponent<Rigidbody>().AddForce(initialForce, ForceMode.Impulse);
@@ -23,7 +24,16 @@ public class PlayerController : MonoBehaviour {
 	
 	void Update ()
     {
-        if(GetComponent<Rigidbody>().velocity.magnitude > 5)
+        if(!canBounce)
+        {
+            bounceCD -= Time.deltaTime;
+            if(bounceCD<=0f)
+            {
+                canBounce = true;
+                bounceCD = 0.2f;
+            }
+        }
+        if (GetComponent<Rigidbody>().velocity.magnitude > 5)
         {
             canSpawn = true;
 
@@ -47,8 +57,27 @@ public class PlayerController : MonoBehaviour {
 
     private void OnCollisionEnter(Collision coll)
     {
-        //This controls the bounce when you hit something. Don't get lost in the mess.
-        gameObject.GetComponent<Rigidbody>().AddForce(-(gameObject.GetComponent<Rigidbody>().velocity) * 1.5f, ForceMode.Impulse);
+        if(coll.transform.tag == "Bounce" && canBounce)
+        {
+            canBounce = false;
+            Vector3 collisionPoint = coll.contacts[0].point;
+            Vector3 reverseCollisionVector = -coll.contacts[0].normal;
+            Vector3 collisionNormal = new Vector3();
+            collisionPoint -= reverseCollisionVector;
+            RaycastHit hitInfo;
+            if(coll.collider.Raycast(new Ray(collisionPoint,reverseCollisionVector),out hitInfo, 4))
+            {
+                collisionNormal = hitInfo.normal;
+            }
+            Vector3 newVelocity = Vector3.Reflect(GetComponent<Rigidbody>().velocity, collisionNormal);
+            GetComponent<Rigidbody>().velocity = newVelocity;
+        }
+        
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        
     }
 
     private void OnTriggerStay(Collider other)
@@ -92,6 +121,6 @@ public class PlayerController : MonoBehaviour {
         GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * 1.15f;
     }
 
-
+    
 
 }

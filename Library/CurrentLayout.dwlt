@@ -14,6 +14,7 @@ MonoBehaviour:
   m_PixelRect:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: -1920
     y: 43
     width: 1920
@@ -23,6 +24,12 @@ MonoBehaviour:
     y: 51
     width: 1904
     height: 981
+>>>>>>> origin/bouncingoffthewalls
+=======
+    x: 0
+    y: 43
+    width: 1920
+    height: 997
 >>>>>>> origin/bouncingoffthewalls
   m_ShowMode: 4
   m_Title: 
@@ -48,6 +55,7 @@ MonoBehaviour:
     x: 0
     y: 30
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 1920
     height: 947
   m_MinSize: {x: 683, y: 342}
@@ -57,6 +65,12 @@ MonoBehaviour:
     height: 931
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
+>>>>>>> origin/bouncingoffthewalls
+=======
+    width: 1920
+    height: 947
+  m_MinSize: {x: 681, y: 342}
+  m_MaxSize: {x: 12006, y: 8042}
 >>>>>>> origin/bouncingoffthewalls
   vertical: 0
   controlID: 9
@@ -74,10 +88,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1518
+    x: 1531
     y: 0
-    width: 386
-    height: 931
+    width: 389
+    height: 947
   m_MinSize: {x: 277, y: 71}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 14}
@@ -101,13 +115,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-<<<<<<< HEAD
-    width: 384
-    height: 563
-=======
     width: 379
     height: 573
->>>>>>> DorianDevAtWork
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
@@ -131,6 +140,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     y: 573
     width: 1531
     height: 374
@@ -144,6 +154,14 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 271}
   m_MaxSize: {x: 10002, y: 10021}
   m_ActualView: {fileID: 13}
+>>>>>>> origin/bouncingoffthewalls
+=======
+    y: 573
+    width: 1531
+    height: 374
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 18}
 >>>>>>> origin/bouncingoffthewalls
   m_Panes:
   - {fileID: 13}
@@ -169,8 +187,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1904
-    height: 981
+    width: 1920
+    height: 997
   m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &7
@@ -189,7 +207,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1904
+    width: 1920
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -209,8 +227,8 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 961
-    width: 1904
+    y: 977
+    width: 1920
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -233,6 +251,7 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 1531
     height: 947
   m_MinSize: {x: 406, y: 342}
@@ -242,6 +261,12 @@ MonoBehaviour:
     height: 931
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
+>>>>>>> origin/bouncingoffthewalls
+=======
+    width: 1531
+    height: 947
+  m_MinSize: {x: 404, y: 342}
+  m_MaxSize: {x: 8004, y: 8042}
 >>>>>>> origin/bouncingoffthewalls
   vertical: 1
   controlID: 10
@@ -263,10 +288,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1518
-    height: 563
-  m_MinSize: {x: 406, y: 221}
-  m_MaxSize: {x: 8006, y: 4021}
+    width: 1531
+    height: 573
+  m_MinSize: {x: 404, y: 221}
+  m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
   controlID: 11
 --- !u!114 &11
@@ -283,17 +308,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 384
-    y: 0
-    width: 1134
-    height: 563
-=======
     x: 379
     y: 0
     width: 1152
     height: 573
->>>>>>> DorianDevAtWork
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 16}
@@ -325,17 +343,10 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-<<<<<<< HEAD
-    x: 381
-    y: 92
-    width: 1148
-    height: 552
-=======
     x: 468
     y: 181
     width: 973
     height: 501
->>>>>>> DorianDevAtWork
   m_PersistentViewDataDictionary: {fileID: 0}
 --- !u!114 &13
 MonoBehaviour:
@@ -360,6 +371,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: -1920
 =======
 <<<<<<< HEAD
@@ -368,12 +380,13 @@ MonoBehaviour:
     width: 1516
     height: 347
 =======
+=======
+>>>>>>> origin/bouncingoffthewalls
     x: 0
 >>>>>>> origin/bouncingoffthewalls
     y: 665
     width: 1529
     height: 353
->>>>>>> DorianDevAtWork
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -388,6 +401,7 @@ MonoBehaviour:
     m_SearchArea: 0
     m_Folders:
 <<<<<<< HEAD
+<<<<<<< HEAD
     - Assets/Scripts/Camera
   m_ViewMode: 1
   m_StartGridSize: 64
@@ -401,18 +415,24 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Scenes
 =======
+=======
+>>>>>>> origin/bouncingoffthewalls
     - Assets/Scripts/Player
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
   - Assets/Scripts/Player
+<<<<<<< HEAD
 >>>>>>> DorianDevAtWork
+>>>>>>> origin/bouncingoffthewalls
+=======
 >>>>>>> origin/bouncingoffthewalls
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\u1148646\Documents\GitHub\Quantum Kitten\QuantumKitten
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
     m_SelectedIDs: b0280000
     m_LastClickedID: 10416
@@ -427,6 +447,11 @@ MonoBehaviour:
     m_LastClickedID: 10136
     m_ExpandedIDs: 00000000702700009e270000b6270000062800009229000000ca9a3bffffff7f
 >>>>>>> DorianDevAtWork
+>>>>>>> origin/bouncingoffthewalls
+=======
+    m_SelectedIDs: 862a0000
+    m_LastClickedID: 10886
+    m_ExpandedIDs: 000000005e2a00008c2a00009c2a000000ca9a3bffffff7f
 >>>>>>> origin/bouncingoffthewalls
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -443,7 +468,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 5}
+      m_ClientGUIView: {fileID: 0}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -456,6 +481,7 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 000000002a280000562800006c280000a8280000ea290000
 =======
 <<<<<<< HEAD
@@ -463,6 +489,9 @@ MonoBehaviour:
 =======
     m_ExpandedIDs: 00000000702700009e270000b6270000062800009229000000ca9a3bffffff7f
 >>>>>>> DorianDevAtWork
+>>>>>>> origin/bouncingoffthewalls
+=======
+    m_ExpandedIDs: 000000005e2a00008c2a00009c2a0000
 >>>>>>> origin/bouncingoffthewalls
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -488,14 +517,15 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
+<<<<<<< HEAD
     m_SelectedInstanceIDs: 6c290000
     m_LastClickedInstanceID: 10604
-    m_HadKeyboardFocusLastEvent: 1
-<<<<<<< HEAD
-    m_ExpandedInstanceIDs: c62300003afefeff642600001426000016260000182600002400ffff000000006c260000a8260000
 =======
+    m_SelectedInstanceIDs: 922d0000
+    m_LastClickedInstanceID: 11666
+>>>>>>> origin/bouncingoffthewalls
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
->>>>>>> DorianDevAtWork
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -545,6 +575,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: -387
 =======
 <<<<<<< HEAD
@@ -553,12 +584,13 @@ MonoBehaviour:
     width: 384
     height: 910
 =======
+=======
+>>>>>>> origin/bouncingoffthewalls
     x: 1533
 >>>>>>> origin/bouncingoffthewalls
     y: 92
     width: 387
     height: 926
->>>>>>> DorianDevAtWork
   m_PersistentViewDataDictionary: {fileID: 0}
   m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
@@ -590,6 +622,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: -1920
 =======
 <<<<<<< HEAD
@@ -604,6 +637,8 @@ MonoBehaviour:
     m_LastClickedID: 10542
     m_ExpandedIDs: caf8ffff9efbffff00000000
 =======
+=======
+>>>>>>> origin/bouncingoffthewalls
     x: 0
 >>>>>>> origin/bouncingoffthewalls
     y: 92
@@ -612,6 +647,7 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
@@ -620,29 +656,30 @@ MonoBehaviour:
     m_ExpandedIDs: 9ae3ffff00000000
 >>>>>>> DorianDevAtWork
 >>>>>>> origin/bouncingoffthewalls
+=======
+    m_SelectedIDs: 542d0000
+    m_LastClickedID: 11604
+    m_ExpandedIDs: 14c6ffffccf6ffff00000000782d0000bc2d0000
+>>>>>>> origin/bouncingoffthewalls
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Plane
+      m_OriginalName: Plane
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 11640
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 4}
     m_SearchString: 
   m_ExpandedScenes:
-<<<<<<< HEAD
-  - testLevel1
-=======
-  - FreeRoamWhirlpool
->>>>>>> DorianDevAtWork
+  - BOUNCYCASTLE
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -669,6 +706,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: -1539
 =======
 <<<<<<< HEAD
@@ -677,28 +715,23 @@ MonoBehaviour:
     width: 1130
     height: 542
 =======
+=======
+>>>>>>> origin/bouncingoffthewalls
     x: 381
 >>>>>>> origin/bouncingoffthewalls
     y: 92
     width: 1148
     height: 552
->>>>>>> DorianDevAtWork
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 0
+  lastFramingTime: 3925.151557930737
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-<<<<<<< HEAD
-    m_Target: {x: -44.515415, y: 0.064901985, z: 340.08228}
+    m_Target: {x: -249.5981, y: 231.15138, z: -224.82648}
     speed: 2
-    m_Value: {x: -44.515415, y: 0.064901985, z: 340.08228}
-=======
-    m_Target: {x: 0, y: 0, z: 0}
-    speed: 2
-    m_Value: {x: 0, y: 0, z: 0}
->>>>>>> DorianDevAtWork
+    m_Value: {x: -249.5981, y: 231.15138, z: -224.82648}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -722,23 +755,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-<<<<<<< HEAD
-    m_Target: {x: -0.015305703, y: -0.023395807, z: 0.00035844202, w: -0.99960905}
+    m_Target: {x: -0.27998847, y: -0.013826107, z: 0.004032387, w: -0.9598954}
     speed: 2
-    m_Value: {x: -0.015305703, y: -0.023395807, z: 0.00035844202, w: -0.99960905}
+    m_Value: {x: -0.27998847, y: -0.013826107, z: 0.004032387, w: -0.9598954}
   m_Size:
-    m_Target: 479.53183
+    m_Target: 39.211945
     speed: 2
-    m_Value: 479.53183
-=======
-    m_Target: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
-    speed: 2
-    m_Value: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
-  m_Size:
-    m_Target: 10
-    speed: 2
-    m_Value: 10
->>>>>>> DorianDevAtWork
+    m_Value: 39.211945
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -773,6 +796,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: -1539
 =======
 <<<<<<< HEAD
@@ -781,12 +805,13 @@ MonoBehaviour:
     width: 1130
     height: 542
 =======
+=======
+>>>>>>> origin/bouncingoffthewalls
     x: 381
 >>>>>>> origin/bouncingoffthewalls
     y: 92
     width: 1148
     height: 552
->>>>>>> DorianDevAtWork
   m_PersistentViewDataDictionary: {fileID: 0}
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
@@ -796,17 +821,10 @@ MonoBehaviour:
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
-<<<<<<< HEAD
-    m_HBaseRangeMin: -565
-    m_HBaseRangeMax: 565
-    m_VBaseRangeMin: -262.5
-    m_VBaseRangeMax: 262.5
-=======
     m_HBaseRangeMin: -574
     m_HBaseRangeMax: 574
     m_VBaseRangeMin: -267.5
     m_VBaseRangeMax: 267.5
->>>>>>> DorianDevAtWork
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -823,43 +841,25 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-<<<<<<< HEAD
-      width: 1130
-      height: 525
-    m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 565, y: 262.5}
-=======
       width: 1148
       height: 535
     m_Scale: {x: 1, y: 1}
     m_Translation: {x: 574, y: 267.5}
->>>>>>> DorianDevAtWork
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-<<<<<<< HEAD
-      x: -565
-      y: -262.5
-      width: 1130
-      height: 525
-=======
       x: -574
       y: -267.5
       width: 1148
       height: 535
->>>>>>> DorianDevAtWork
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-<<<<<<< HEAD
-  m_LastWindowPixelSize: {x: 1130, y: 542}
-=======
   m_LastWindowPixelSize: {x: 1148, y: 552}
->>>>>>> DorianDevAtWork
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -886,6 +886,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: -1920
     y: 665
     width: 1529
@@ -901,5 +902,11 @@ MonoBehaviour:
     width: 1366
     height: 308
 >>>>>>> DorianDevAtWork
+>>>>>>> origin/bouncingoffthewalls
+=======
+    x: 0
+    y: 665
+    width: 1529
+    height: 353
 >>>>>>> origin/bouncingoffthewalls
   m_PersistentViewDataDictionary: {fileID: 0}
