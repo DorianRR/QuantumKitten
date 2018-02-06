@@ -14,10 +14,12 @@ public class CameraController: MonoBehaviour
     private Vector3 offset;
     private Vector3 GWPosition;
     private float screenOrth = 15;
+    private Vector3 playerVelocity;
+    private Vector3 playerVelLastFrame;
+    private bool justBounced = false;
     
 
 
-    // Use this for initialization
     void Start()
     {
         offset = transform.position - player.transform.position;
@@ -25,19 +27,19 @@ public class CameraController: MonoBehaviour
 
     void LateUpdate()
     {
-        Mathf.Clamp(screenOrth, 20, 30);
+        playerVelocity = player.GetComponent<Rigidbody>().velocity;
 
-        if (!centeredOnGW)
+        if (!centeredOnGW && !justBounced)
         {
             reCenter();
         }
+      
 
-        if(centeredOnGW)
+        if (centeredOnGW)
         {
             GWPosition.z = -22f;
-            //transform.position = Vector3.Lerp(transform.position, GWPosition, 0.05f);
-            
-            gameObject.GetComponent<Camera>().orthographicSize = Mathf.Lerp(gameObject.GetComponent<Camera>().orthographicSize, 50, lerpRatio* Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, GWPosition, 0.05f);
+            gameObject.GetComponent<Camera>().orthographicSize = Mathf.Lerp(gameObject.GetComponent<Camera>().orthographicSize, 40, lerpRatio* Time.deltaTime);
         }
         
     }
@@ -50,24 +52,22 @@ public class CameraController: MonoBehaviour
 
     public void reCenter()
     {
-        //This lerping needs to be adjusted to reduce lag.
-        transform.position = Vector3.Lerp(transform.position, player.GetComponent<Rigidbody>().transform.position + offset, (lerpRatio*2)* Time.deltaTime);
-        //transform.position = player.GetComponent<Rigidbody>().transform.position + offset;
+        gameObject.GetComponent<Camera>().orthographicSize = Mathf.Lerp(gameObject.GetComponent<Camera>().orthographicSize, 20, lerpRatio * Time.deltaTime);
+  
+        Vector3 playerVelocity = player.GetComponent<Rigidbody>().velocity.normalized;
 
-        screenOrth = Mathf.Clamp(player.GetComponent<Rigidbody>().velocity.magnitude/1.5f, 20, 30);
-        Mathf.Clamp(screenOrth, 20, 30);
-        //screenOrth = 10;
-        if (Mathf.Abs(screenOrth - gameObject.GetComponent<Camera>().orthographicSize) < 3)
+        if (Mathf.Abs(transform.position.magnitude - (player.GetComponent<Rigidbody>().transform.position + offset + (playerVelocity * 7)).magnitude) > 2)
         {
-            //gameObject.GetComponent<Camera>().orthographicSize = screenOrth;
-
+            Vector3 temp = transform.GetComponent<Rigidbody>().velocity;
+            transform.position = Vector3.SmoothDamp(transform.position, (player.GetComponent<Rigidbody>().transform.position + offset + (playerVelocity * 7)), ref temp, .01f, 200, Time.deltaTime);
         }
         else
         {
-            gameObject.GetComponent<Camera>().orthographicSize = Mathf.Lerp(gameObject.GetComponent<Camera>().orthographicSize, screenOrth, lerpRatio * Time.deltaTime);
+            transform.position = player.GetComponent<Rigidbody>().transform.position + offset + (playerVelocity * 7);
         }
-
+        
         centeredOnGW = false;
     }
+
 }
 
