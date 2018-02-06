@@ -1186,8 +1186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 306ed09149ec2224389ceab5b74f43d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialForce: {x: 10, y: 7, z: 0}
-  gravityModifier: 30
+  initialForce: {x: 20, y: 14, z: 0}
+  gravityModifier: 25
   startedWhirl: 0
   canSpawn: 1
   stoppedUI: {fileID: 363237844}

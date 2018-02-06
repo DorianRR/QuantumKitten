@@ -9,7 +9,6 @@ public class D2_PlayerController : MonoBehaviour {
     public float gravityModifier;
     public bool startedWhirl = false;
     public bool canSpawn = true;
-    public GameObject stoppedUI;
     public float ImpulsePower = 20;
 
     private Vector2 playerDirection;
@@ -20,14 +19,12 @@ public class D2_PlayerController : MonoBehaviour {
     void Start ()
     {
         gameObject.GetComponent<Rigidbody>().AddForce(initialForce, ForceMode.Impulse);
-        stoppedUI.SetActive(false);
 	}
 	
 	void Update ()
     {
         if(GetComponent<Rigidbody>().velocity.magnitude > 5)
         {
-            stoppedUI.SetActive(false);
             canSpawn = true;
 
         }
@@ -40,11 +37,11 @@ public class D2_PlayerController : MonoBehaviour {
         else
         {
             GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * .9999f;
-            if(GetComponent<Rigidbody>().velocity.magnitude < 5)
-            {
-                canSpawn = false;
-                stoppedUI.SetActive(true);
-            }
+            
+        }
+        if(GetComponent<Rigidbody>().velocity.magnitude > 50)
+        {
+            GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * 0.75f;
         }
     }
 
@@ -95,37 +92,6 @@ public class D2_PlayerController : MonoBehaviour {
         GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * 1.15f;
     }
 
-    public void ImpulseUp()
-    {
-        canSpawn = true;
-        gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,ImpulsePower,0), ForceMode.Impulse);
-        stoppedUI.SetActive(false);
-
-    }
-
-    public void ImpulseRight()
-    {
-        canSpawn = true;
-        gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(ImpulsePower,0,0), ForceMode.Impulse);
-        stoppedUI.SetActive(false);
-
-    }
-
-    public void ImpulseDown()
-    {
-        canSpawn = true;
-        gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,-ImpulsePower,0), ForceMode.Impulse);
-        stoppedUI.SetActive(false);
-
-    }
-
-    public void ImpulseLeft()
-    {
-        canSpawn = true;
-        gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(-ImpulsePower,0,0), ForceMode.Impulse);
-        stoppedUI.SetActive(false);
-
-    }
 
 
 }

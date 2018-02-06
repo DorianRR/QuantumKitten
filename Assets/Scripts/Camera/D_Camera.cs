@@ -51,15 +51,15 @@ public class D_Camera: MonoBehaviour
     public void reCenter()
     {
         //This lerping needs to be adjusted to reduce lag.
-        //transform.position = Vector3.Lerp(transform.position, player.GetComponent<Rigidbody>().transform.position + offset, lerpRatio* Time.deltaTime);
-        transform.position = player.GetComponent<Rigidbody>().transform.position + offset;
+        transform.position = Vector3.Lerp(transform.position, player.GetComponent<Rigidbody>().transform.position + offset, (lerpRatio*2)* Time.deltaTime);
+        //transform.position = player.GetComponent<Rigidbody>().transform.position + offset;
 
-        screenOrth = Mathf.Clamp(player.GetComponent<Rigidbody>().velocity.magnitude/2, 20, 30);
+        screenOrth = Mathf.Clamp(player.GetComponent<Rigidbody>().velocity.magnitude/1.5f, 20, 30);
         Mathf.Clamp(screenOrth, 20, 30);
         //screenOrth = 10;
         if (Mathf.Abs(screenOrth - gameObject.GetComponent<Camera>().orthographicSize) < 3)
         {
-            gameObject.GetComponent<Camera>().orthographicSize = screenOrth;
+            //gameObject.GetComponent<Camera>().orthographicSize = screenOrth;
 
         }
         else

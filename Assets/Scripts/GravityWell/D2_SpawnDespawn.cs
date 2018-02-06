@@ -48,6 +48,25 @@ public class D2_SpawnDespawn : MonoBehaviour
             MainCamera.GetComponent<D_Camera>().reCenter();
 
         }
+
+        if(spawnedWell)
+        {
+            float distance = (spawnedWell.transform.position - transform.position).magnitude;
+            if (distance < 5f)
+            {
+                gameObject.GetComponent<ObjectiveIndicator>().externalPause = false;
+
+                onSpawn = true;
+                gameObject.GetComponent<D2_PlayerController>().startedWhirl = false;
+
+
+                Destroy(spawnedWell);
+                gameObject.GetComponent<D2_PlayerController>().Launch();
+                MainCamera.GetComponent<D_Camera>().reCenter();
+
+
+            }
+        }
     }
 
     public void ForcedDeSpawn()
