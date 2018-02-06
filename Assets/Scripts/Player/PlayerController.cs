@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour {
     private float whirlBoost = 1.0f;
     private bool canBounce = true;
     private float bounceCD = 0.2f;
+
     void Start ()
     {
         gameObject.GetComponent<Rigidbody>().AddForce(initialForce, ForceMode.Impulse);
