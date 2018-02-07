@@ -70,7 +70,7 @@ public class BlackHoleEffect : MonoBehaviour
             //is the black hole in front of the camera
             if (wtsp.z > 0) 
             {
-                pos = new Vector2(wtsp.x / cam.pixelWidth, 1 - (wtsp.y / cam.pixelHeight));
+                pos = new Vector2(wtsp.x / cam.pixelWidth, (wtsp.y / cam.pixelHeight));
                 //apply shader parameters
                 _material.SetVector("_Position", pos);
                 _material.SetFloat("_Ratio", ratio);
