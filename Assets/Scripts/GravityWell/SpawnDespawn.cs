@@ -40,11 +40,10 @@ public class SpawnDespawn : MonoBehaviour
             gameObject.GetComponent<ObjectiveIndicator>().externalPause = false;
 
             onSpawn = true;
-            gameObject.GetComponent<PlayerController>().startedWhirl = false;
+            gameObject.GetComponent<PlayerController>().setWhirl(false);
 
 
             Destroy(spawnedWell);
-            gameObject.GetComponent<PlayerController>().Launch();
             MainCamera.GetComponent<CameraController>().reCenter();
 
         }
@@ -57,11 +56,10 @@ public class SpawnDespawn : MonoBehaviour
                 gameObject.GetComponent<ObjectiveIndicator>().externalPause = false;
 
                 onSpawn = true;
-                gameObject.GetComponent<PlayerController>().startedWhirl = false;
+                gameObject.GetComponent<PlayerController>().setWhirl(false);
 
 
                 Destroy(spawnedWell);
-                gameObject.GetComponent<PlayerController>().Launch();
                 MainCamera.GetComponent<CameraController>().reCenter();
 
 
@@ -76,7 +74,8 @@ public class SpawnDespawn : MonoBehaviour
 
 
         Destroy(spawnedWell);
-        gameObject.GetComponent<PlayerController>().Launch();
         MainCamera.GetComponent<CameraController>().reCenter();
     }
+
+
 }

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - GravityWell
   - Bounce
+  - WormHole
+  - ExitHole
   layers:
   - Default
   - TransparentFX
