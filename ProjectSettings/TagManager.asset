@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GravityWell
   - Bounce
+  - Asteroid
   layers:
   - Default
   - TransparentFX

@@ -16,6 +16,7 @@ public class Breakable_vfx : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Object.Destroy(gameObject);
+
         }
 
 	}
