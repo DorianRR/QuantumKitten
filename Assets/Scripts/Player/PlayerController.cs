@@ -31,14 +31,9 @@ public class PlayerController : MonoBehaviour {
             if(bounceCD<=0f)
             {
                 canBounce = true;
-                bounceCD = 0.2f;
+                bounceCD = 0.1f;
             }
         }
-        if (GetComponent<Rigidbody>().velocity.magnitude > 5)
-        {
-            canSpawn = true;
-
-        } 
         GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * .9999f;
             
         if(GetComponent<Rigidbody>().velocity.magnitude > 50)
@@ -62,7 +57,7 @@ public class PlayerController : MonoBehaviour {
                 collisionNormal = hitInfo.normal;
             }
             Vector3 newVelocity = Vector3.Reflect(GetComponent<Rigidbody>().velocity, collisionNormal);
-            GetComponent<Rigidbody>().velocity = newVelocity;
+            GetComponent<Rigidbody>().velocity = newVelocity * 0.8f;
         }
         
     }
@@ -80,10 +75,17 @@ public class PlayerController : MonoBehaviour {
     public void disableInput()
     {
         Debug.Log("player input disabled");
+        canSpawn = false;
     }
 
     public void enableInput()
     {
         Debug.Log("player input enabled");
+        canSpawn = true;
+    }
+
+    public void Launch()
+    {
+        gameObject.GetComponent<Rigidbody>().AddForce(gameObject.GetComponent<Rigidbody>().velocity, ForceMode.Impulse);
     }
 }

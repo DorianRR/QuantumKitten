@@ -34,7 +34,6 @@ public class SpawnDespawn : MonoBehaviour
 
 
         }
-        //if (Input.GetMouseButtonUp(0))
         else if (Input.GetMouseButtonDown(0) && !onSpawn)
         {
             gameObject.GetComponent<ObjectiveIndicator>().externalPause = false;
