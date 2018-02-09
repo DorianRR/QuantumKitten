@@ -34,17 +34,16 @@ public class SpawnDespawn : MonoBehaviour
 
 
         }
-        //if (Input.GetMouseButtonUp(0))
         else if (Input.GetMouseButtonDown(0) && !onSpawn)
         {
             gameObject.GetComponent<ObjectiveIndicator>().externalPause = false;
 
             onSpawn = true;
-            gameObject.GetComponent<PlayerController>().startedWhirl = false;
+            gameObject.GetComponent<PlayerController>().setWhirl(false);
+            gameObject.GetComponent<PlayerController>().Launch();
 
 
             Destroy(spawnedWell);
-            gameObject.GetComponent<PlayerController>().Launch();
             MainCamera.GetComponent<CameraController>().reCenter();
 
         }
@@ -57,11 +56,10 @@ public class SpawnDespawn : MonoBehaviour
                 gameObject.GetComponent<ObjectiveIndicator>().externalPause = false;
 
                 onSpawn = true;
-                gameObject.GetComponent<PlayerController>().startedWhirl = false;
+                gameObject.GetComponent<PlayerController>().setWhirl(false);
 
 
                 Destroy(spawnedWell);
-                gameObject.GetComponent<PlayerController>().Launch();
                 MainCamera.GetComponent<CameraController>().reCenter();
 
 
@@ -72,11 +70,13 @@ public class SpawnDespawn : MonoBehaviour
     public void ForcedDeSpawn()
     {
         onSpawn = true;
-        gameObject.GetComponent<PlayerController>().startedWhirl = false;
+        gameObject.GetComponent<PlayerController>().setWhirl(false);
+        gameObject.GetComponent<PlayerController>().Launch();
 
 
         Destroy(spawnedWell);
-        gameObject.GetComponent<PlayerController>().Launch();
         MainCamera.GetComponent<CameraController>().reCenter();
     }
+
+
 }

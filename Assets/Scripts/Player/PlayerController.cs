@@ -15,7 +15,9 @@ public class PlayerController : MonoBehaviour {
     private Vector2 distanceToWell;
     private Vector2 directionTowardsWell;
     private float whirlBoost = 1.0f;
-    
+    private bool canBounce = true;
+    private float bounceCD = 0.2f;
+
     void Start ()
     {
         gameObject.GetComponent<Rigidbody>().AddForce(initialForce, ForceMode.Impulse);
@@ -23,22 +25,17 @@ public class PlayerController : MonoBehaviour {
 	
 	void Update ()
     {
-        if(GetComponent<Rigidbody>().velocity.magnitude > 5)
+        if(!canBounce)
         {
-            canSpawn = true;
-
+            bounceCD -= Time.deltaTime;
+            if(bounceCD<=0f)
+            {
+                canBounce = true;
+                bounceCD = 0.1f;
+            }
         }
-        if(startedWhirl)
-        {
-            gameObject.GetComponent<Rigidbody>().AddForce
-                (whirlBoost * gameObject.GetComponent<Rigidbody>().velocity.magnitude * gravityModifier/distanceToWell.magnitude*directionTowardsWell, ForceMode.Force);
-            whirlBoost += Time.deltaTime / 7;
-        }
-        else
-        {
-            GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * .9999f;
+        GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * .9999f;
             
-        }
         if(GetComponent<Rigidbody>().velocity.magnitude > 50)
         {
             GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * 0.75f;
@@ -47,51 +44,48 @@ public class PlayerController : MonoBehaviour {
 
     private void OnCollisionEnter(Collision coll)
     {
-        //This controls the bounce when you hit something. Don't get lost in the mess.
-        gameObject.GetComponent<Rigidbody>().AddForce(-(gameObject.GetComponent<Rigidbody>().velocity) * 1.5f, ForceMode.Impulse);
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if(other.tag == "GravityWell")
+        if(coll.transform.tag == "Bounce" && canBounce)
         {
-            playerDirection = new Vector2(GetComponent<Rigidbody>().velocity.x, GetComponent<Rigidbody>().velocity.y);
-            playerDirection.Normalize();
-
-            distanceToWell = other.transform.position - transform.position;
-            directionTowardsWell = distanceToWell.normalized;
-            float angle = Vector2.Angle(directionTowardsWell, playerDirection);
-
-            if (angle % 90 < 5f && gameObject.GetComponent<Rigidbody>().velocity.magnitude > 3.0f || startedWhirl)
+            canBounce = false;
+            Vector3 collisionPoint = coll.contacts[0].point;
+            Vector3 reverseCollisionVector = -coll.contacts[0].normal;
+            Vector3 collisionNormal = new Vector3();
+            collisionPoint -= reverseCollisionVector;
+            RaycastHit hitInfo;
+            if(coll.collider.Raycast(new Ray(collisionPoint,reverseCollisionVector),out hitInfo, 4))
             {
-                startedWhirl = true;
+                collisionNormal = hitInfo.normal;
             }
-            else
-            {
-                gameObject.GetComponent<Rigidbody>().AddForce
-                    (whirlBoost * gameObject.GetComponent<Rigidbody>().velocity.magnitude*(gravityModifier/2)/distanceToWell.magnitude*directionTowardsWell, ForceMode.Force);
-            }
-            
+            Vector3 newVelocity = Vector3.Reflect(GetComponent<Rigidbody>().velocity, collisionNormal);
+            GetComponent<Rigidbody>().velocity = newVelocity * 0.8f;
         }
+        
     }
 
-    private void OnTriggerExit()
+    public void setWhirl(bool status)
     {
-        gameObject.GetComponent<SpawnDespawn>().ForcedDeSpawn();
-
+        startedWhirl = status;
     }
 
-    private void OnTriggerExit(Collider other)
+    public bool getWhirl()
     {
-        startedWhirl = false;
+        return startedWhirl;
+    }
 
+    public void disableInput()
+    {
+        Debug.Log("player input disabled");
+        canSpawn = false;
+    }
+
+    public void enableInput()
+    {
+        Debug.Log("player input enabled");
+        canSpawn = true;
     }
 
     public void Launch()
     {
-        GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * 1.15f;
+        gameObject.GetComponent<Rigidbody>().AddForce(gameObject.GetComponent<Rigidbody>().velocity, ForceMode.Impulse);
     }
-
-
-
 }
