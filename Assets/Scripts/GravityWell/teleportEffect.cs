@@ -24,7 +24,7 @@ public class teleportEffect : MonoBehaviour {
             newDirection.z = 0;
             collision.transform.position = holePosition;
             collision.transform.GetComponent<Rigidbody>().AddForce(newDirection * 10, ForceMode.Impulse);
-
+            collision.transform.GetComponent<PlayerController>().enableInput();
         }
     }
 }

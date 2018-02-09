@@ -41,6 +41,7 @@ public class SpawnDespawn : MonoBehaviour
 
             onSpawn = true;
             gameObject.GetComponent<PlayerController>().setWhirl(false);
+            gameObject.GetComponent<PlayerController>().Launch();
 
 
             Destroy(spawnedWell);
@@ -70,7 +71,8 @@ public class SpawnDespawn : MonoBehaviour
     public void ForcedDeSpawn()
     {
         onSpawn = true;
-        gameObject.GetComponent<PlayerController>().startedWhirl = false;
+        gameObject.GetComponent<PlayerController>().setWhirl(false);
+        gameObject.GetComponent<PlayerController>().Launch();
 
 
         Destroy(spawnedWell);

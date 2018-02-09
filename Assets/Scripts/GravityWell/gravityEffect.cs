@@ -58,6 +58,7 @@ public class gravityEffect : MonoBehaviour {
     {
         if(other.transform.tag == "Player")
         {
+            other.GetComponent<PlayerController>().Launch();
             other.GetComponent<PlayerController>().setWhirl(false);
             other.GetComponent<SpawnDespawn>().ForcedDeSpawn();
         }
