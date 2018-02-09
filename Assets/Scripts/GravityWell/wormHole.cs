@@ -19,6 +19,7 @@ public class wormHole : MonoBehaviour {
         if(other.transform.tag == "Player")
         {
             other.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            other.GetComponent<PlayerController>().disableInput();
         }
     }
 
@@ -35,7 +36,7 @@ public class wormHole : MonoBehaviour {
     {
         if(other.transform.tag == "Player")
         {
-            other.GetComponent<PlayerController>().disableInput();
+
         }
     }
 }
