@@ -6,8 +6,12 @@ TagManager:
   tags:
   - GravityWell
   - Bounce
+<<<<<<< HEAD
+  - Asteroid
+=======
   - WormHole
   - ExitHole
+>>>>>>> bouncingoffthewalls
   layers:
   - Default
   - TransparentFX

@@ -15,6 +15,7 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
+
         transform.position = (player.GetComponent<Rigidbody>().transform.position + offset);
         offset = transform.position - player.transform.position;
     }
@@ -48,14 +49,14 @@ public class CameraController : MonoBehaviour
         gameObject.GetComponent<Camera>().orthographicSize = Mathf.Lerp(gameObject.GetComponent<Camera>().orthographicSize, 20, lerpRatio * Time.deltaTime);
 
         Vector3 playerVelocity = player.GetComponent<Rigidbody>().velocity.normalized;
-
+        
         Vector3 temp = transform.GetComponent<Rigidbody>().velocity;
         transform.position = Vector3.SmoothDamp(transform.position,
             new Vector3
             ((player.GetComponent<Rigidbody>().transform.position.x + offset.x + (playerVelocity.x * 15)),
             (player.GetComponent<Rigidbody>().transform.position.y + offset.y + (playerVelocity.y * 7)),
             -20), ref temp, .01f, 150, Time.deltaTime);
-
+        
         centeredOnGW = false;
     }
 }
