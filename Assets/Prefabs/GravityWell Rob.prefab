@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33670208949990220}
   - component: {fileID: 135006516128747110}
   - component: {fileID: 23995802568366170}
+  - component: {fileID: 114673700002403924}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: GravityWell
@@ -374,6 +375,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7534288e50bc13045a4ad297581ede0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114673700002403924
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1074495678114788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1340f0a037d143a408b3d7e25d588ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!135 &135006516128747110

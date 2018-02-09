@@ -38,18 +38,9 @@ public class PlayerController : MonoBehaviour {
         {
             canSpawn = true;
 
-        }
-        if(startedWhirl)
-        {
-            gameObject.GetComponent<Rigidbody>().AddForce
-                (whirlBoost * gameObject.GetComponent<Rigidbody>().velocity.magnitude * gravityModifier/distanceToWell.magnitude*directionTowardsWell, ForceMode.Force);
-            whirlBoost += Time.deltaTime / 7;
-        }
-        else
-        {
-            GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * .9999f;
+        } 
+        GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * .9999f;
             
-        }
         if(GetComponent<Rigidbody>().velocity.magnitude > 50)
         {
             GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * 0.75f;
@@ -76,52 +67,23 @@ public class PlayerController : MonoBehaviour {
         
     }
 
-    private void OnCollisionExit(Collision collision)
+    public void setWhirl(bool status)
     {
-        
+        startedWhirl = status;
     }
 
-    private void OnTriggerStay(Collider other)
+    public bool getWhirl()
     {
-        if(other.tag == "GravityWell")
-        {
-            playerDirection = new Vector2(GetComponent<Rigidbody>().velocity.x, GetComponent<Rigidbody>().velocity.y);
-            playerDirection.Normalize();
-
-            distanceToWell = other.transform.position - transform.position;
-            directionTowardsWell = distanceToWell.normalized;
-            float angle = Vector2.Angle(directionTowardsWell, playerDirection);
-
-            if (angle % 90 < 5f && gameObject.GetComponent<Rigidbody>().velocity.magnitude > 3.0f || startedWhirl)
-            {
-                startedWhirl = true;
-            }
-            else
-            {
-                gameObject.GetComponent<Rigidbody>().AddForce
-                    (whirlBoost * gameObject.GetComponent<Rigidbody>().velocity.magnitude*(gravityModifier/2)/distanceToWell.magnitude*directionTowardsWell, ForceMode.Force);
-            }
-            
-        }
+        return startedWhirl;
     }
 
-    private void OnTriggerExit()
+    public void disableInput()
     {
-        gameObject.GetComponent<SpawnDespawn>().ForcedDeSpawn();
-
+        Debug.Log("player input disabled");
     }
 
-    private void OnTriggerExit(Collider other)
+    public void enableInput()
     {
-        startedWhirl = false;
-
+        Debug.Log("player input enabled");
     }
-
-    public void Launch()
-    {
-        GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * 1.15f;
-    }
-
-    
-
 }
