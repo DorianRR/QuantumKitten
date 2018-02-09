@@ -41,7 +41,7 @@ public class gravityEffect : MonoBehaviour {
             {
                 other.GetComponent<Rigidbody>().AddForce
                 (whirlBoost * other.GetComponent<Rigidbody>().velocity.magnitude * gravityModifier / distanceToWell.magnitude * directionTowardsWell, ForceMode.Force);
-                whirlBoost += Time.deltaTime / 7;
+                whirlBoost += Time.deltaTime / 3;
             }
             else
             {

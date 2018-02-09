@@ -44,7 +44,7 @@ public class SpawnDespawn : MonoBehaviour
 
 
             Destroy(spawnedWell);
-            MainCamera.GetComponent<CameraController>().reCenter();
+            MainCamera.GetComponent<CameraController>().setCenteredOnGW(false);
 
         }
 
@@ -60,7 +60,9 @@ public class SpawnDespawn : MonoBehaviour
 
 
                 Destroy(spawnedWell);
-                MainCamera.GetComponent<CameraController>().reCenter();
+                MainCamera.GetComponent<CameraController>().setCenteredOnGW(false);
+
+                //MainCamera.GetComponent<CameraController>().reCenter();
 
 
             }
@@ -75,7 +77,9 @@ public class SpawnDespawn : MonoBehaviour
 
 
         Destroy(spawnedWell);
-        MainCamera.GetComponent<CameraController>().reCenter();
+        MainCamera.GetComponent<CameraController>().setCenteredOnGW(false);
+
+        //MainCamera.GetComponent<CameraController>().reCenter();
     }
 
 

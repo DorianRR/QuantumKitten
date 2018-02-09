@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour {
     private Vector2 playerDirection;
     private Vector2 distanceToWell;
     private Vector2 directionTowardsWell;
-    private float whirlBoost = 1.0f;
     private bool canBounce = true;
     private float bounceCD = 0.2f;
 
@@ -58,6 +57,7 @@ public class PlayerController : MonoBehaviour {
             }
             Vector3 newVelocity = Vector3.Reflect(GetComponent<Rigidbody>().velocity, collisionNormal);
             GetComponent<Rigidbody>().velocity = newVelocity * 0.8f;
+
         }
         
     }
