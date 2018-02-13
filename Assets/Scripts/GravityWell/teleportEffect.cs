@@ -27,4 +27,9 @@ public class teleportEffect : MonoBehaviour {
             collision.transform.GetComponent<PlayerController>().enableInput();
         }
     }
+
+    private Vector3 calculateTrajectory(Vector3 fromPosition)
+    {
+        Vector3 holePosition
+    }
 }

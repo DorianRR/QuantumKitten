@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour {
     public void Launch()
     {
 
-        gameObject.GetComponent<Rigidbody>().AddForce(gameObject.GetComponent<Rigidbody>().velocity, ForceMode.Impulse);
+        gameObject.GetComponent<Rigidbody>().AddForce(gameObject.GetComponent<Rigidbody>().velocity* 0.1f, ForceMode.Impulse);
 
     }
 }
