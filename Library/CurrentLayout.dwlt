@@ -70,7 +70,7 @@ MonoBehaviour:
   m_MinSize: {x: 887, y: 492}
   m_MaxSize: {x: 16012, y: 14042}
   vertical: 0
-  controlID: 205
+  controlID: 144
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -190,7 +190,7 @@ MonoBehaviour:
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
-  m_LastLoadedLayoutName: Jonathan
+  m_LastLoadedLayoutName: 
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_MinSize: {x: 610, y: 492}
   m_MaxSize: {x: 12010, y: 14042}
   vertical: 1
-  controlID: 206
+  controlID: 10
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -259,7 +259,7 @@ MonoBehaviour:
   m_MinSize: {x: 610, y: 221}
   m_MaxSize: {x: 12010, y: 4021}
   vertical: 0
-  controlID: 207
+  controlID: 11
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -324,19 +324,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scenes
+    - Assets/Materials/SplosionVFX
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Materials/SplosionVFX
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Jonathan\Desktop\Projects\QuantumKitten\QuantumKitten
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 422b0000
-    m_LastClickedID: 11074
-    m_ExpandedIDs: 000000000a2b0000942b000000ca9a3bffffff7f
+    m_SelectedIDs: 3a280000
+    m_LastClickedID: 10298
+    m_ExpandedIDs: 00000000802700003628000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -364,7 +364,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000a2b0000942b000000ca9a3bffffff7f
+    m_ExpandedIDs: 000000008027000036280000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -391,7 +391,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -408,7 +408,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 6}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -482,9 +482,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 3c2c0000
-    m_LastClickedID: 11324
-    m_ExpandedIDs: d6f2ffffdef5ffff20f7ffff22f7ffff000000003c2c0000
+    m_SelectedIDs: aaa1fdff
+    m_LastClickedID: -155222
+    m_ExpandedIDs: 6696feff08fefeff9efbffff000000001e290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -500,7 +500,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 0
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 5}
     m_SearchString: 
   m_ExpandedScenes:
   - Jonathan_Test_Scene
@@ -535,14 +535,14 @@ MonoBehaviour:
     height: 558
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 85.0151197289041
+  lastFramingTime: 3305.3609587950427
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.826326, y: -3.324428, z: 2.8062851}
+    m_Target: {x: -0.34, y: -3.19, z: -16.26}
     speed: 2
-    m_Value: {x: 0.826326, y: -3.324428, z: 2.8062851}
+    m_Value: {x: -0.34, y: -3.19, z: -16.26}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -566,13 +566,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.06775765, y: 0.0035881256, z: -0.00024382545, w: -0.9976953}
+    m_Target: {x: 0.058466434, y: -0.00000001067508, z: 0.000000046583967, w: 0.9982858}
     speed: 2
-    m_Value: {x: -0.06775765, y: 0.0035881256, z: -0.00024382545, w: -0.9976953}
+    m_Value: {x: 0.058466647, y: -0.0000000106751195, z: 0.000000046584137, w: 0.9982894}
   m_Size:
-    m_Target: 28.647455
+    m_Target: 9.8929
     speed: 2
-    m_Value: 28.647455
+    m_Value: 9.8929
   m_Ortho:
     m_Target: 0
     speed: 2
