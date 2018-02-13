@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour {
     private Vector2 playerDirection;
     private Vector2 distanceToWell;
     private Vector2 directionTowardsWell;
-    private float whirlBoost = 1.0f;
     private bool canBounce = true;
 
     private float bounceCD = 0.1f;
@@ -35,7 +34,10 @@ public class PlayerController : MonoBehaviour {
                 bounceCD = 0.1f;
             }
         }
+<<<<<<< HEAD
         
+=======
+>>>>>>> origin/DirectionIndicatorWork
         GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * .9999f;
             
         if(GetComponent<Rigidbody>().velocity.magnitude > 50)
@@ -60,6 +62,10 @@ public class PlayerController : MonoBehaviour {
             }
             Vector3 newVelocity = Vector3.Reflect(GetComponent<Rigidbody>().velocity, collisionNormal);
             GetComponent<Rigidbody>().velocity = newVelocity * 0.8f;
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/DirectionIndicatorWork
         }
         
     }
@@ -93,7 +99,11 @@ public class PlayerController : MonoBehaviour {
 
     public void Launch()
     {
+<<<<<<< HEAD
         Debug.Log("LAUNCH");
         gameObject.GetComponent<Rigidbody>().AddForce(GetComponent<Rigidbody>().velocity, ForceMode.Impulse);
+=======
+        gameObject.GetComponent<Rigidbody>().AddForce(gameObject.GetComponent<Rigidbody>().velocity, ForceMode.Impulse);
+>>>>>>> origin/DirectionIndicatorWork
     }
 }

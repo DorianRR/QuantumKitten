@@ -6,35 +6,34 @@ public class CameraController : MonoBehaviour
 {
 
     public GameObject player;
-    public bool centeredOnGW = false;
-    public float lerpRatio = 30f;
+    public float lerpRatio;
 
+    private bool centeredOnGW = false;
     private Vector3 offset;
     private Vector3 GWPosition;
-    private Vector3 playerVelocity;
 
     void Start()
     {
+        offset = transform.position - player.transform.position;
 
         transform.position = (player.GetComponent<Rigidbody>().transform.position + offset);
-        offset = transform.position - player.transform.position;
     }
 
     void LateUpdate()
     {
-        GWPosition.z = -22f;
-
-        playerVelocity = player.GetComponent<Rigidbody>().velocity;
-
-        if (!centeredOnGW)
-        {
-            reCenter();
-        }
-
         if (centeredOnGW)
         {
-            transform.position = Vector3.Lerp(transform.position, GWPosition, 0.05f);
-            gameObject.GetComponent<Camera>().orthographicSize = Mathf.Lerp(gameObject.GetComponent<Camera>().orthographicSize, 40, lerpRatio * Time.deltaTime);
+            GWPosition.z = -22f;
+
+            transform.position = Vector3.Lerp(transform.position, GWPosition, lerpRatio/2 * Time.deltaTime);
+            gameObject.GetComponent<Camera>().orthographicSize = Mathf.Lerp(gameObject.GetComponent<Camera>().orthographicSize, 25, lerpRatio/2 * Time.deltaTime);
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -37.5f, 37.5f), Mathf.Clamp(transform.position.y, -19f, 19f), -22);
+        }
+        else
+        {
+            gameObject.GetComponent<Camera>().orthographicSize = Mathf.Lerp(gameObject.GetComponent<Camera>().orthographicSize, 15, lerpRatio * Time.deltaTime);
+            transform.position = (player.GetComponent<Rigidbody>().transform.position + offset);
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -58f, 58f), Mathf.Clamp(transform.position.y, -30f, 30f), -22);
         }
     }
 
@@ -44,19 +43,14 @@ public class CameraController : MonoBehaviour
         GWPosition = location;
     }
 
-    public void reCenter()
+    public bool getCenteredOnGW()
     {
-        gameObject.GetComponent<Camera>().orthographicSize = Mathf.Lerp(gameObject.GetComponent<Camera>().orthographicSize, 20, lerpRatio * Time.deltaTime);
-
-        Vector3 playerVelocity = player.GetComponent<Rigidbody>().velocity.normalized;
-        
-        Vector3 temp = transform.GetComponent<Rigidbody>().velocity;
-        transform.position = Vector3.SmoothDamp(transform.position,
-            new Vector3
-            ((player.GetComponent<Rigidbody>().transform.position.x + offset.x + (playerVelocity.x * 15)),
-            (player.GetComponent<Rigidbody>().transform.position.y + offset.y + (playerVelocity.y * 7)),
-            -20), ref temp, .01f, 150, Time.deltaTime);
-        
-        centeredOnGW = false;
+        return centeredOnGW;
     }
+
+    public void setCenteredOnGW(bool set)
+    {
+        centeredOnGW = set;
+    }
+
 }

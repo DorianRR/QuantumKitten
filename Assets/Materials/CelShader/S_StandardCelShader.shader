@@ -3,8 +3,8 @@
     _Color ("Diffuse Material Color", Color) = (1,1,1,1)
     _UnlitColor ("Unlit Color", Color) = (0.5,0.5,0.5,1)
     _DiffuseThreshold ("Lighting Threshold", Range(-1.1,1)) = 0.1
-    _SpecColor ("Specular Material Color", Color) = (1,1,1,1)
-    _Shininess ("Shininess", Range(0.5,1)) = 1 
+    //_SpecColor ("Specular Material Color", Color) = (1,1,1,1)
+    //_Shininess ("Shininess", Range(0.5,1)) = 1 
     _OutlineThickness ("Outline Thickness", Range(0,1)) = 0.1
     _MainTex ("Main Texture", 2D) = " " {}
 	_EmitMap ("Emission Texture", 2D) = "black" {}
@@ -116,7 +116,8 @@
     float3 diffuseReflection = (1-specularCutoff) * _Color.xyz * diffuseCutoff;
     float3 specularReflection = _SpecColor.xyz * specularCutoff;
        
-    float3 combinedLight = (ambientLight + diffuseReflection) * outlineStrength + specularReflection + (texE.xyz * _EmitStrength);
+    //float3 combinedLight = (ambientLight + diffuseReflection) * outlineStrength + specularReflection + (texE.xyz * _EmitStrength);
+    float3 combinedLight = (ambientLight + diffuseReflection) * outlineStrength + (texE.xyz * _EmitStrength); //minus the specularReflection
            
     return float4(combinedLight, 1.0) * tex2D(_MainTex, input.uv); //Combines celshading light & 2d albedo texture.
 	       
