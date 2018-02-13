@@ -3,12 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-<<<<<<< HEAD
   tags:
+  - GravityWell
   - Bounce
-=======
-  tags: []
->>>>>>> origin/DirectionIndicatorWork
   layers:
   - Default
   - TransparentFX
