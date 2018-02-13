@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -145,7 +145,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b954f6a964576c6418b6ad37f79df53c, type: 2}
+  - {fileID: 650368486, guid: 5580df95cb7032c4993280ba804e42b1, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -299,48 +299,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 151259972}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &198682074
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4690143982192012, guid: 374973aec0c3c43869fc58f9f20d75e9, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 280.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4690143982192012, guid: 374973aec0c3c43869fc58f9f20d75e9, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 142.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4690143982192012, guid: 374973aec0c3c43869fc58f9f20d75e9, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4690143982192012, guid: 374973aec0c3c43869fc58f9f20d75e9, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4690143982192012, guid: 374973aec0c3c43869fc58f9f20d75e9, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4690143982192012, guid: 374973aec0c3c43869fc58f9f20d75e9, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4690143982192012, guid: 374973aec0c3c43869fc58f9f20d75e9, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4690143982192012, guid: 374973aec0c3c43869fc58f9f20d75e9, type: 2}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 374973aec0c3c43869fc58f9f20d75e9, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &221139056
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,7 +331,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b954f6a964576c6418b6ad37f79df53c, type: 2}
+  - {fileID: 650368486, guid: 5580df95cb7032c4993280ba804e42b1, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -459,7 +417,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b954f6a964576c6418b6ad37f79df53c, type: 2}
+  - {fileID: 650368486, guid: 5580df95cb7032c4993280ba804e42b1, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -591,7 +549,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b954f6a964576c6418b6ad37f79df53c, type: 2}
+  - {fileID: 650368486, guid: 5580df95cb7032c4993280ba804e42b1, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -940,7 +898,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &637981001
 GameObject:
@@ -8220,7 +8178,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b954f6a964576c6418b6ad37f79df53c, type: 2}
+  - {fileID: 650368486, guid: 5580df95cb7032c4993280ba804e42b1, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8568,7 +8526,7 @@ Transform:
   m_LocalScale: {x: 2.5409389, y: 2.2817724, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1538463992
 GameObject:
@@ -8728,10 +8686,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: 0ed7f66215996c648a52ffb58c68220c, type: 3}
   blackHole: {fileID: 1789032220}
-  blackHoleTexture: {fileID: 2800000, guid: ff3f32d697cdff6489c4ad2d6c4f9626, type: 3}
+  blackHoleTexture: {fileID: 2800000, guid: b72614e09bdbb0a4a8b991fc29474db9, type: 3}
   ratio: 0.5625
-  blackHoleSize: 1
-  gravFieldSize: 5
+  blackHoleSize: 2
+  gravFieldSize: 20
 --- !u!20 &1597630783
 Camera:
   m_ObjectHideFlags: 0
@@ -8775,11 +8733,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1597630779}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -55.4, y: 0, z: -22}
+  m_LocalPosition: {x: -70.7, y: 0, z: -22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1597630785
 MonoBehaviour:
@@ -8794,7 +8752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: 0ed7f66215996c648a52ffb58c68220c, type: 3}
   blackHole: {fileID: 1704942893}
-  blackHoleTexture: {fileID: 2800000, guid: ff3f32d697cdff6489c4ad2d6c4f9626, type: 3}
+  blackHoleTexture: {fileID: 2800000, guid: b72614e09bdbb0a4a8b991fc29474db9, type: 3}
   ratio: 0.5625
   blackHoleSize: 0.5
   gravFieldSize: 3
@@ -8839,7 +8797,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: 0ed7f66215996c648a52ffb58c68220c, type: 3}
   blackHole: {fileID: 2147425937}
-  blackHoleTexture: {fileID: 2800000, guid: ff3f32d697cdff6489c4ad2d6c4f9626, type: 3}
+  blackHoleTexture: {fileID: 2800000, guid: b72614e09bdbb0a4a8b991fc29474db9, type: 3}
   ratio: 0.5625
   blackHoleSize: 0.5
   gravFieldSize: 3
@@ -8856,7 +8814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: 0ed7f66215996c648a52ffb58c68220c, type: 3}
   blackHole: {fileID: 1990606582}
-  blackHoleTexture: {fileID: 2800000, guid: ff3f32d697cdff6489c4ad2d6c4f9626, type: 3}
+  blackHoleTexture: {fileID: 2800000, guid: b72614e09bdbb0a4a8b991fc29474db9, type: 3}
   ratio: 0.5625
   blackHoleSize: 0.5
   gravFieldSize: 3
@@ -9176,7 +9134,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b954f6a964576c6418b6ad37f79df53c, type: 2}
+  - {fileID: 650368486, guid: 5580df95cb7032c4993280ba804e42b1, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9595,7 +9553,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b954f6a964576c6418b6ad37f79df53c, type: 2}
+  - {fileID: 650368486, guid: 5580df95cb7032c4993280ba804e42b1, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13132,7 +13090,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b954f6a964576c6418b6ad37f79df53c, type: 2}
+  - {fileID: 650368486, guid: 5580df95cb7032c4993280ba804e42b1, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13359,7 +13317,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b954f6a964576c6418b6ad37f79df53c, type: 2}
+  - {fileID: 650368486, guid: 5580df95cb7032c4993280ba804e42b1, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
