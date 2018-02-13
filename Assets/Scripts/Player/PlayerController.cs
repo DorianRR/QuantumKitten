@@ -15,7 +15,8 @@ public class PlayerController : MonoBehaviour {
     private Vector2 distanceToWell;
     private Vector2 directionTowardsWell;
     private bool canBounce = true;
-    private float bounceCD = 0.2f;
+
+    private float bounceCD = 0.1f;
 
     void Start ()
     {
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour {
                 bounceCD = 0.1f;
             }
         }
+
         GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * .9999f;
             
         if(GetComponent<Rigidbody>().velocity.magnitude > 50)
@@ -57,8 +59,12 @@ public class PlayerController : MonoBehaviour {
             }
             Vector3 newVelocity = Vector3.Reflect(GetComponent<Rigidbody>().velocity, collisionNormal);
             GetComponent<Rigidbody>().velocity = newVelocity * 0.8f;
-
         }
+        
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
         
     }
 
@@ -86,6 +92,8 @@ public class PlayerController : MonoBehaviour {
 
     public void Launch()
     {
+
         gameObject.GetComponent<Rigidbody>().AddForce(gameObject.GetComponent<Rigidbody>().velocity, ForceMode.Impulse);
+
     }
 }
