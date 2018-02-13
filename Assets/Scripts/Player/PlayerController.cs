@@ -60,6 +60,8 @@ public class PlayerController : MonoBehaviour {
             Vector3 newVelocity = Vector3.Reflect(GetComponent<Rigidbody>().velocity, collisionNormal);
             GetComponent<Rigidbody>().velocity = newVelocity * 0.8f;
         }
+
+
         
     }
 
@@ -93,7 +95,7 @@ public class PlayerController : MonoBehaviour {
     public void Launch()
     {
 
-        gameObject.GetComponent<Rigidbody>().AddForce(gameObject.GetComponent<Rigidbody>().velocity, ForceMode.Impulse);
+        gameObject.GetComponent<Rigidbody>().AddForce(gameObject.GetComponent<Rigidbody>().velocity.normalized * 2, ForceMode.Impulse);
 
     }
 }
