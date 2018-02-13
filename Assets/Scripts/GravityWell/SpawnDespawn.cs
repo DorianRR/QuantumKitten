@@ -51,6 +51,7 @@ public class SpawnDespawn : MonoBehaviour
         if(spawnedWell)
         {
             float distance = (spawnedWell.transform.position - transform.position).magnitude;
+            //float distance= 10f;
             if (distance < 5f)
             {
                 gameObject.GetComponent<ObjectiveIndicator>().externalPause = false;
