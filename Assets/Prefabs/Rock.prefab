@@ -44,7 +44,11 @@ GameObject:
   - component: {fileID: 135571664735645050}
   m_Layer: 0
   m_Name: Rock
+<<<<<<< HEAD
   m_TagString: Untagged
+=======
+  m_TagString: Asteroid
+>>>>>>> origin/DirectionIndicatorWork
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
