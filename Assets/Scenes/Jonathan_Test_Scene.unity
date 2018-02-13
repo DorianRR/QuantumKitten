@@ -229,7 +229,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &448100469
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -294,7 +294,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &672227829
 GameObject:
@@ -4026,7 +4026,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1405818096
+  randomSeed: 23032366
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -7584,7 +7584,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -348258384
+  randomSeed: 1713824333
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -17826,7 +17826,7 @@ GameObject:
   - component: {fileID: 1728864737}
   - component: {fileID: 1728864736}
   m_Layer: 0
-  m_Name: SphereTest
+  m_Name: SphereTrailTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17897,7 +17897,7 @@ Transform:
   m_Children:
   - {fileID: 1035788437}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1729276529
 GameObject:
@@ -21424,7 +21424,7 @@ Transform:
   - {fileID: 1707320244}
   - {fileID: 1819130606}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!199 &1894548159
 ParticleSystemRenderer:
@@ -21540,7 +21540,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1335716583
+  randomSeed: -84174414
   InitialModule:
     serializedVersion: 3
     enabled: 1
