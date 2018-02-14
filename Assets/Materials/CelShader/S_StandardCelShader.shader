@@ -4,6 +4,7 @@
    {
         _MainTex ("Main Texture", 2D) = " " {}
         _BaseColor ("Base Color Addition", Color) = (1,1,1,1)
+        //_NormalMap ("Normal Map", 2D) = "bump" {}
         _NotLitColor ("Shadow Color Addition", Color) = (0.0,0.0,0,1)
         _ShadowCoverage ("Shadow Coverage", Range(-1.1,1)) = 0.1
         _SpecularHighlightColor ("Specular Highlight Color", Color) = (1,1,1,1)
@@ -46,6 +47,8 @@
             float _Transparency;
             float _CutoutThresh;
             uniform sampler2D _CutoutMap;
+            //uniform sampler2D _NormalMap;
+            //uniform float4 _NormalMap_ST;
 
             uniform float4 _LightColor0;
             uniform sampler2D _MainTex;
@@ -65,7 +68,7 @@
             {
             
                 float4 pos : SV_POSITION;
-                float3 normalDir : TEXCOORD1;
+                float3 Normal : TEXCOORD1;
                 float4 lightDir : TEXCOORD2;
                 float3 viewDir : TEXCOORD3;
                 float2 uv : TEXCOORD0;
@@ -76,7 +79,7 @@
             {
                 vertexOutput o;
             
-                o.normalDir = normalize ( mul( float4( i.normal, 0.0 ), unity_WorldToObject).xyz );
+                o.Normal = normalize ( mul ( float4( i.normal, 0.0 ), unity_WorldToObject).xyz);
             
                 float4 posWorld = mul(unity_ObjectToWorld, i.vertex);
             
@@ -101,13 +104,13 @@
             float4 frag(vertexOutput i) : COLOR
             {
 
-                float nDotL = saturate(dot(i.normalDir, i.lightDir.xyz));
+                float nDotL = saturate(dot(i.Normal, i.lightDir.xyz));
                     
                 float shadowCutoff = saturate( ( max(_ShadowCoverage, nDotL) - _ShadowCoverage ) *1000 );
                     
-                float specCoverage = saturate( max(_SpecularCoverageArea, dot(reflect(-i.lightDir.xyz, i.normalDir), i.viewDir))-_SpecularCoverageArea ) * 1000;
+                float specCoverage = saturate( max(_SpecularCoverageArea, dot(reflect(-i.lightDir.xyz, i.Normal), i.viewDir))-_SpecularCoverageArea ) * 1000;
                     
-                float blackLine = saturate( (dot(i.normalDir, i.viewDir ) - _BlackLineBorderThickness) * 1000 );
+                float blackLine = saturate( (dot(i.Normal, i.viewDir ) - _BlackLineBorderThickness) * 1000 );
 
                 float4 textureEmissive = tex2D( _EmitMap, i.uv.xy * _EmitMap_ST.xy + _EmitMap_ST.zw );
 
@@ -115,13 +118,13 @@
 
                 float4 textureTransparency = tex2D( _TransparencyMap, i.uv.xy);
 
-                float3 ambientLight = (1-shadowCutoff) * _NotLitColor.xyz; //adds general ambient illumination
+                float3 ambientLight = (1-shadowCutoff) * _NotLitColor.xyz; 
                 float3 diffuseReflection = (1-specCoverage) * _BaseColor.xyz * shadowCutoff;
                 float3 specularReflection = _SpecularHighlightColor.xyz * specCoverage;
                 
                 float3 combinedLight = (ambientLight + diffuseReflection) * blackLine + specularReflection + (textureEmissive.xyz * _EmitStrength);
 
-                fixed4 combinedTexture = float4(combinedLight, 1.0) * tex2D(_MainTex, i.uv); //Combines celshading light & 2d albedo texture.
+                fixed4 combinedTexture = float4(combinedLight, 1.0) * tex2D(_MainTex, i.uv); 
 
                 combinedTexture.a = (textureTransparency * _Transparency);
 
