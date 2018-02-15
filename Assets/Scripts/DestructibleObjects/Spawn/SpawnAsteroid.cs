@@ -28,7 +28,6 @@ public class SpawnAsteroid : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log("test");
             GameObject newCube = Instantiate(asteroid, spawnLocation, Quaternion.identity);
             newCube.transform.SetParent(GameObject.Find("FloatingObjects").transform);
             initialImpulse = new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0);

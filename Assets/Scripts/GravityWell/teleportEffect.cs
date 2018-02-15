@@ -28,11 +28,10 @@ public class teleportEffect : MonoBehaviour {
 
     private Vector3 calculateTrajectory(Vector3 fromPosition)
     {
-        bool foundVector = true;
+        bool foundVector = false;
         Vector3 newDirection = new Vector3();
-        while (foundVector)
+        while (!foundVector)
         {
-            foundVector = false;
             newDirection = Random.onUnitSphere.normalized;
             newDirection.z = 0;
             if (!Physics.Raycast(fromPosition, newDirection, 5))
