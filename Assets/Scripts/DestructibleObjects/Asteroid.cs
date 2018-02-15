@@ -14,6 +14,8 @@ public class Asteroid : MonoBehaviour {
 		
 	}
 
+  
+
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.transform.tag == "Player")

@@ -6,14 +6,11 @@ public class PlayerController : MonoBehaviour {
 
 
     public Vector3 initialForce = new Vector3(10,7,0);
-    public float gravityModifier;
     public bool startedWhirl = false;
     public bool canSpawn = true;
     public float ImpulsePower = 20;
 
-    private Vector2 playerDirection;
-    private Vector2 distanceToWell;
-    private Vector2 directionTowardsWell;
+    private Vector3 playerDirection;
     private bool canBounce = true;
 
     private float bounceCD = 0.1f;
@@ -41,6 +38,13 @@ public class PlayerController : MonoBehaviour {
         {
             GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * 0.75f;
         }
+
+		//Cat facing direction of movement
+		playerDirection = GetComponent<Rigidbody>().velocity.normalized;
+        gameObject.GetComponentInChildren<Rigidbody>().transform.rotation = Quaternion.LookRotation(playerDirection) ; //transform.rotation =  Quaternion.LookRotation(playerDirection);
+        
+      
+
     }
 
     private void OnCollisionEnter(Collision coll)
