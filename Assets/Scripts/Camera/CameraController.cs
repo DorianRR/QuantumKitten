@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Timeline;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
@@ -11,6 +12,7 @@ public class CameraController : MonoBehaviour
     private bool centeredOnGW = false;
     private Vector3 offset;
     private Vector3 GWPosition;
+      
 
     void Start()
     {
