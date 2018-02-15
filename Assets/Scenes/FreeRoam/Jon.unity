@@ -1059,7 +1059,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1407f3f5b966ad8459c9fe67ffa02082, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8122,7 +8122,7 @@ MonoBehaviour:
   upperRotationBounds: 0
   lowerRotationBounds: 0
   upperSizeBounds: 250
-  lowerSizeBounds: 150
+  lowerSizeBounds: 250
 --- !u!4 &989494335
 Transform:
   m_ObjectHideFlags: 0
@@ -8155,7 +8155,7 @@ MonoBehaviour:
   lowerYBounds: -36
   upperRotationBounds: 1000
   lowerRotationBounds: 1000
-  upperSizeBounds: 150
+  upperSizeBounds: 250
   lowerSizeBounds: 250
 --- !u!114 &989494337
 MonoBehaviour:
@@ -8173,7 +8173,7 @@ MonoBehaviour:
   upperRotationBounds: 0
   lowerRotationBounds: 0
   upperSizeBounds: 250
-  lowerSizeBounds: 150
+  lowerSizeBounds: 250
 --- !u!114 &989494338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8190,7 +8190,7 @@ MonoBehaviour:
   upperRotationBounds: 0
   lowerRotationBounds: 0
   upperSizeBounds: 250
-  lowerSizeBounds: 150
+  lowerSizeBounds: 250
 --- !u!1001 &1181063278
 Prefab:
   m_ObjectHideFlags: 0
