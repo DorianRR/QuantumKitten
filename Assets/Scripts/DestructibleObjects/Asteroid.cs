@@ -14,6 +14,8 @@ public class Asteroid : MonoBehaviour {
 		
 	}
 
+  
+
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.transform.tag == "Player")
@@ -41,5 +43,11 @@ public class Asteroid : MonoBehaviour {
 
     }
 
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.transform.tag == "WormHole")
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

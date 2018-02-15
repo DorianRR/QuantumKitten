@@ -44,13 +44,14 @@ public class SpawnDespawn : MonoBehaviour
 
 
             Destroy(spawnedWell);
-            MainCamera.GetComponent<CameraController>().reCenter();
+            MainCamera.GetComponent<CameraController>().setCenteredOnGW(false);
 
         }
 
         if(spawnedWell)
         {
             float distance = (spawnedWell.transform.position - transform.position).magnitude;
+            //float distance= 10f;
             if (distance < 5f)
             {
                 gameObject.GetComponent<ObjectiveIndicator>().externalPause = false;
@@ -60,7 +61,9 @@ public class SpawnDespawn : MonoBehaviour
 
 
                 Destroy(spawnedWell);
-                MainCamera.GetComponent<CameraController>().reCenter();
+                MainCamera.GetComponent<CameraController>().setCenteredOnGW(false);
+
+                //MainCamera.GetComponent<CameraController>().reCenter();
 
 
             }
@@ -75,7 +78,9 @@ public class SpawnDespawn : MonoBehaviour
 
 
         Destroy(spawnedWell);
-        MainCamera.GetComponent<CameraController>().reCenter();
+        MainCamera.GetComponent<CameraController>().setCenteredOnGW(false);
+
+        //MainCamera.GetComponent<CameraController>().reCenter();
     }
 
 

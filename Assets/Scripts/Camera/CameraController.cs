@@ -1,41 +1,54 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Timeline;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
 
     public GameObject player;
-    public bool centeredOnGW = false;
-    public float lerpRatio = 30f;
+    public float lerpRatio;
 
+    private bool centeredOnGW = false;
     private Vector3 offset;
     private Vector3 GWPosition;
-    private Vector3 playerVelocity;
+      
 
     void Start()
     {
+        transform.position = (player.GetComponent<Rigidbody>().transform.position);
+        transform.position.Set(transform.position.x, transform.position.y, -22f);
 
-        transform.position = (player.GetComponent<Rigidbody>().transform.position + offset);
         offset = transform.position - player.transform.position;
+
     }
 
     void LateUpdate()
     {
-        GWPosition.z = -22f;
+        transform.position = (player.GetComponent<Rigidbody>().transform.position + offset);
+        //transform.position = new Vector3(Mathf.Clamp(transform.position.x, -58f, 58f), Mathf.Clamp(transform.position.y, -30f, 30f), -22);
 
-        playerVelocity = player.GetComponent<Rigidbody>().velocity;
+        //if (centeredOnGW)
+        //{
+        //    GWPosition.z = -22f;
 
-        if (!centeredOnGW)
-        {
-            reCenter();
-        }
+        //    transform.position = Vector3.Lerp(transform.position, GWPosition, lerpRatio/2 * Time.deltaTime);+
+        float temp = ((Mathf.Abs(player.GetComponent<Rigidbody>().velocity.magnitude) - 10f) / (25f - 10f)) * 20f;
+        temp = Mathf.Clamp(temp, 10f, 25f);
+        gameObject.GetComponent<Camera>().orthographicSize = 
+            Mathf.Lerp(gameObject.GetComponent<Camera>().orthographicSize, temp, lerpRatio/5 * Time.deltaTime);
+        float tempOrthSize = gameObject.GetComponent<Camera>().orthographicSize;
+        Debug.Log(tempOrthSize);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, (((tempOrthSize-10))*2f)-70, (-(tempOrthSize - 10) * 2f) + 70), Mathf.Clamp(transform.position.y, ((tempOrthSize-10)-34), (35 - (tempOrthSize - 10))), -22);
+        //transform.position = new Vector3(Mathf.Clamp(transform.position.x, -70,  70), Mathf.Clamp(transform.position.y, ((tempOrthSize - 10) - 34), (34 - (-tempOrthSize + 10))), -22);
 
-        if (centeredOnGW)
-        {
-            transform.position = Vector3.Lerp(transform.position, GWPosition, 0.05f);
-            gameObject.GetComponent<Camera>().orthographicSize = Mathf.Lerp(gameObject.GetComponent<Camera>().orthographicSize, 40, lerpRatio * Time.deltaTime);
-        }
+        //}
+        //else
+        //{
+        //    gameObject.GetComponent<Camera>().orthographicSize = Mathf.Lerp(gameObject.GetComponent<Camera>().orthographicSize, 15, lerpRatio/5 * Time.deltaTime);
+        //    transform.position = (player.GetComponent<Rigidbody>().transform.position + offset);
+        //    transform.position = new Vector3(Mathf.Clamp(transform.position.x, -58f, 58f), Mathf.Clamp(transform.position.y, -30f, 30f), -22);
+        //}
     }
 
     public void CenterOnSpawnedGW(Vector3 location)
@@ -44,19 +57,14 @@ public class CameraController : MonoBehaviour
         GWPosition = location;
     }
 
-    public void reCenter()
+    public bool getCenteredOnGW()
     {
-        gameObject.GetComponent<Camera>().orthographicSize = Mathf.Lerp(gameObject.GetComponent<Camera>().orthographicSize, 20, lerpRatio * Time.deltaTime);
-
-        Vector3 playerVelocity = player.GetComponent<Rigidbody>().velocity.normalized;
-        
-        Vector3 temp = transform.GetComponent<Rigidbody>().velocity;
-        transform.position = Vector3.SmoothDamp(transform.position,
-            new Vector3
-            ((player.GetComponent<Rigidbody>().transform.position.x + offset.x + (playerVelocity.x * 15)),
-            (player.GetComponent<Rigidbody>().transform.position.y + offset.y + (playerVelocity.y * 7)),
-            -20), ref temp, .01f, 150, Time.deltaTime);
-        
-        centeredOnGW = false;
+        return centeredOnGW;
     }
+
+    public void setCenteredOnGW(bool set)
+    {
+        centeredOnGW = set;
+    }
+
 }

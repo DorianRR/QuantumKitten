@@ -6,17 +6,14 @@ public class PlayerController : MonoBehaviour {
 
 
     public Vector3 initialForce = new Vector3(10,7,0);
-    public float gravityModifier;
     public bool startedWhirl = false;
     public bool canSpawn = true;
     public float ImpulsePower = 20;
 
-    private Vector2 playerDirection;
-    private Vector2 distanceToWell;
-    private Vector2 directionTowardsWell;
-    private float whirlBoost = 1.0f;
+    private Vector3 playerDirection;
     private bool canBounce = true;
-    private float bounceCD = 0.2f;
+
+    private float bounceCD = 0.1f;
 
     void Start ()
     {
@@ -34,12 +31,20 @@ public class PlayerController : MonoBehaviour {
                 bounceCD = 0.1f;
             }
         }
+
         GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * .9999f;
             
         if(GetComponent<Rigidbody>().velocity.magnitude > 50)
         {
             GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * 0.75f;
         }
+
+		//Cat facing direction of movement
+		playerDirection = GetComponent<Rigidbody>().velocity.normalized;
+        gameObject.GetComponentInChildren<Rigidbody>().transform.rotation = Quaternion.LookRotation(playerDirection) ; //transform.rotation =  Quaternion.LookRotation(playerDirection);
+        
+      
+
     }
 
     private void OnCollisionEnter(Collision coll)
@@ -59,6 +64,13 @@ public class PlayerController : MonoBehaviour {
             Vector3 newVelocity = Vector3.Reflect(GetComponent<Rigidbody>().velocity, collisionNormal);
             GetComponent<Rigidbody>().velocity = newVelocity * 0.8f;
         }
+
+
+        
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
         
     }
 
@@ -86,6 +98,8 @@ public class PlayerController : MonoBehaviour {
 
     public void Launch()
     {
-        gameObject.GetComponent<Rigidbody>().AddForce(gameObject.GetComponent<Rigidbody>().velocity, ForceMode.Impulse);
+
+        gameObject.GetComponent<Rigidbody>().AddForce(gameObject.GetComponent<Rigidbody>().velocity.normalized * 2, ForceMode.Impulse);
+
     }
 }

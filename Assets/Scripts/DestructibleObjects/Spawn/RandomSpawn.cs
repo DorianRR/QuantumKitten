@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpinningCube : MonoBehaviour {
+public class RandomSpawn : MonoBehaviour
+{
 
     public GameObject cube;
 
@@ -40,5 +41,5 @@ public class SpinningCube : MonoBehaviour {
         }
     }
 
-    
+
 }

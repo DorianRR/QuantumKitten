@@ -11,6 +11,7 @@ public class ObjectiveIndicator : MonoBehaviour {
 	private Vector3 objDirection;
 	private bool objectiveHelp = true;
 	private GameObject privateInd;
+	private Vector3 playerDirection;
 
 	void Start () 
 	{
@@ -40,6 +41,7 @@ public class ObjectiveIndicator : MonoBehaviour {
 		{
 			privateInd.SetActive(false);
 		}
+
 
 
 		
