@@ -16,15 +16,17 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
+        transform.position = (player.GetComponent<Rigidbody>().transform.position);
+        transform.position.Set(transform.position.x, transform.position.y, -22f);
+
         offset = transform.position - player.transform.position;
 
-        transform.position = (player.GetComponent<Rigidbody>().transform.position + offset);
     }
 
     void LateUpdate()
     {
         transform.position = (player.GetComponent<Rigidbody>().transform.position + offset);
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -58f, 58f), Mathf.Clamp(transform.position.y, -30f, 30f), -22);
+        //transform.position = new Vector3(Mathf.Clamp(transform.position.x, -58f, 58f), Mathf.Clamp(transform.position.y, -30f, 30f), -22);
 
         //if (centeredOnGW)
         //{
@@ -35,7 +37,11 @@ public class CameraController : MonoBehaviour
         temp = Mathf.Clamp(temp, 10f, 25f);
         gameObject.GetComponent<Camera>().orthographicSize = 
             Mathf.Lerp(gameObject.GetComponent<Camera>().orthographicSize, temp, lerpRatio/5 * Time.deltaTime);
-        //    transform.position = new Vector3(Mathf.Clamp(transform.position.x, -37.5f, 37.5f), Mathf.Clamp(transform.position.y, -19f, 19f), -22);
+        float tempOrthSize = gameObject.GetComponent<Camera>().orthographicSize;
+        Debug.Log(tempOrthSize);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, (((tempOrthSize-10))*2f)-70, (-(tempOrthSize - 10) * 2f) + 70), Mathf.Clamp(transform.position.y, ((tempOrthSize-10)-34), (35 - (tempOrthSize - 10))), -22);
+        //transform.position = new Vector3(Mathf.Clamp(transform.position.x, -70,  70), Mathf.Clamp(transform.position.y, ((tempOrthSize - 10) - 34), (34 - (-tempOrthSize + 10))), -22);
+
         //}
         //else
         //{
