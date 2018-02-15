@@ -10,6 +10,7 @@ ModelImporter:
     400000: pSphere5
     400002: //RootNode
     2100000: initialShadingGroup
+    2100002: pSphere5Mat
     2300000: pSphere5
     3300000: pSphere5
     4300000: pSphere5
