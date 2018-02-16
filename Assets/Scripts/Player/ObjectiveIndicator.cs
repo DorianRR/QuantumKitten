@@ -9,7 +9,7 @@ public class ObjectiveIndicator : MonoBehaviour {
 	public bool externalPause;
 
 	private Vector3 objDirection;
-	private bool objectiveHelp = true;
+	public bool objectiveHelp = true;
 	private GameObject privateInd;
 	private Vector3 playerDirection;
 
@@ -28,7 +28,6 @@ public class ObjectiveIndicator : MonoBehaviour {
 			objDirection = objective.transform.position - transform.position;
 			objDirection.Normalize();
 			
-			StartCoroutine(ShrinkAndGrow());
 		}
 		
 		if(!externalPause)
@@ -48,20 +47,4 @@ public class ObjectiveIndicator : MonoBehaviour {
 	}
 
 
-	IEnumerator ShrinkAndGrow()
-	{
-		objectiveHelp = false;
-		for(int i = 0; i < 50; i++)
-		{
-			privateInd.transform.localScale += new Vector3(0.02f, 0.02f, 0.02f);
-			yield return new WaitForSeconds(0.01f);
-		}
-		for(int i = 0; i < 50; i++)
-		{
-			privateInd.transform.localScale -= new Vector3(0.02f, 0.02f, 0.02f);
-			yield return new WaitForSeconds(0.01f);
-		}
-		objectiveHelp = true;
-
-	}
 }
