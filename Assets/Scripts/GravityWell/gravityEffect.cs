@@ -5,7 +5,7 @@ using UnityEngine;
 public class gravityEffect : MonoBehaviour {
 
     private float whirlBoost = 1.0f;
-    private float gravityModifier = 25f;
+    public float gravityModifier = 25f;
     void Start () {
         whirlBoost = 1.0f;
         gravityModifier = 25f;
@@ -60,6 +60,7 @@ public class gravityEffect : MonoBehaviour {
         {
             other.GetComponent<PlayerController>().Launch();
             other.GetComponent<PlayerController>().setWhirl(false);
+            
             other.GetComponent<SpawnDespawn>().ForcedDeSpawn();
         }
     }
