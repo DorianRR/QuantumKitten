@@ -19,10 +19,11 @@ public class teleportEffect : MonoBehaviour {
         if(collision.transform.tag == "Player")
         {
             int holeNumber = Random.Range(0, exitHoles.Length);
-            Vector3 newDirection = calculateTrajectory(exitHoles[holeNumber].transform.position);      
-            collision.transform.position = exitHoles[holeNumber].transform.position;
-            collision.transform.GetComponent<Rigidbody>().AddForce(newDirection * 10, ForceMode.Impulse);
-            collision.transform.GetComponent<PlayerController>().enableInput();
+            collision.transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            Vector3 newDirection = calculateTrajectory(exitHoles[holeNumber].transform.position);
+            newDirection.Normalize();
+            collision.transform.position = exitHoles[holeNumber].transform.position+new Vector3(0,0,5);
+            StartCoroutine(WaitABit(collision.gameObject, newDirection));
         }
     }
 
@@ -41,5 +42,18 @@ public class teleportEffect : MonoBehaviour {
       
         }
         return newDirection;
+    }
+
+    private IEnumerator WaitABit(GameObject collision, Vector3 direction)
+    {
+        yield return new WaitForSeconds(2f);
+        popOut(collision, direction);
+    }
+
+    private void popOut(GameObject collision, Vector3 newDirection)
+    {
+        collision.transform.position += new Vector3(0, 0, -5);
+        collision.transform.GetComponent<Rigidbody>().AddForce(newDirection * 20, ForceMode.Impulse);
+        collision.transform.GetComponent<PlayerController>().enableInput();
     }
 }

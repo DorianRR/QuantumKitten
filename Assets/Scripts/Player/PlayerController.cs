@@ -74,15 +74,6 @@ public class PlayerController : MonoBehaviour {
         
     }
 
-    public void setWhirl(bool status)
-    {
-        startedWhirl = status;
-    }
-
-    public bool getWhirl()
-    {
-        return startedWhirl;
-    }
 
     public void disableInput()
     {
@@ -101,5 +92,17 @@ public class PlayerController : MonoBehaviour {
 
         gameObject.GetComponent<Rigidbody>().AddForce(gameObject.GetComponent<Rigidbody>().velocity.normalized * 2, ForceMode.Impulse);
 
+    }
+
+    //deprecated
+
+    public void setWhirl(bool status)
+    {
+        startedWhirl = status;
+    }
+
+    public bool getWhirl()
+    {
+        return startedWhirl;
     }
 }
