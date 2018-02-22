@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 509d38ffe41e7af41bbf7584bba41c54
-timeCreated: 1519322111
+timeCreated: 1519324484
 licenseType: Free
 SubstanceImporter:
   externalObjects: {}
@@ -26,7 +26,7 @@ SubstanceImporter:
     materialInformation:
       serializedVersion: 5
       offset: {x: 0, y: 0}
-      scale: {x: 2, y: 2}
+      scale: {x: 5, y: 5}
       generateMipmaps: 1
       generateAllOutputs: 0
       animationUpdateRate: 42
@@ -51,11 +51,11 @@ SubstanceImporter:
           offset: {x: 0, y: 0}
       - _EmissionMap:
           texture: {instanceID: 0}
-          scale: {x: 2, y: 2}
+          scale: {x: 5, y: 5}
           offset: {x: 0, y: 0}
       - _MainTex:
           texture: {instanceID: 0}
-          scale: {x: 2, y: 2}
+          scale: {x: 5, y: 5}
           offset: {x: 0, y: 0}
       - _MetallicGlossMap:
           texture: {instanceID: 0}
