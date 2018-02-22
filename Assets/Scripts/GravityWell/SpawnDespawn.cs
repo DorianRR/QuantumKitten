@@ -28,10 +28,12 @@ public class SpawnDespawn : MonoBehaviour
             onSpawn = false;
             touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             Physics.Raycast(touchRay, out touchHit);
-            spawnedWell = Instantiate(GravityWell, touchHit.point, Quaternion.identity);
+            if (touchHit.transform.tag == "Clickable")
+            {
+                spawnedWell = Instantiate(GravityWell, touchHit.point, Quaternion.identity);
 
-            MainCamera.GetComponent<CameraController>().CenterOnSpawnedGW(touchHit.point);
-
+                MainCamera.GetComponent<CameraController>().CenterOnSpawnedGW(touchHit.point);
+            }
 
         }
         else if (Input.GetMouseButtonDown(0) && !onSpawn)

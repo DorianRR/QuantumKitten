@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
     public bool startedWhirl = false;
     public bool canSpawn = true;
     public float ImpulsePower = 20;
+    public enum PlayerState { }
 
     private Vector3 playerDirection;
     private bool canBounce = true;
@@ -32,7 +33,7 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
-        GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * .9999f;
+       // GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * .9999f;
             
         if(GetComponent<Rigidbody>().velocity.magnitude > 50)
         {
