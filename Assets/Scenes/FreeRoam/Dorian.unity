@@ -7813,6 +7813,10 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: d311556a509e2fc4dbc8ff43c5c80100, type: 2}
+    - target: {fileID: 100090, guid: 5a442fee710e8d941bac073ca4edf17e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a442fee710e8d941bac073ca4edf17e, type: 3}
   m_IsPrefabParent: 0
@@ -7830,8 +7834,6 @@ GameObject:
   - component: {fileID: 989494335}
   - component: {fileID: 989494334}
   - component: {fileID: 989494336}
-  - component: {fileID: 989494338}
-  - component: {fileID: 989494337}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -7851,7 +7853,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroid: {fileID: 1145007694099684, guid: 59928e43025fa244fa40be0faaaf610d, type: 2}
-  spawnLocation: {x: -2, y: -40, z: 0.5}
+  maxAsteroids: 50
+  startingAsteroids: 20
+  waveSize: 10
   upperRotationBounds: 0
   lowerRotationBounds: 0
   upperSizeBounds: 250
@@ -7875,7 +7879,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 989494333}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8a6207a3e935f84889e0571cfb5a4b5, type: 3}
   m_Name: 
@@ -7888,40 +7892,6 @@ MonoBehaviour:
   lowerYBounds: -36
   upperRotationBounds: 1000
   lowerRotationBounds: 1000
-  upperSizeBounds: 250
-  lowerSizeBounds: 250
---- !u!114 &989494337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 989494333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7ccd1e8e992ce44d90d39004fd46b61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  asteroid: {fileID: 1145007694099684, guid: 59928e43025fa244fa40be0faaaf610d, type: 2}
-  spawnLocation: {x: -2, y: 40, z: 0.5}
-  upperRotationBounds: 0
-  lowerRotationBounds: 0
-  upperSizeBounds: 250
-  lowerSizeBounds: 250
---- !u!114 &989494338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 989494333}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7ccd1e8e992ce44d90d39004fd46b61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  asteroid: {fileID: 1145007694099684, guid: 59928e43025fa244fa40be0faaaf610d, type: 2}
-  spawnLocation: {x: -85, y: 0, z: 0.5}
-  upperRotationBounds: 0
-  lowerRotationBounds: 0
   upperSizeBounds: 250
   lowerSizeBounds: 250
 --- !u!1001 &1181063278
