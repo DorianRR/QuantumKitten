@@ -4042,7 +4042,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &254448186
 GameObject:
@@ -4078,7 +4078,7 @@ Transform:
   - {fileID: 522860391}
   - {fileID: 681107101}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 90}
 --- !u!23 &254448188
 MeshRenderer:
@@ -4250,7 +4250,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &370415100
 GameObject:
@@ -11392,7 +11392,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &637981005 stripped
 Transform:
@@ -11520,7 +11520,7 @@ Transform:
   - {fileID: 1154976365}
   - {fileID: 242065282}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 180, y: 180, z: 90}
 --- !u!114 &856652848
 MonoBehaviour:
@@ -18526,7 +18526,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroid: {fileID: 1448253365344612, guid: 59928e43025fa244fa40be0faaaf610d, type: 2}
-  spawnLocation: {x: -2, y: -40, z: 0.5}
+  maxAsteroids: 50
+  startingAsteroids: 20
+  waveSize: 10
   upperRotationBounds: 0
   lowerRotationBounds: 0
   upperSizeBounds: 250
@@ -18542,7 +18544,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &989494336
 MonoBehaviour:
@@ -18577,7 +18579,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroid: {fileID: 1448253365344612, guid: 59928e43025fa244fa40be0faaaf610d, type: 2}
-  spawnLocation: {x: -2, y: 40, z: 0.5}
+  maxAsteroids: 50
+  startingAsteroids: 20
+  waveSize: 10
   upperRotationBounds: 0
   lowerRotationBounds: 0
   upperSizeBounds: 250
@@ -18594,7 +18598,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroid: {fileID: 1448253365344612, guid: 59928e43025fa244fa40be0faaaf610d, type: 2}
-  spawnLocation: {x: -85, y: 0, z: 0.5}
+  maxAsteroids: 50
+  startingAsteroids: 20
+  waveSize: 10
   upperRotationBounds: 0
   lowerRotationBounds: 0
   upperSizeBounds: 250
@@ -22573,7 +22579,7 @@ Transform:
   m_LocalScale: {x: 2.5409389, y: 2.2817724, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1538463992
 GameObject:
@@ -22680,7 +22686,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1597630779
 GameObject:
@@ -22784,7 +22790,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1597630785
 MonoBehaviour:
@@ -23257,7 +23263,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1779866816}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -8.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1930499515}

@@ -20,6 +20,7 @@ public class wormHole : MonoBehaviour {
         {
             other.GetComponent<Rigidbody>().velocity = Vector3.zero;
             other.GetComponent<PlayerController>().disableInput();
+            other.GetComponent<SpawnDespawn>().ForcedDeSpawn();
         }
     }
 
