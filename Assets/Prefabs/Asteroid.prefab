@@ -57,9 +57,12 @@ GameObject:
   - component: {fileID: 23912348525425232}
   - component: {fileID: 95458053736343792}
   - component: {fileID: 54294613527118490}
+  - component: {fileID: 64772455994075404}
+  - component: {fileID: 114202325380116404}
+  - component: {fileID: 136592960893910720}
   m_Layer: 0
   m_Name: Asteroid
-  m_TagString: Untagged
+  m_TagString: Asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,7 +150,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1145007694099684}
   m_LocalRotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -68.11283, y: -24.348297, z: 0}
+  m_LocalPosition: {x: -54.35, y: 0, z: 0}
   m_LocalScale: {x: 306.82574, y: 306.82574, z: 306.82574}
   m_Children:
   - {fileID: 4603746372942752}
@@ -215,14 +218,28 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1145007694099684}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.0000001
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!64 &64772455994075404
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1145007694099684}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 2f331b5c99bd84245acbf5542e401f65, type: 3}
 --- !u!95 &95458053736343792
 Animator:
   serializedVersion: 3
@@ -240,6 +257,30 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114202325380116404
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1145007694099684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2abe76a71f4a8447965deadc34b8714, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &136592960893910720
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1145007694099684}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.011032096
+  m_Height: 0.028298078
+  m_Direction: 1
+  m_Center: {x: 0.0025118364, y: -0.0014875721, z: 0.0026546705}
 --- !u!198 &198336395297583654
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
-        GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * .9999f;
+        //GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * .9999f;
             
         if(GetComponent<Rigidbody>().velocity.magnitude > 50)
         {
