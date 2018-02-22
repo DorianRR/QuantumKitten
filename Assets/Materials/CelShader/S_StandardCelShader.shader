@@ -17,18 +17,22 @@
         _CutoutMap("Cutout Map", 2D) = "black" {}
         _CutoutThresh("Cutout Threshold", Range(0.0,0.8)) = 0.0
 
+
     }
    
     SubShader 
     {
-        Tags{ "LightMode"="ForwardBase" "Que"="Transparent" "RenderType"="Transparent"  }
-
-        ZWrite Off
-        Blend SrcAlpha OneMinusSrcAlpha 
-        Cull back
+        
 
         Pass 
         {
+			Tags{ "LightMode"="ForwardBase" "Que"="Transparent" "RenderType"="Transparent"  }
+
+
+			Zwrite Off
+			Blend SrcAlpha OneMinusSrcAlpha 
+			Cull back
+
             CGPROGRAM
         
             #pragma vertex vert

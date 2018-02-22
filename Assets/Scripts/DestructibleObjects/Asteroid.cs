@@ -26,18 +26,22 @@ public class Asteroid : MonoBehaviour {
 
     IEnumerator DestroyAst()
     {
-        
+
         Vector3 tempV = gameObject.transform.localScale;
         GameObject temp = transform.GetChild(0).gameObject;
+        Vector3 currentPosition = temp.transform.position;
         temp.SetActive(true);
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 30; i++)
         {
             tempV = tempV * 0.75f;
             gameObject.transform.localScale =tempV;
+            gameObject.transform.position = currentPosition;
             yield return new WaitForSeconds(0.01f);
             
         }
+        temp.transform.parent = null;
         yield return new WaitForSeconds(0.5f);
+        Destroy(temp);
         Destroy(gameObject);
 
 

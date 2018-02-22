@@ -86,13 +86,13 @@ public class PlayerController : MonoBehaviour {
 
     public void disableInput()
     {
-        Debug.Log("player input disabled");
+        //Debug.Log("player input disabled");
         canSpawn = false;
     }
 
     public void enableInput()
     {
-        Debug.Log("player input enabled");
+        //Debug.Log("player input enabled");
         canSpawn = true;
     }
 
