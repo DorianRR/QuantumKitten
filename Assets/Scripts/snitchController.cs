@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class snitchController : MonoBehaviour {
 
@@ -57,17 +56,5 @@ public class snitchController : MonoBehaviour {
     private void findNewLocation()
     {
         targetLocation = new Vector3(Random.Range(-35, 35),Random.Range(-70, 70),transform.position.z);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("trigger");
-        if (other.transform.tag == "Player")
-        {
-            Debug.Log("you caught the snitch");
-            GameObject.Find("Player").GetComponent<ObjectiveIndicator>().objectiveHelp = false;
-            GameObject.Find("Player").GetComponent<ObjectiveIndicator>().externalPause = true;
-            Destroy(gameObject);
-        }
     }
 }

@@ -1,0 +1,222 @@
+fileFormatVersion: 2
+guid: 7bef8bf2dd29b764aa3e90d436b043c3
+timeCreated: 1518542078
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: antenna1
+    100002: antenna1_grp
+    100004: antenna2
+    100006: antenna2_grp
+    100008: antenna3
+    100010: antenna3_grp
+    100012: antenna4
+    100014: antenna4_grp
+    100016: antenna5
+    100018: antenna5_grp
+    100020: antenna_ctrl
+    100022: antenna_ctrl2
+    100024: antenna_ctrl3
+    100026: antenna_ctrl4
+    100028: antenna_ctrl5
+    100030: backhips
+    100032: BL_ctrl
+    100034: BL_leg
+    100036: BL_leg2
+    100038: BL_leg3
+    100040: bobble
+    100042: body
+    100044: body 1
+    100046: BR_ctrl
+    100048: BR_leg
+    100050: BR_leg2
+    100052: BR_leg3
+    100054: //RootNode
+    100056: FL_ctrl
+    100058: FL_leg
+    100060: FL_leg2
+    100062: FL_leg3
+    100064: FR_ctrl
+    100066: FR_leg
+    100068: FR_leg2
+    100070: FR_leg3
+    100072: frontHips_ctrl
+    100074: geo
+    100076: Head
+    100078: head
+    100080: head_ctrl
+    100082: helmet
+    100084: IK_BL_leg
+    100086: IK_BR_leg
+    100088: IK_FL_leg
+    100090: IK_FR_leg
+    100092: neck
+    100094: neck_ctrl
+    100096: root
+    100098: root_ctrl
+    100100: spine1
+    100102: spine2
+    100104: tail
+    100106: tail2
+    100108: tail2_grp
+    100110: tail3
+    100112: tail3_grp
+    100114: tail4
+    100116: tail4_grp
+    100118: tail5
+    100120: tail5_grp
+    100122: tail_grp
+    400000: antenna1
+    400002: antenna1_grp
+    400004: antenna2
+    400006: antenna2_grp
+    400008: antenna3
+    400010: antenna3_grp
+    400012: antenna4
+    400014: antenna4_grp
+    400016: antenna5
+    400018: antenna5_grp
+    400020: antenna_ctrl
+    400022: antenna_ctrl2
+    400024: antenna_ctrl3
+    400026: antenna_ctrl4
+    400028: antenna_ctrl5
+    400030: backhips
+    400032: BL_ctrl
+    400034: BL_leg
+    400036: BL_leg2
+    400038: BL_leg3
+    400040: bobble
+    400042: body
+    400044: body 1
+    400046: BR_ctrl
+    400048: BR_leg
+    400050: BR_leg2
+    400052: BR_leg3
+    400054: //RootNode
+    400056: FL_ctrl
+    400058: FL_leg
+    400060: FL_leg2
+    400062: FL_leg3
+    400064: FR_ctrl
+    400066: FR_leg
+    400068: FR_leg2
+    400070: FR_leg3
+    400072: frontHips_ctrl
+    400074: geo
+    400076: Head
+    400078: head
+    400080: head_ctrl
+    400082: helmet
+    400084: IK_BL_leg
+    400086: IK_BR_leg
+    400088: IK_FL_leg
+    400090: IK_FR_leg
+    400092: neck
+    400094: neck_ctrl
+    400096: root
+    400098: root_ctrl
+    400100: spine1
+    400102: spine2
+    400104: tail
+    400106: tail2
+    400108: tail2_grp
+    400110: tail3
+    400112: tail3_grp
+    400114: tail4
+    400116: tail4_grp
+    400118: tail5
+    400120: tail5_grp
+    400122: tail_grp
+    2100000: lambert4
+    2100002: lambert1
+    4300000: helmet
+    4300002: Head
+    4300004: bobble
+    4300006: body
+    9500000: //RootNode
+    13700000: bobble
+    13700002: body
+    13700004: Head
+    13700006: helmet
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

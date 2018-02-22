@@ -2,27 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class teleportEffect : MonoBehaviour {
+public class teleportEffect : MonoBehaviour
+{
 
     private GameObject[] exitHoles;
-	void Start () {
+    void Start()
+    {
         exitHoles = GameObject.FindGameObjectsWithTag("ExitHole");
-	}
-	
+    }
 
-	void Update () {
-		
-	}
+
+    void Update()
+    {
+
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.tag == "Player")
+        if (collision.transform.tag == "Player")
         {
             int holeNumber = Random.Range(0, exitHoles.Length);
             collision.transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
             Vector3 newDirection = calculateTrajectory(exitHoles[holeNumber].transform.position);
             newDirection.Normalize();
-            collision.transform.position = exitHoles[holeNumber].transform.position+new Vector3(0,0,5);
+            collision.transform.position = exitHoles[holeNumber].transform.position + new Vector3(0, 0, 205);
             StartCoroutine(WaitABit(collision.gameObject, newDirection));
         }
     }
@@ -39,7 +42,7 @@ public class teleportEffect : MonoBehaviour {
             {
                 foundVector = true;
             }
-      
+
         }
         return newDirection;
     }
@@ -52,7 +55,7 @@ public class teleportEffect : MonoBehaviour {
 
     private void popOut(GameObject collision, Vector3 newDirection)
     {
-        collision.transform.position += new Vector3(0, 0, -5);
+        collision.transform.position += new Vector3(0, 0, -205);
         collision.transform.GetComponent<Rigidbody>().AddForce(newDirection * 20, ForceMode.Impulse);
         collision.transform.GetComponent<PlayerController>().enableInput();
     }

@@ -2,19 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class gravityEffect : MonoBehaviour {
+public class gravityEffect : MonoBehaviour
+{
 
     private float whirlBoost = 1.0f;
     private float gravityModifier = 25f;
-    void Start () {
+    void Start()
+    {
         whirlBoost = 1.0f;
         gravityModifier = 25f;
-	}
-	
-	
-	void Update () {
-		
-	}
+    }
+
+
+    void Update()
+    {
+
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -29,7 +32,7 @@ public class gravityEffect : MonoBehaviour {
         }
     }
 
-    
+
 
     private void realGravity(Collider player)
     {
@@ -40,13 +43,12 @@ public class gravityEffect : MonoBehaviour {
         Vector3 distanceToWell = transform.position - player.transform.position;
         Vector3 directionToWell = distanceToWell.normalized;
         float angle = Vector3.Angle(directionToWell, playerDirection);
-        Debug.Log("grav");
         playerRB.AddForce(playerRB.velocity.magnitude * gravityModifier / distanceToWell.magnitude * directionToWell, ForceMode.Force);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.transform.tag == "Player")
+        if (other.transform.tag == "Player")
         {
             other.GetComponent<PlayerController>().Launch();
             other.GetComponent<SpawnDespawn>().ForcedDeSpawn();

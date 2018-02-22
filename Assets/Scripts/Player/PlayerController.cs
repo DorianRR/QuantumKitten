@@ -74,28 +74,6 @@ public class PlayerController : MonoBehaviour {
         
     }
 
-
-    public void disableInput()
-    {
-        Debug.Log("player input disabled");
-        canSpawn = false;
-    }
-
-    public void enableInput()
-    {
-        Debug.Log("player input enabled");
-        canSpawn = true;
-    }
-
-    public void Launch()
-    {
-
-        gameObject.GetComponent<Rigidbody>().AddForce(gameObject.GetComponent<Rigidbody>().velocity.normalized * 2, ForceMode.Impulse);
-
-    }
-
-    //deprecated
-
     public void setWhirl(bool status)
     {
         startedWhirl = status;
@@ -104,5 +82,24 @@ public class PlayerController : MonoBehaviour {
     public bool getWhirl()
     {
         return startedWhirl;
+    }
+
+    public void disableInput()
+    {
+        //Debug.Log("player input disabled");
+        canSpawn = false;
+    }
+
+    public void enableInput()
+    {
+        //Debug.Log("player input enabled");
+        canSpawn = true;
+    }
+
+    public void Launch()
+    {
+
+        gameObject.GetComponent<Rigidbody>().AddForce(gameObject.GetComponent<Rigidbody>().velocity.normalized * 2, ForceMode.Impulse);
+
     }
 }

@@ -39,7 +39,7 @@ public class SpawnAsteroid : MonoBehaviour
     {
         waveTimer -= Time.deltaTime;
         spawnTimer -= Time.deltaTime;
-        if (maxAsteroids-currentAsteroids>10 && waveTimer<=0)
+        if (maxAsteroids - currentAsteroids > 10 && waveTimer <= 0)
         {
             spawnWave();
             waveTimer = 10f;
@@ -54,23 +54,23 @@ public class SpawnAsteroid : MonoBehaviour
 
     private IEnumerator SpawnInitialWave()
     {
-        while (currentAsteroids<startingAsteroids)
-        { 
-           
-                spawnLocation = holes[Random.Range(0, 2)].transform.position;
-                GameObject newAsteroid = Instantiate(asteroid, spawnLocation, Quaternion.identity);
-                newAsteroid.transform.SetParent(GameObject.Find("FloatingObjects").transform);
-                initialImpulse = new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0);
-                newAsteroid.GetComponent<Rigidbody>().velocity = initialImpulse*50 ;
-                scale = new Vector3(Random.Range(upperSizeBounds, lowerSizeBounds), Random.Range(upperSizeBounds, lowerSizeBounds), Random.Range(upperSizeBounds, lowerSizeBounds));
+        while (currentAsteroids < startingAsteroids)
+        {
 
-                newAsteroid.transform.localScale = scale;
-                currentAsteroids++;
-                yield return new WaitForSeconds(3f);
+            spawnLocation = holes[Random.Range(0, 2)].transform.position;
+            GameObject newAsteroid = Instantiate(asteroid, spawnLocation, Quaternion.identity);
+            newAsteroid.transform.SetParent(GameObject.Find("FloatingObjects").transform);
+            initialImpulse = new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0);
+            newAsteroid.GetComponent<Rigidbody>().velocity = initialImpulse * 50;
+            scale = new Vector3(Random.Range(upperSizeBounds, lowerSizeBounds), Random.Range(upperSizeBounds, lowerSizeBounds), Random.Range(upperSizeBounds, lowerSizeBounds));
+
+            newAsteroid.transform.localScale = scale;
+            currentAsteroids++;
+            yield return new WaitForSeconds(3f);
 
         }
     }
-    
+
 
     private void spawnWave()
     {
@@ -105,4 +105,3 @@ public class SpawnAsteroid : MonoBehaviour
         SpawnInitialWave();
     }
 }
-
