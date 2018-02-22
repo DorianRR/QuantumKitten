@@ -191,10 +191,6 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 100054, guid: 7bef8bf2dd29b764aa3e90d436b043c3, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7bef8bf2dd29b764aa3e90d436b043c3, type: 3}
   m_IsPrefabParent: 0
@@ -819,8 +815,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &856652845
-SphereCollider:
+--- !u!136 &856652845
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -828,8 +824,9 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 1
+  m_Height: 3.25
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &856652846
 MeshFilter:
@@ -844,15 +841,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 856652843}
-  m_LocalRotation: {x: -0.019572472, y: 0.019572577, z: -0.70683587, w: 0.70683587}
-  m_LocalPosition: {x: -72.47565, y: -0.0000010421138, z: 0.22119789}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -72.71, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2014912053}
   - {fileID: 242065282}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 180, y: 183.172, z: 89.99999}
+  m_LocalEulerAnglesHint: {x: 180, y: 180, z: 90}
 --- !u!114 &856652848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -867,7 +864,6 @@ MonoBehaviour:
   objective: {fileID: 1522351732}
   indicator: {fileID: 1779332013038700, guid: f5dc361d056a14aa188e9da6a7dd18eb, type: 2}
   externalPause: 0
-  objectiveHelp: 1
 --- !u!54 &856652849
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7749,6 +7745,8 @@ GameObject:
   - component: {fileID: 989494335}
   - component: {fileID: 989494334}
   - component: {fileID: 989494336}
+  - component: {fileID: 989494338}
+  - component: {fileID: 989494337}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -7768,9 +7766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroid: {fileID: 1544494039713102, guid: d6f72cb428dd1c74c856582654a71776, type: 2}
-  maxAsteroids: 50
-  startingAsteroids: 20
-  waveSize: 10
+  spawnLocation: {x: -2, y: -40, z: 0.5}
   upperRotationBounds: 0
   lowerRotationBounds: 0
   upperSizeBounds: 250
@@ -7796,9 +7792,53 @@ MonoBehaviour:
   m_GameObject: {fileID: 989494333}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b11cd7e4d53fc6548bf07913e77e78cb, type: 3}
+  m_Script: {fileID: 11500000, guid: b8a6207a3e935f84889e0571cfb5a4b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cube: {fileID: 1544494039713102, guid: d6f72cb428dd1c74c856582654a71776, type: 2}
+  numberOfObjects: 15
+  upperXBounds: 80
+  lowerXBounds: -80
+  upperYBounds: 36
+  lowerYBounds: -36
+  upperRotationBounds: 1000
+  lowerRotationBounds: 1000
+  upperSizeBounds: 150
+  lowerSizeBounds: 250
+--- !u!114 &989494337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 989494333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ccd1e8e992ce44d90d39004fd46b61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroid: {fileID: 1544494039713102, guid: d6f72cb428dd1c74c856582654a71776, type: 2}
+  spawnLocation: {x: -2, y: 40, z: 0.5}
+  upperRotationBounds: 0
+  lowerRotationBounds: 0
+  upperSizeBounds: 250
+  lowerSizeBounds: 150
+--- !u!114 &989494338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 989494333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ccd1e8e992ce44d90d39004fd46b61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroid: {fileID: 1544494039713102, guid: d6f72cb428dd1c74c856582654a71776, type: 2}
+  spawnLocation: {x: -85, y: 0, z: 0.5}
+  upperRotationBounds: 0
+  lowerRotationBounds: 0
+  upperSizeBounds: 250
+  lowerSizeBounds: 150
 --- !u!1001 &1181063278
 Prefab:
   m_ObjectHideFlags: 0

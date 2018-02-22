@@ -20,7 +20,6 @@ public class Asteroid : MonoBehaviour {
     {
         if(collision.transform.tag == "Player")
         {
-            GameObject.Find("GameController").GetComponent<SpawnAsteroid>().destroyAsteroid();
             StartCoroutine(DestroyAst());
         }
     }
@@ -52,10 +51,7 @@ public class Asteroid : MonoBehaviour {
     {
         if(other.transform.tag == "WormHole")
         {
-            GameObject.Find("GameController").GetComponent<SpawnAsteroid>().destroyAsteroid();
             Destroy(this.gameObject);
         }
     }
-
-    
 }
