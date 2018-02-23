@@ -809,6 +809,7 @@ MonoBehaviour:
   startedWhirl: 0
   canSpawn: 1
   ImpulsePower: 25
+  animations: {fileID: 0}
 --- !u!114 &856652852
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,19 +5,13 @@ using UnityEngine;
 public class wormHole : MonoBehaviour {
 
 	
-	void Start () {
-		
-	}
-	
 
-	void Update () {
-		
-	}
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.transform.tag == "Player")
         {
+            
             other.GetComponent<Rigidbody>().velocity = Vector3.zero;
             other.GetComponent<PlayerController>().disableInput();
             other.GetComponent<SpawnDespawn>().ForcedDeSpawn();
