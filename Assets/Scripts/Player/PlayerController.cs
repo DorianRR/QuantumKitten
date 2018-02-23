@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour {
         {
             GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * 0.75f;
         }
-        else if (GetComponent<Rigidbody>().velocity.magnitude > 20 && GetComponent<Rigidbody>().velocity.magnitude < 50)
+        else if (GetComponent<Rigidbody>().velocity.magnitude > 20 && GetComponent<Rigidbody>().velocity.magnitude < 50 )
         {
             animations.SetBool("fastSwim", true);
             animations.SetBool("slowSwim", false);
@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour {
 
             gameObject.GetComponentInChildren<Rigidbody>().transform.rotation = Quaternion.LookRotation(-playerDirection); //transform.rotation =  Quaternion.LookRotation(playerDirection);
         }
+        //cat facing away from direction of movement
         else
         {
             playerDirection = GetComponent<Rigidbody>().velocity.normalized;
@@ -106,6 +107,10 @@ public class PlayerController : MonoBehaviour {
         {
             spinCountDown = 0.5f;
             animations.SetBool("hitAsteroid", true);
+        }
+        else if(coll.transform.tag == "WormHole")
+        {
+            animations.SetBool("hitBlackHole", true);
         }
 
 

@@ -11,8 +11,12 @@ public class wormHole : MonoBehaviour {
     {
         if(other.transform.tag == "Player")
         {
-            
+            other.gameObject.GetComponent<PlayerController>().setReversed(true);
+            other.gameObject.GetComponent<PlayerController>().animations.SetBool("hitBlackHole", true);
+            other.gameObject.GetComponent<PlayerController>().animations.SetBool("slowSwim", false);
+            other.gameObject.GetComponent<PlayerController>().animations.SetBool("fastSwim", false);
             other.GetComponent<Rigidbody>().velocity = Vector3.zero;
+
             other.GetComponent<PlayerController>().disableInput();
             other.GetComponent<SpawnDespawn>().ForcedDeSpawn();
         }

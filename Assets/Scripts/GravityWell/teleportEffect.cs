@@ -21,7 +21,8 @@ public class teleportEffect : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
-            collision.gameObject.GetComponent<PlayerController>().animations.SetBool("hitBlackHole", true);
+            
+
             collision.gameObject.GetComponent<PlayerController>().setReversed(true);
             int holeNumber = Random.Range(0, exitHoles.Length);
             collision.transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -54,6 +55,7 @@ public class teleportEffect : MonoBehaviour
         collision.GetComponent<PlayerController>().animations.SetBool("hitBlackHole", false);
         collision.GetComponent<PlayerController>().setReversed(false);
         yield return new WaitForSeconds(2f);
+        
         popOut(collision, direction);
     }
 
