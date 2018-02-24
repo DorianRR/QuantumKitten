@@ -23,7 +23,6 @@ public class teleportEffect : MonoBehaviour
         {
             
 
-            collision.gameObject.GetComponent<PlayerController>().setReversed(true);
             int holeNumber = Random.Range(0, exitHoles.Length);
             collision.transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
             Vector3 newDirection = calculateTrajectory(exitHoles[holeNumber].transform.position);
