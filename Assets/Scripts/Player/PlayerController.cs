@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour {
     public bool startedWhirl = false;
     public bool canSpawn = true;
     public float ImpulsePower = 20;
-    public enum PlayerState { }
+    public enum PlayerState {Moving,Bouncing,Stuck,MaxSpeed }
+    private PlayerState currentState;
 
     private Vector3 playerDirection;
     private bool canBounce = true;
@@ -19,30 +20,42 @@ public class PlayerController : MonoBehaviour {
     void Start ()
     {
         gameObject.GetComponent<Rigidbody>().AddForce(initialForce, ForceMode.Impulse);
+        currentState = PlayerState.Moving;
 	}
 	
 	void Update ()
     {
-        if(!canBounce)
+        //if(!canBounce)
+        //{
+        //    bounceCD -= Time.deltaTime;
+        //    if(bounceCD<=0f)
+        //    {
+        //        canBounce = true;
+        //        bounceCD = 0.1f;
+        //    }
+        //}
+
+
+        switch(currentState)
         {
-            bounceCD -= Time.deltaTime;
-            if(bounceCD<=0f)
-            {
-                canBounce = true;
-                bounceCD = 0.1f;
-            }
+            case PlayerState.Moving:
+                Move();
+                break;
+            case PlayerState.Stuck:
+                Stuck();
+                break;
+            case PlayerState.MaxSpeed:
+                MaxSpeed();
+                break;
+            case PlayerState.Bouncing:
+                Bouncing();
+                break;
         }
 
-       // GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * .9999f;
-            
-        if(GetComponent<Rigidbody>().velocity.magnitude > 50)
-        {
-            GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * 0.75f;
-        }
 
 		//Cat facing direction of movement
 		playerDirection = GetComponent<Rigidbody>().velocity.normalized;
-        gameObject.GetComponentInChildren<Rigidbody>().transform.rotation = Quaternion.LookRotation(playerDirection) ; //transform.rotation =  Quaternion.LookRotation(playerDirection);
+        gameObject.GetComponentInChildren<Rigidbody>().transform.rotation = Quaternion.LookRotation(playerDirection);
         
       
 
@@ -50,29 +63,38 @@ public class PlayerController : MonoBehaviour {
 
     private void OnCollisionEnter(Collision coll)
     {
-        if(coll.transform.tag == "Bounce" && canBounce)
+        if(coll.transform.tag == "Bounce")
         {
-            canBounce = false;
+            currentState = PlayerState.Bouncing;
+            StartCoroutine(setState(PlayerState.Moving, 0.1f));
             Vector3 collisionPoint = coll.contacts[0].point;
             Vector3 reverseCollisionVector = -coll.contacts[0].normal;
             Vector3 collisionNormal = new Vector3();
             collisionPoint -= reverseCollisionVector;
             RaycastHit hitInfo;
-            if(coll.collider.Raycast(new Ray(collisionPoint,reverseCollisionVector),out hitInfo, 4))
+            if(coll.collider.Raycast(new Ray(collisionPoint,reverseCollisionVector),out hitInfo, 1))
             {
                 collisionNormal = hitInfo.normal;
             }
             Vector3 newVelocity = Vector3.Reflect(GetComponent<Rigidbody>().velocity, collisionNormal);
             GetComponent<Rigidbody>().velocity = newVelocity * 0.8f;
         }
-
-
-        
     }
 
-    private void OnTriggerExit(Collider other)
+    public void setPlayerState(PlayerState newState)
     {
-        
+        currentState = newState;
+    }
+
+    public PlayerState getState()
+    {
+        return currentState;
+    }
+
+    private IEnumerator setState(PlayerState newState, float time)
+    {
+        yield return new WaitForSeconds(time);
+        currentState = newState;
     }
 
     public void setWhirl(bool status)
@@ -87,20 +109,35 @@ public class PlayerController : MonoBehaviour {
 
     public void disableInput()
     {
-        //Debug.Log("player input disabled");
         canSpawn = false;
     }
 
     public void enableInput()
     {
-        //Debug.Log("player input enabled");
         canSpawn = true;
     }
 
     public void Launch()
     {
-
         gameObject.GetComponent<Rigidbody>().AddForce(gameObject.GetComponent<Rigidbody>().velocity.normalized * 2, ForceMode.Impulse);
+
+    }
+
+    private void Move()
+    {
+        
+    }
+    private void MaxSpeed()
+    {
+
+    }
+
+    private void Bouncing()
+    {
+
+    }
+    private void Stuck()
+    {
 
     }
 }
