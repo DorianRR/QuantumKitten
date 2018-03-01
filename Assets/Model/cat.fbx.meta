@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 7bef8bf2dd29b764aa3e90d436b043c3
-timeCreated: 1518542078
+guid: 5a442fee710e8d941bac073ca4edf17e
+timeCreated: 1519324972
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -22,51 +22,91 @@ ModelImporter:
     100028: antenna_ctrl5
     100030: backhips
     100032: BL_ctrl
-    100034: BL_leg
-    100036: BL_leg2
-    100038: BL_leg3
-    100040: bobble
-    100042: body
-    100044: body 1
-    100046: BR_ctrl
-    100048: BR_leg
-    100050: BR_leg2
-    100052: BR_leg3
-    100054: //RootNode
-    100056: FL_ctrl
-    100058: FL_leg
-    100060: FL_leg2
-    100062: FL_leg3
-    100064: FR_ctrl
-    100066: FR_leg
-    100068: FR_leg2
-    100070: FR_leg3
-    100072: frontHips_ctrl
-    100074: geo
-    100076: Head
-    100078: head
-    100080: head_ctrl
-    100082: helmet
-    100084: IK_BL_leg
-    100086: IK_BR_leg
-    100088: IK_FL_leg
-    100090: IK_FR_leg
-    100092: neck
-    100094: neck_ctrl
-    100096: root
-    100098: root_ctrl
-    100100: spine1
-    100102: spine2
-    100104: tail
-    100106: tail2
-    100108: tail2_grp
-    100110: tail3
-    100112: tail3_grp
-    100114: tail4
-    100116: tail4_grp
-    100118: tail5
-    100120: tail5_grp
-    100122: tail_grp
+    100034: BL_ctrl3FK2
+    100036: BL_ctrl3FK2 1
+    100038: BL_ctrlFK1
+    100040: BL_ctrlFK2
+    100042: BL_ctrlFK2 1
+    100044: BL_ctrlFK3
+    100046: BL_leg2_BOUND
+    100048: BL_leg2_FK
+    100050: BL_leg2_IK
+    100052: BL_leg3_BOUND
+    100054: BL_leg3_FK
+    100056: BL_leg3_IK
+    100058: BL_leg_BOUND
+    100060: BL_leg_FK
+    100062: BL_leg_IK
+    100064: bobble
+    100066: body
+    100068: body 1
+    100070: BR_ctrl
+    100072: BR_leg2_FK
+    100074: BR_leg2_IK
+    100076: BR_leg2_IK_BOUND
+    100078: BR_leg3_FK
+    100080: BR_leg3_IK
+    100082: BR_leg3_IK_BOUND
+    100084: BR_leg_FK
+    100086: BR_leg_FK1_BOUND
+    100088: BR_leg_IK
+    100090: //RootNode
+    100092: FL_ctrl
+    100094: FL_ctrl2IK
+    100096: FL_ctrl3FK
+    100098: FL_ctrlFK
+    100100: FL_leg2_bound
+    100102: FL_leg2_FK
+    100104: FL_leg2_IK
+    100106: FL_leg3_bound
+    100108: FL_leg3_FK
+    100110: FL_leg3_IK
+    100112: FL_leg4_bound
+    100114: FL_leg5_FK
+    100116: FL_leg_IK
+    100118: FR_ctrl
+    100120: FR_ctrl2IK
+    100122: FR_ctrl3FK
+    100124: FR_ctrlFK1
+    100126: FR_leg2_BOUND
+    100128: FR_leg2_FK
+    100130: FR_leg2_IK
+    100132: FR_leg3_BOUND
+    100134: FR_leg3_FK
+    100136: FR_leg3_IK
+    100138: FR_leg_BOUND
+    100140: FR_leg_FK
+    100142: FR_leg_IK
+    100144: frontHips_ctrl
+    100146: geo
+    100148: Head
+    100150: head
+    100152: head_ctrl
+    100154: helmet
+    100156: IK_BL_leg
+    100158: IK_BR_leg
+    100160: IK_FL_leg
+    100162: IK_FR_leg
+    100164: IKFKSwitch_BL
+    100166: IKFKSwitch_BR
+    100168: IKFKSwitch_FL
+    100170: IKFKSwitch_FR
+    100172: neck
+    100174: neck_ctrl
+    100176: root
+    100178: root_ctrl
+    100180: spine1
+    100182: spine2
+    100184: tail
+    100186: tail2
+    100188: tail2_grp
+    100190: tail3
+    100192: tail3_grp
+    100194: tail4
+    100196: tail4_grp
+    100198: tail5
+    100200: tail5_grp
+    100202: tail_grp
     400000: antenna1
     400002: antenna1_grp
     400004: antenna2
@@ -84,57 +124,98 @@ ModelImporter:
     400028: antenna_ctrl5
     400030: backhips
     400032: BL_ctrl
-    400034: BL_leg
-    400036: BL_leg2
-    400038: BL_leg3
-    400040: bobble
-    400042: body
-    400044: body 1
-    400046: BR_ctrl
-    400048: BR_leg
-    400050: BR_leg2
-    400052: BR_leg3
-    400054: //RootNode
-    400056: FL_ctrl
-    400058: FL_leg
-    400060: FL_leg2
-    400062: FL_leg3
-    400064: FR_ctrl
-    400066: FR_leg
-    400068: FR_leg2
-    400070: FR_leg3
-    400072: frontHips_ctrl
-    400074: geo
-    400076: Head
-    400078: head
-    400080: head_ctrl
-    400082: helmet
-    400084: IK_BL_leg
-    400086: IK_BR_leg
-    400088: IK_FL_leg
-    400090: IK_FR_leg
-    400092: neck
-    400094: neck_ctrl
-    400096: root
-    400098: root_ctrl
-    400100: spine1
-    400102: spine2
-    400104: tail
-    400106: tail2
-    400108: tail2_grp
-    400110: tail3
-    400112: tail3_grp
-    400114: tail4
-    400116: tail4_grp
-    400118: tail5
-    400120: tail5_grp
-    400122: tail_grp
+    400034: BL_ctrl3FK2
+    400036: BL_ctrl3FK2 1
+    400038: BL_ctrlFK1
+    400040: BL_ctrlFK2
+    400042: BL_ctrlFK2 1
+    400044: BL_ctrlFK3
+    400046: BL_leg2_BOUND
+    400048: BL_leg2_FK
+    400050: BL_leg2_IK
+    400052: BL_leg3_BOUND
+    400054: BL_leg3_FK
+    400056: BL_leg3_IK
+    400058: BL_leg_BOUND
+    400060: BL_leg_FK
+    400062: BL_leg_IK
+    400064: bobble
+    400066: body
+    400068: body 1
+    400070: BR_ctrl
+    400072: BR_leg2_FK
+    400074: BR_leg2_IK
+    400076: BR_leg2_IK_BOUND
+    400078: BR_leg3_FK
+    400080: BR_leg3_IK
+    400082: BR_leg3_IK_BOUND
+    400084: BR_leg_FK
+    400086: BR_leg_FK1_BOUND
+    400088: BR_leg_IK
+    400090: //RootNode
+    400092: FL_ctrl
+    400094: FL_ctrl2IK
+    400096: FL_ctrl3FK
+    400098: FL_ctrlFK
+    400100: FL_leg2_bound
+    400102: FL_leg2_FK
+    400104: FL_leg2_IK
+    400106: FL_leg3_bound
+    400108: FL_leg3_FK
+    400110: FL_leg3_IK
+    400112: FL_leg4_bound
+    400114: FL_leg5_FK
+    400116: FL_leg_IK
+    400118: FR_ctrl
+    400120: FR_ctrl2IK
+    400122: FR_ctrl3FK
+    400124: FR_ctrlFK1
+    400126: FR_leg2_BOUND
+    400128: FR_leg2_FK
+    400130: FR_leg2_IK
+    400132: FR_leg3_BOUND
+    400134: FR_leg3_FK
+    400136: FR_leg3_IK
+    400138: FR_leg_BOUND
+    400140: FR_leg_FK
+    400142: FR_leg_IK
+    400144: frontHips_ctrl
+    400146: geo
+    400148: Head
+    400150: head
+    400152: head_ctrl
+    400154: helmet
+    400156: IK_BL_leg
+    400158: IK_BR_leg
+    400160: IK_FL_leg
+    400162: IK_FR_leg
+    400164: IKFKSwitch_BL
+    400166: IKFKSwitch_BR
+    400168: IKFKSwitch_FL
+    400170: IKFKSwitch_FR
+    400172: neck
+    400174: neck_ctrl
+    400176: root
+    400178: root_ctrl
+    400180: spine1
+    400182: spine2
+    400184: tail
+    400186: tail2
+    400188: tail2_grp
+    400190: tail3
+    400192: tail3_grp
+    400194: tail4
+    400196: tail4_grp
+    400198: tail5
+    400200: tail5_grp
+    400202: tail_grp
     2100000: lambert4
     2100002: lambert1
+    2100004: catSkin
     4300000: helmet
-    4300002: Head
-    4300004: bobble
-    4300006: body
+    4300002: bobble
+    4300004: body
+    4300006: Head
     9500000: //RootNode
     13700000: bobble
     13700002: body

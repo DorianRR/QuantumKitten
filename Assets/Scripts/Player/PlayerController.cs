@@ -9,41 +9,81 @@ public class PlayerController : MonoBehaviour {
     public bool startedWhirl = false;
     public bool canSpawn = true;
     public float ImpulsePower = 20;
+    public Animator animations;
+
 
     private Vector3 playerDirection;
     private bool canBounce = true;
 
     private float bounceCD = 0.1f;
+    private bool reversed = false;
+    private float spinCountDown;
+
 
     void Start ()
     {
         gameObject.GetComponent<Rigidbody>().AddForce(initialForce, ForceMode.Impulse);
+        animations = gameObject.GetComponentInChildren<Animator>();
 	}
 	
 	void Update ()
     {
+        //I don't know what  happened, but this became necessary again. QQ
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0f);
+        
+        
+        //handles bounce cooldown
         if(!canBounce)
         {
             bounceCD -= Time.deltaTime;
             if(bounceCD<=0f)
             {
+                animations.SetBool("justBounced", false);
+
                 canBounce = true;
                 bounceCD = 0.1f;
             }
         }
 
-        GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * .9999f;
-            
+        //protect us from insane speed, set which moving animation we're using
         if(GetComponent<Rigidbody>().velocity.magnitude > 50)
         {
             GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * 0.75f;
         }
+        else if (GetComponent<Rigidbody>().velocity.magnitude > 20 && GetComponent<Rigidbody>().velocity.magnitude < 50 )
+        {
+            animations.SetBool("fastSwim", true);
+            animations.SetBool("slowSwim", false);
 
-		//Cat facing direction of movement
-		playerDirection = GetComponent<Rigidbody>().velocity.normalized;
-        gameObject.GetComponentInChildren<Rigidbody>().transform.rotation = Quaternion.LookRotation(playerDirection) ; //transform.rotation =  Quaternion.LookRotation(playerDirection);
-        
-      
+        }
+        else
+        {
+            animations.SetBool("fastSwim", false);
+            animations.SetBool("slowSwim", true);
+
+        }
+
+        //Cat facing direction of movement
+        if (reversed)
+        {
+            playerDirection = GetComponent<Rigidbody>().velocity.normalized;
+
+            gameObject.GetComponentInChildren<Rigidbody>().transform.rotation = Quaternion.LookRotation(-playerDirection); //transform.rotation =  Quaternion.LookRotation(playerDirection);
+        }
+        //cat facing away from direction of movement
+        else
+        {
+            playerDirection = GetComponent<Rigidbody>().velocity.normalized;
+            gameObject.GetComponentInChildren<Rigidbody>().transform.rotation = Quaternion.LookRotation(playerDirection); //transform.rotation =  Quaternion.LookRotation(playerDirection);
+
+        }
+        spinCountDown -= Time.deltaTime;
+        if (spinCountDown <= 0f)
+        {
+            animations.SetBool("hitAsteroid", false);
+
+        }
+
 
     }
 
@@ -51,6 +91,8 @@ public class PlayerController : MonoBehaviour {
     {
         if(coll.transform.tag == "Bounce" && canBounce)
         {
+
+            animations.SetBool("justBounced", true);
             canBounce = false;
             Vector3 collisionPoint = coll.contacts[0].point;
             Vector3 reverseCollisionVector = -coll.contacts[0].normal;
@@ -63,10 +105,21 @@ public class PlayerController : MonoBehaviour {
             }
             Vector3 newVelocity = Vector3.Reflect(GetComponent<Rigidbody>().velocity, collisionNormal);
             GetComponent<Rigidbody>().velocity = newVelocity * 0.8f;
+
+        }
+        else if(coll.transform.tag == "Asteroid")
+        {
+            spinCountDown = 0.5f;
+            animations.SetBool("hitAsteroid", true);
+        }
+        else if(coll.transform.tag == "WormHole")
+        {
+            animations.SetBool("hitBlackHole", true);
         }
 
 
-        
+
+
     }
 
     private void OnTriggerExit(Collider other)
@@ -86,13 +139,13 @@ public class PlayerController : MonoBehaviour {
 
     public void disableInput()
     {
-        Debug.Log("player input disabled");
+        //Debug.Log("player input disabled");
         canSpawn = false;
     }
 
     public void enableInput()
     {
-        Debug.Log("player input enabled");
+        //Debug.Log("player input enabled");
         canSpawn = true;
     }
 
@@ -101,5 +154,15 @@ public class PlayerController : MonoBehaviour {
 
         gameObject.GetComponent<Rigidbody>().AddForce(gameObject.GetComponent<Rigidbody>().velocity.normalized * 2, ForceMode.Impulse);
 
+    }
+
+    public void bounceAnimationFinished()
+    {
+        animations.SetBool("justBounced", false);
+    }
+
+    public void setReversed(bool set)
+    {
+        reversed = set;
     }
 }
