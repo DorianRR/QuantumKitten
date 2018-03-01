@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour {
     public bool startedWhirl = false;
     public bool canSpawn = true;
     public float ImpulsePower = 20;
-    public enum PlayerState {Moving,Bouncing,Stuck,MaxSpeed }
+    public enum PlayerState {Moving,Bouncing,Stuck,MaxSpeed,Teleporting }
     private PlayerState currentState;
 
     private Vector3 playerDirection;
@@ -25,18 +25,18 @@ public class PlayerController : MonoBehaviour {
 	
 	void Update ()
     {
-        //if(!canBounce)
-        //{
-        //    bounceCD -= Time.deltaTime;
-        //    if(bounceCD<=0f)
-        //    {
-        //        canBounce = true;
-        //        bounceCD = 0.1f;
-        //    }
-        //}
+        if (!canBounce)
+        {
+            bounceCD -= Time.deltaTime;
+            if (bounceCD <= 0f)
+            {
+                canBounce = true;
+                bounceCD = 0.1f;
+            }
+        }
 
 
-        switch(currentState)
+        switch (currentState)
         {
             case PlayerState.Moving:
                 Move();
@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour {
         return currentState;
     }
 
-    private IEnumerator setState(PlayerState newState, float time)
+    public IEnumerator setState(PlayerState newState, float time)
     {
         yield return new WaitForSeconds(time);
         currentState = newState;
