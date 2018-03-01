@@ -96,19 +96,23 @@ public class MapGenScript : MonoBehaviour {
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
                 Color pixelColor = pixels[i * height + j]; //Each color prefab is assign as follows:
-				if (pixelColor == Color.white) { //Floor
-					if(prefabFloor.Length!=0) {
-                   		GameObject inst = GameObject.Instantiate(randomPrefab(prefabFloor), trans);
-                    	inst.transform.position = new Vector3(j* multiplierFactor, 0, i* multiplierFactor);
-					}
+				if (pixelColor == Color.white) { //Boundary
+                    if (prefabFloor.Length != 0)
+                    {
+                        GameObject inst = GameObject.Instantiate(randomPrefab(prefabFloor), trans);
+                        inst.transform.position = new Vector3(j * multiplierFactor, 0, i * multiplierFactor);
+                        inst.transform.Rotate(new Vector3(0, FindRotationW(pixels, i, j), 0), Space.Self);
+                    }
                 }
-                if (pixelColor == Color.cyan) { //Ceiling
-					if(prefabFloor.Length!=0) {
-                   		GameObject inst = GameObject.Instantiate(randomPrefab(prefabCeiling), trans);
-                    	inst.transform.position = new Vector3(j* multiplierFactor, 0, i* multiplierFactor);
-					}
+                if (pixelColor == Color.cyan) { //BlackholeIn
+                    if (prefabCeiling.Length != 0)
+                    {
+                        GameObject inst = GameObject.Instantiate(randomPrefab(prefabCeiling), trans);
+                        inst.transform.position = new Vector3(j * multiplierFactor, 0, i * multiplierFactor);
+                        inst.transform.Rotate(new Vector3(0, FindRotationW(pixels, i, j), 0), Space.Self);
+                    }
                 }
-                if (pixelColor == Color.red) //Wall
+                if (pixelColor == Color.red) //BlackholeOut
                 { 
 					if(prefabWall.Length!=0) {
                     	GameObject inst = GameObject.Instantiate(randomPrefab(prefabWall), trans);
@@ -116,7 +120,7 @@ public class MapGenScript : MonoBehaviour {
 						inst.transform.Rotate(new Vector3(0, FindRotationW(pixels, i, j), 0), Space.Self);
 					}
                 }
-                if (pixelColor == Color.green) //Retangular L Curve
+                if (pixelColor == Color.green) //BouncyThing
                 {
 					if(prefabCurveL.Length!=0) {
                     	GameObject inst = GameObject.Instantiate(randomPrefab(prefabCurveL), trans);
@@ -124,7 +128,7 @@ public class MapGenScript : MonoBehaviour {
 						inst.transform.Rotate(new Vector3(0, FindRotationL(pixels, i, j), 0), Space.Self);
 					}
                 }
-				if (pixelColor == Color.magenta) //Diagonal
+				if (pixelColor == Color.magenta) //Destructable
                 {
 					if(prefabDiagonal.Length!=0) {
                     	GameObject inst = GameObject.Instantiate(randomPrefab(prefabDiagonal), trans);
