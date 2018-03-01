@@ -9,6 +9,7 @@ TagManager:
   - WormHole
   - ExitHole
   - Asteroid
+  - Clickable
   layers:
   - Default
   - TransparentFX

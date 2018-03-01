@@ -63,6 +63,10 @@ public class teleportEffect : MonoBehaviour
         collision.transform.position += new Vector3(0, 0, -205);
         collision.transform.GetComponent<Rigidbody>().AddForce(newDirection * 20, ForceMode.Impulse);
         collision.transform.GetComponent<PlayerController>().enableInput();
+<<<<<<< HEAD
         
+=======
+        collision.transform.GetComponent<PlayerController>().setPlayerState(PlayerController.PlayerState.Moving);
+>>>>>>> bouncingoffthewalls
     }
 }
