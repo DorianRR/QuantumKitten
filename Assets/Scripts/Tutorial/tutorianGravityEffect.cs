@@ -52,41 +52,41 @@ public class tutorianGravityEffect : MonoBehaviour
         {
             other.GetComponent<PlayerController>().Launch();
             other.GetComponent<SpawnDespawn>().ForcedDeSpawn();
-            other.GetComponent<PlayerController>().setWhirl(false);
+            //other.GetComponent<PlayerController>().setWhirl(false);
 
         }
     }
 
     //deprecated
-    private void whirlGravity(Collider other)
-    {
-        if (other.tag == "Player")
-        {
+    //private void whirlGravity(Collider other)
+    //{
+    //    if (other.tag == "Player")
+    //    {
 
-            Vector2 playerDirection = other.GetComponent<Rigidbody>().velocity;
-            playerDirection.Normalize();
+    //        Vector2 playerDirection = other.GetComponent<Rigidbody>().velocity;
+    //        playerDirection.Normalize();
 
-            Vector2 distanceToWell = transform.position - other.transform.position;
-            Vector2 directionTowardsWell = distanceToWell.normalized;
-            float angle = Vector2.Angle(directionTowardsWell, playerDirection);
+    //        Vector2 distanceToWell = transform.position - other.transform.position;
+    //        Vector2 directionTowardsWell = distanceToWell.normalized;
+    //        float angle = Vector2.Angle(directionTowardsWell, playerDirection);
 
-            if (angle % 90 < 2f && other.GetComponent<Rigidbody>().velocity.magnitude > 3.0f)
-            {
-                other.GetComponent<PlayerController>().setWhirl(true);
-            }
-            else if (other.GetComponent<PlayerController>().getWhirl())
-            {
-                other.GetComponent<Rigidbody>().AddForce
-                (whirlBoost * other.GetComponent<Rigidbody>().velocity.magnitude * gravityModifier / distanceToWell.magnitude * directionTowardsWell, ForceMode.Force);
-                whirlBoost += Time.deltaTime / 5;
-            }
-            else
-            {
-                other.GetComponent<Rigidbody>().AddForce
-                    (whirlBoost * other.GetComponent<Rigidbody>().velocity.magnitude * (gravityModifier / 2) / distanceToWell.magnitude * directionTowardsWell, ForceMode.Force);
-            }
+    //        if (angle % 90 < 2f && other.GetComponent<Rigidbody>().velocity.magnitude > 3.0f)
+    //        {
+    //            other.GetComponent<PlayerController>().setWhirl(true);
+    //        }
+    //        else if (other.GetComponent<PlayerController>().getWhirl())
+    //        {
+    //            other.GetComponent<Rigidbody>().AddForce
+    //            (whirlBoost * other.GetComponent<Rigidbody>().velocity.magnitude * gravityModifier / distanceToWell.magnitude * directionTowardsWell, ForceMode.Force);
+    //            whirlBoost += Time.deltaTime / 5;
+    //        }
+    //        else
+    //        {
+    //            other.GetComponent<Rigidbody>().AddForce
+    //                (whirlBoost * other.GetComponent<Rigidbody>().velocity.magnitude * (gravityModifier / 2) / distanceToWell.magnitude * directionTowardsWell, ForceMode.Force);
+    //        }
 
 
-        }
-    }
+    //    }
+    //}
 }

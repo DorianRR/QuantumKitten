@@ -707,7 +707,7 @@ GameObject:
   - component: {fileID: 1253011198}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Clickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1150,7 +1150,8 @@ Prefab:
       propertyPath: objective
       value: 
       objectReference: {fileID: 1522351732}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 136245570833421266, guid: 18bf7fef32240d4419afa73d72bcdd35, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 18bf7fef32240d4419afa73d72bcdd35, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1522351732

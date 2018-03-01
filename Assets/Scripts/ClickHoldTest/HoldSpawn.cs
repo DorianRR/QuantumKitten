@@ -47,7 +47,7 @@ public class HoldSpawn : MonoBehaviour
             gameObject.GetComponent<ObjectiveIndicator>().externalPause = false;
 
             onSpawn = true;
-            gameObject.GetComponent<PlayerController>().setWhirl(false);
+            //gameObject.GetComponent<PlayerController>().setWhirl(false);
             gameObject.GetComponent<PlayerController>().Launch();
 
 
@@ -69,7 +69,7 @@ public class HoldSpawn : MonoBehaviour
     public void ForcedDeSpawn()
     {
         onSpawn = true;
-        gameObject.GetComponent<PlayerController>().setWhirl(false);
+        //gameObject.GetComponent<PlayerController>().setWhirl(false);
         gameObject.GetComponent<PlayerController>().Launch();
 
 

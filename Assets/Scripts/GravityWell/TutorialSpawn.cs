@@ -37,7 +37,7 @@ public class TutorialSpawn : MonoBehaviour
         {
 
             onSpawn = true;
-            gameObject.GetComponent<PlayerController>().setWhirl(false);
+            //gameObject.GetComponent<PlayerController>().setWhirl(false);
             gameObject.GetComponent<PlayerController>().Launch();
 
 
@@ -54,7 +54,7 @@ public class TutorialSpawn : MonoBehaviour
             {
 
                 onSpawn = true;
-                gameObject.GetComponent<PlayerController>().setWhirl(false);
+                //gameObject.GetComponent<PlayerController>().setWhirl(false);
 
 
                 Destroy(spawnedWell);
@@ -70,7 +70,7 @@ public class TutorialSpawn : MonoBehaviour
     public void ForcedDeSpawn()
     {
         onSpawn = true;
-        gameObject.GetComponent<PlayerController>().setWhirl(false);
+        //gameObject.GetComponent<PlayerController>().setWhirl(false);
         gameObject.GetComponent<PlayerController>().Launch();
 
 

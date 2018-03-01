@@ -30,6 +30,7 @@ public class SpawnDespawn : MonoBehaviour
             Physics.Raycast(touchRay, out touchHit);
             if (touchHit.transform.tag == "Clickable")
             {
+
                 spawnedWell = Instantiate(GravityWell, touchHit.point, Quaternion.identity);
 
                 MainCamera.GetComponent<CameraController>().CenterOnSpawnedGW(touchHit.point);
@@ -41,7 +42,7 @@ public class SpawnDespawn : MonoBehaviour
             gameObject.GetComponent<ObjectiveIndicator>().externalPause = false;
 
             onSpawn = true;
-            gameObject.GetComponent<PlayerController>().setWhirl(false);
+            //gameObject.GetComponent<PlayerController>().setWhirl(false);
             gameObject.GetComponent<PlayerController>().Launch();
 
 
@@ -59,7 +60,7 @@ public class SpawnDespawn : MonoBehaviour
                 gameObject.GetComponent<ObjectiveIndicator>().externalPause = false;
 
                 onSpawn = true;
-                gameObject.GetComponent<PlayerController>().setWhirl(false);
+                //gameObject.GetComponent<PlayerController>().setWhirl(false);
 
 
                 Destroy(spawnedWell);
@@ -75,7 +76,7 @@ public class SpawnDespawn : MonoBehaviour
     public void ForcedDeSpawn()
     {
         onSpawn = true;
-        gameObject.GetComponent<PlayerController>().setWhirl(false);
+        //gameObject.GetComponent<PlayerController>().setWhirl(false);
         gameObject.GetComponent<PlayerController>().Launch();
 
 
