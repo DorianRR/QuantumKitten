@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour {
     private PlayerState currentState;
 
     private Vector3 playerDirection;
-    private bool canBounce = true;
 
     private float bounceCD = 0.1f;
     private bool reversed = false;
@@ -31,21 +30,19 @@ public class PlayerController : MonoBehaviour {
 	
 	void Update ()
     {
-        
-        
-        
+        Debug.Log(currentState);
         //handles bounce cooldown
-        if(!canBounce)
-        {
-            bounceCD -= Time.deltaTime;
-            if(bounceCD<=0f)
-            {
-                animations.SetBool("justBounced", false);
+        //if(currentState == PlayerState.Bouncing)
+        //{
+        //    bounceCD -= Time.deltaTime;
+        //    if(bounceCD<=0f)
+        //    {
+        //        currentState = PlayerState.Moving;
+        //        animations.SetBool("justBounced", false);
 
-                canBounce = true;
-                bounceCD = 0.1f;
-            }
-        }
+        //        bounceCD = 0.1f;
+        //    }
+        //}
 
      
 
@@ -76,29 +73,29 @@ public class PlayerController : MonoBehaviour {
 
     private void OnCollisionEnter(Collision coll)
     {
-        if(coll.transform.tag == "Bounce" && currentState == PlayerState.Moving)
-        {
+        //if(coll.transform.tag == "Bounce" && (currentState == PlayerState.Moving || currentState == PlayerState.MaxSpeed))
+        //{
+        //    Vector3 collisionPoint = coll.contacts[0].point;
+        //    Vector3 reverseCollisionVector = -coll.contacts[0].normal;
+        //    Vector3 collisionNormal = new Vector3();
+        //    collisionPoint -= reverseCollisionVector;
+        //    RaycastHit hitInfo;
+        //    if (coll.collider.Raycast(new Ray(collisionPoint, reverseCollisionVector), out hitInfo, 1))
+        //    {
+        //        collisionNormal = hitInfo.normal;
+        //    }
+        //    Vector3 newVelocity = Vector3.Reflect(GetComponent<Rigidbody>().velocity, collisionNormal);
+        //    GetComponent<Rigidbody>().velocity = newVelocity * 0.8f;
 
-            canBounce = false;
+        //    currentState = PlayerState.Bouncing;
+        //    StartCoroutine(setState(PlayerState.Moving, 0.1f));
 
-            currentState = PlayerState.Bouncing;
-            StartCoroutine(setState(PlayerState.Moving, 0.1f));
 
-            Vector3 collisionPoint = coll.contacts[0].point;
-            Vector3 reverseCollisionVector = -coll.contacts[0].normal;
-            Vector3 collisionNormal = new Vector3();
-            collisionPoint -= reverseCollisionVector;
-            RaycastHit hitInfo;
-            if(coll.collider.Raycast(new Ray(collisionPoint,reverseCollisionVector),out hitInfo, 1))
-            {
-                collisionNormal = hitInfo.normal;
-            }
-            Vector3 newVelocity = Vector3.Reflect(GetComponent<Rigidbody>().velocity, collisionNormal);
-            GetComponent<Rigidbody>().velocity = newVelocity * 0.8f;
+            
 
-        }
+        //}
 
-        else if(coll.transform.tag == "Asteroid")
+        if(coll.transform.tag == "Asteroid")
         {
             spinCountDown = 0.5f;
             animations.SetBool("hitAsteroid", true);
@@ -106,6 +103,14 @@ public class PlayerController : MonoBehaviour {
         else if(coll.transform.tag == "WormHole")
         {
             animations.SetBool("hitBlackHole", true);
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if(collision.transform.tag == "Bounce")
+        {
+            gameObject.GetComponent<Rigidbody>().velocity *= 10;
         }
     }
 
@@ -127,15 +132,7 @@ public class PlayerController : MonoBehaviour {
         currentState = newState;
     }
 
-    //public void setWhirl(bool status)
-    //{
-    //    startedWhirl = status;
-    //}
-
-    //public bool getWhirl()
-    //{
-    //    return startedWhirl;
-    //}
+  
 
     public void disableInput()
     {
@@ -166,21 +163,20 @@ public class PlayerController : MonoBehaviour {
     private void Move()
     {
         //protect us from insane speed, set which moving animation we're using
-        if (GetComponent<Rigidbody>().velocity.magnitude > 50)
+        if (GetComponent<Rigidbody>().velocity.magnitude > 60)
         {
             GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * 0.75f;
         }
-        else if (GetComponent<Rigidbody>().velocity.magnitude > 20 && GetComponent<Rigidbody>().velocity.magnitude < 50)
+        else if (GetComponent<Rigidbody>().velocity.magnitude > 45 && GetComponent<Rigidbody>().velocity.magnitude < 60)
         {
             setPlayerState(PlayerState.MaxSpeed);
 
         }
-        else
-        {
-            animations.SetBool("fastSwim", false);
-            animations.SetBool("slowSwim", true);
+        
+        animations.SetBool("fastSwim", false);
+        animations.SetBool("slowSwim", true);
 
-        }
+        
 
 
         //Cat facing direction of movement used for anim
@@ -212,11 +208,10 @@ public class PlayerController : MonoBehaviour {
     }
     private void Stuck()
     {
-        if (reversed)
-        {
-            playerDirection = GetComponent<Rigidbody>().velocity.normalized;
+        
+        playerDirection = GetComponent<Rigidbody>().velocity.normalized;
 
-            gameObject.GetComponentInChildren<Rigidbody>().transform.rotation = Quaternion.LookRotation(-playerDirection); //transform.rotation =  Quaternion.LookRotation(playerDirection);
-        }
+        gameObject.GetComponentInChildren<Rigidbody>().transform.rotation = Quaternion.LookRotation(-playerDirection); //transform.rotation =  Quaternion.LookRotation(playerDirection);
+        
     }
 }

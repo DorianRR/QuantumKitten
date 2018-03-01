@@ -618,7 +618,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 185d6bedd8263a04a933c42b315a7871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Camera: {fileID: 1597630779}
 --- !u!1001 &1019801163
 Prefab:
   m_ObjectHideFlags: 0
@@ -1049,7 +1048,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
@@ -1163,8 +1162,20 @@ Prefab:
       propertyPath: objective
       value: 
       objectReference: {fileID: 1522351732}
+    - target: {fileID: 23164295957891644, guid: 18bf7fef32240d4419afa73d72bcdd35,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 54842233184274054, guid: 18bf7fef32240d4419afa73d72bcdd35,
+        type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 136245570833421266, guid: 18bf7fef32240d4419afa73d72bcdd35, type: 2}
+    - {fileID: 33585216605498026, guid: 18bf7fef32240d4419afa73d72bcdd35, type: 2}
+    - {fileID: 23164295957891644, guid: 18bf7fef32240d4419afa73d72bcdd35, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 18bf7fef32240d4419afa73d72bcdd35, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1522351732
