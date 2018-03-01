@@ -66,4 +66,28 @@ public class CameraController : MonoBehaviour
         centeredOnGW = set;
     }
 
+    public void smoothBetweenPoints(Vector3 newPosition, float timeToArrive)
+    {
+        float temp = 0f;
+        while (temp < timeToArrive)
+        {
+            Vector3.Lerp(gameObject.transform.position, newPosition, Time.deltaTime);
+
+            temp += Time.deltaTime;
+
+        }
+
+        IEnumerator transferPosition(Vector3 newPosition, float timeToArrive)
+    {
+        float temp = 0f;
+        while(temp < timeToArrive)
+        {
+            Vector3.Lerp(gameObject.transform.position, newPosition, Time.deltaTime);
+
+            temp += Time.deltaTime;
+        }
+
+        yield return null;
+    }
+
 }
