@@ -28,6 +28,10 @@ public class PlayerController : MonoBehaviour {
 	
 	void Update ()
     {
+        //I don't know what  happened, but this became necessary again. QQ
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0f);
+        
+        
         //handles bounce cooldown
         if(!canBounce)
         {
