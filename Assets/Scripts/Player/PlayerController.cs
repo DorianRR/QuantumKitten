@@ -65,6 +65,7 @@ public class PlayerController : MonoBehaviour {
     {
         if(coll.transform.tag == "Bounce")
         {
+            gameObject.transform.GetComponent<CapsuleCollider>().isTrigger = true;
             currentState = PlayerState.Bouncing;
             StartCoroutine(setState(PlayerState.Moving, 0.1f));
             Vector3 collisionPoint = coll.contacts[0].point;
@@ -72,13 +73,15 @@ public class PlayerController : MonoBehaviour {
             Vector3 collisionNormal = new Vector3();
             collisionPoint -= reverseCollisionVector;
             RaycastHit hitInfo;
-            if(coll.collider.Raycast(new Ray(collisionPoint,reverseCollisionVector),out hitInfo, 1))
+            if(coll.collider.Raycast(new Ray(collisionPoint,reverseCollisionVector),out hitInfo, 4))
             {
                 collisionNormal = hitInfo.normal;
             }
             Vector3 newVelocity = Vector3.Reflect(GetComponent<Rigidbody>().velocity, collisionNormal);
             GetComponent<Rigidbody>().velocity = newVelocity * 0.8f;
+            gameObject.transform.GetComponent<CapsuleCollider>().isTrigger = false;
         }
+        gameObject.transform.GetComponent<CapsuleCollider>().isTrigger = false;
     }
 
     public void setPlayerState(PlayerState newState)
