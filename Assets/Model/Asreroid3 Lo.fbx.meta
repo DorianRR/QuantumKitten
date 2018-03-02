@@ -1,23 +1,23 @@
 fileFormatVersion: 2
-guid: 5b5fe735917c8442082c9a49386e0dd5
-timeCreated: 1519696325
+guid: 07e6b493547020d4d986e18910b2878e
+timeCreated: 1520025228
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: initialShadingGroup1
+    2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Sand_PlanetMed:ZBrush_defualt_group
+    4300000: AsteroidFBX3LO
     9500000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: initialShadingGroup1
-    second: {fileID: 2100000, guid: af563e2e874d54d998824e272bd7102e, type: 2}
+      name: lambert1
+    second: {fileID: 2100000, guid: badf8594440eb8f4c96876e2051ced15, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
