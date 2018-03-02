@@ -12,20 +12,21 @@ public class SpawnDespawn : MonoBehaviour
 
     private GameObject spawnedWell;
     private GameObject MainCamera;
-    private bool onSpawn = true;
+
+    private bool activeWell = false;
 
     private void Start()
     {
         MainCamera = GameObject.Find("Main Camera");
     }
-    
+
     void Update()
     {
 
-        if (Input.GetMouseButtonDown(0) && gameObject.GetComponent<PlayerController>().canSpawn && onSpawn)
+        if (!activeWell && Input.GetMouseButtonDown(0) && (gameObject.GetComponent<PlayerController>().getState() == PlayerController.PlayerState.Moving || gameObject.GetComponent<PlayerController>().getState() == PlayerController.PlayerState.MaxSpeed))
         {
+            activeWell = true;
             gameObject.GetComponent<ObjectiveIndicator>().externalPause = true;
-            onSpawn = false;
             touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             Physics.Raycast(touchRay, out touchHit);
             if (touchHit.transform.tag == "Clickable")
@@ -33,15 +34,15 @@ public class SpawnDespawn : MonoBehaviour
 
                 spawnedWell = Instantiate(GravityWell, touchHit.point, Quaternion.identity);
 
-                MainCamera.GetComponent<CameraController>().CenterOnSpawnedGW(touchHit.point);
+                //MainCamera.GetComponent<CameraController>().CenterOnSpawnedGW(touchHit.point);
             }
 
         }
-        else if (Input.GetMouseButtonDown(0) && !onSpawn)
+        else if (Input.GetMouseButtonDown(0))
         {
+            activeWell = false;
             gameObject.GetComponent<ObjectiveIndicator>().externalPause = false;
 
-            onSpawn = true;
             //gameObject.GetComponent<PlayerController>().setWhirl(false);
             gameObject.GetComponent<PlayerController>().Launch();
 
@@ -51,20 +52,23 @@ public class SpawnDespawn : MonoBehaviour
 
         }
 
-        if(spawnedWell)
+        if (spawnedWell)
         {
             float distance = (spawnedWell.transform.position - transform.position).magnitude;
             //float distance= 10f;
+
+            //FIX THIS SECTION
             if (distance < 5f)
             {
                 gameObject.GetComponent<ObjectiveIndicator>().externalPause = false;
 
-                onSpawn = true;
                 //gameObject.GetComponent<PlayerController>().setWhirl(false);
 
 
-                Destroy(spawnedWell);
-                MainCamera.GetComponent<CameraController>().setCenteredOnGW(false);
+                //Destroy(spawnedWell);
+                ForcedDeSpawn();
+
+                //MainCamera.GetComponent<CameraController>().setCenteredOnGW(false);
 
                 //MainCamera.GetComponent<CameraController>().reCenter();
 
@@ -75,7 +79,7 @@ public class SpawnDespawn : MonoBehaviour
 
     public void ForcedDeSpawn()
     {
-        onSpawn = true;
+        activeWell = false;
         //gameObject.GetComponent<PlayerController>().setWhirl(false);
         gameObject.GetComponent<PlayerController>().Launch();
 

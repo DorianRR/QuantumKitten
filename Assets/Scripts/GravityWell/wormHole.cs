@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class wormHole : MonoBehaviour {
-
-	
-
+public class wormHole : MonoBehaviour
+{
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.transform.tag == "Player")
+        if (other.transform.tag == "Player")
         {
             other.gameObject.GetComponent<PlayerController>().setReversed(true);
             other.gameObject.GetComponent<PlayerController>().animations.SetBool("hitBlackHole", true);
@@ -34,7 +32,7 @@ public class wormHole : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.transform.tag == "Player")
+        if (other.transform.tag == "Player")
         {
 
         }
