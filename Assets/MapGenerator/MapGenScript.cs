@@ -15,12 +15,13 @@ public class MapGenScript : MonoBehaviour {
     private GameObject[] prefabClusterCyan;
     private GameObject[] prefabClusterMagenta;
 
-    public GameObject[] prefabFloor;
-    public GameObject[] prefabWall;
-    public GameObject[] prefabCurveL;
-    public GameObject[] prefabDiagonal;
-	public GameObject[] prefabCollumn;
-    public GameObject[] prefabCeiling;
+    public GameObject[] prefabBoundary;
+	public GameObject[] prefabBlackHoleIn;
+    public GameObject[] prefabBlackHoleOut;
+    public GameObject[] prefabBouncyThing;
+    public GameObject[] prefabDestructableA;
+	public GameObject[] prefabDestructableB;
+    
     public Texture2D Map;
 
     private int width;
@@ -96,50 +97,51 @@ public class MapGenScript : MonoBehaviour {
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
                 Color pixelColor = pixels[i * height + j]; //Each color prefab is assign as follows:
-				if (pixelColor == Color.white) { //Boundary
-                    if (prefabFloor.Length != 0)
-                    {
-                        GameObject inst = GameObject.Instantiate(randomPrefab(prefabFloor), trans);
-                        inst.transform.position = new Vector3(j * multiplierFactor, 0, i * multiplierFactor);
-                        inst.transform.Rotate(new Vector3(0, FindRotationW(pixels, i, j), 0), Space.Self);
-                    }
+				if (pixelColor == Color.white)  //Boundary  == White
+				{
+					if(prefabBoundary.Length!=0) 
+					{
+                   		GameObject inst = GameObject.Instantiate(randomPrefab(prefabBoundary), trans);
+                    	inst.transform.position = new Vector3(j* multiplierFactor, 0, i* multiplierFactor);
+					}
                 }
-                if (pixelColor == Color.cyan) { //BlackholeIn
-                    if (prefabCeiling.Length != 0)
-                    {
-                        GameObject inst = GameObject.Instantiate(randomPrefab(prefabCeiling), trans);
-                        inst.transform.position = new Vector3(j * multiplierFactor, 0, i * multiplierFactor);
-                        inst.transform.Rotate(new Vector3(0, FindRotationW(pixels, i, j), 0), Space.Self);
-                    }
+                if (pixelColor == Color.cyan) //BlackHoleIn == Cyan
+				{ 
+					if(prefabBlackHoleIn.Length!=0) 
+					{
+                   		GameObject inst = GameObject.Instantiate(randomPrefab(prefabBlackHoleIn), trans);
+                    	inst.transform.position = new Vector3(j* multiplierFactor, 0, i* multiplierFactor);
+					}
                 }
-                if (pixelColor == Color.red) //BlackholeOut
+                if (pixelColor == Color.red) //BlackHoleOut == Red
                 { 
-					if(prefabWall.Length!=0) {
-                    	GameObject inst = GameObject.Instantiate(randomPrefab(prefabWall), trans);
+					if(prefabBlackHoleOut.Length!=0)
+					{
+                    	GameObject inst = GameObject.Instantiate(randomPrefab(prefabBlackHoleOut), trans);
                     	inst.transform.position = new Vector3(j * multiplierFactor, 0, i * multiplierFactor);
 						inst.transform.Rotate(new Vector3(0, FindRotationW(pixels, i, j), 0), Space.Self);
 					}
                 }
-                if (pixelColor == Color.green) //BouncyThing
+                if (pixelColor == Color.green) //BouncyThing == Green
                 {
-					if(prefabCurveL.Length!=0) {
-                    	GameObject inst = GameObject.Instantiate(randomPrefab(prefabCurveL), trans);
+					if(prefabBouncyThing.Length!=0) {
+                    	GameObject inst = GameObject.Instantiate(randomPrefab(prefabBouncyThing), trans);
                     	inst.transform.position = new Vector3(j * multiplierFactor, 0, i * multiplierFactor);
 						inst.transform.Rotate(new Vector3(0, FindRotationL(pixels, i, j), 0), Space.Self);
 					}
                 }
-				if (pixelColor == Color.magenta) //Destructable
+				if (pixelColor == Color.magenta) //DestructableA == Magenta
                 {
-					if(prefabDiagonal.Length!=0) {
-                    	GameObject inst = GameObject.Instantiate(randomPrefab(prefabDiagonal), trans);
+					if(prefabDestructableA.Length!=0) {
+                    	GameObject inst = GameObject.Instantiate(randomPrefab(prefabDestructableA), trans);
                     	inst.transform.position = new Vector3(j * multiplierFactor, 0, i * multiplierFactor);
 					}
 					//inst.transform.Rotate(new Vector3(0, 0, FindDiagonalRotation(pixels, i, j)));
                 }
-				if (pixelColor == Color.blue) //Collumn
+				if (pixelColor == Color.blue) //DestructableB == Blue
 				{
-					if(prefabCollumn.Length!=0) {
-						GameObject inst = GameObject.Instantiate(randomPrefab(prefabCollumn), trans);
+					if(prefabDestructableB.Length!=0) {
+						GameObject inst = GameObject.Instantiate(randomPrefab(prefabDestructableB), trans);
 						inst.transform.position = new Vector3(j * multiplierFactor, 0, i * multiplierFactor);
 						inst.transform.Rotate(new Vector3(0, FindRotationC(pixels, i, j), 0), Space.Self);
 					}
