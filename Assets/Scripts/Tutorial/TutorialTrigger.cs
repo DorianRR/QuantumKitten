@@ -18,9 +18,8 @@ public class TutorialTrigger : MonoBehaviour {
     {
         if(other.transform.tag == "Player")
         {
-            ChildCanvas.SetActive(true);
 
-            controller.CallFadeSlow();
+            controller.CallFadeSlow(ChildCanvas);
         }
     }
 

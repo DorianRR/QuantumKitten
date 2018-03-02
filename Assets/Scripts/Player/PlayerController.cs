@@ -1,17 +1,19 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
 
 
-    public Vector3 initialForce = new Vector3(10,7,0);
+    public Vector3 initialForce = new Vector3(10, 7, 0);
     public bool startedWhirl = false;
     public bool canSpawn = true;
     public float ImpulsePower = 20;
     public Animator animations;
 
-    public enum PlayerState {Moving,Bouncing,Stuck,MaxSpeed }
+
+    public enum PlayerState { Moving, Bouncing, Stuck, MaxSpeed, Teleporting }
     private PlayerState currentState;
 
     private Vector3 playerDirection;
@@ -21,32 +23,31 @@ public class PlayerController : MonoBehaviour {
     private float spinCountDown;
 
 
-    void Start ()
+    void Start()
     {
         gameObject.GetComponent<Rigidbody>().AddForce(initialForce, ForceMode.Impulse);
         animations = gameObject.GetComponentInChildren<Animator>();
         currentState = PlayerState.Moving;
-	}
-	
-	void Update ()
+    }
+
+    void Update()
     {
         Debug.Log(currentState);
-        //handles bounce cooldown
-        //if(currentState == PlayerState.Bouncing)
-        //{
-        //    bounceCD -= Time.deltaTime;
-        //    if(bounceCD<=0f)
-        //    {
-        //        currentState = PlayerState.Moving;
-        //        animations.SetBool("justBounced", false);
+        if (currentState == PlayerState.Bouncing)
+        {
+            bounceCD -= Time.deltaTime;
+            if (bounceCD <= 0f)
+            {
+                currentState = PlayerState.Moving;
+                animations.SetBool("justBounced", false);
 
-        //        bounceCD = 0.1f;
-        //    }
-        //}
+                bounceCD = 0.1f;
+            }
+        }
 
-     
 
-        switch(currentState)
+
+        switch (currentState)
         {
             case PlayerState.Moving:
                 Move();
@@ -68,63 +69,40 @@ public class PlayerController : MonoBehaviour {
         {
             animations.SetBool("hitAsteroid", false);
         }
-        
+
     }
 
     private void OnCollisionEnter(Collision coll)
     {
-        //if(coll.transform.tag == "Bounce" && (currentState == PlayerState.Moving || currentState == PlayerState.MaxSpeed))
-        //{
-        //    Vector3 collisionPoint = coll.contacts[0].point;
-        //    Vector3 reverseCollisionVector = -coll.contacts[0].normal;
-        //    Vector3 collisionNormal = new Vector3();
-        //    collisionPoint -= reverseCollisionVector;
-        //    RaycastHit hitInfo;
-        //    if (coll.collider.Raycast(new Ray(collisionPoint, reverseCollisionVector), out hitInfo, 1))
-        //    {
-        //        collisionNormal = hitInfo.normal;
-        //    }
-        //    Vector3 newVelocity = Vector3.Reflect(GetComponent<Rigidbody>().velocity, collisionNormal);
-        //    GetComponent<Rigidbody>().velocity = newVelocity * 0.8f;
-
-        //    currentState = PlayerState.Bouncing;
-        //    StartCoroutine(setState(PlayerState.Moving, 0.1f));
-
-
-            
-
-        //}
-
-        if(coll.transform.tag == "Asteroid")
+       
+        if (coll.transform.tag == "Asteroid")
         {
             spinCountDown = 0.5f;
             animations.SetBool("hitAsteroid", true);
         }
-        else if(coll.transform.tag == "WormHole")
+        else if (coll.transform.tag == "WormHole")
         {
             animations.SetBool("hitBlackHole", true);
         }
     }
 
-    private void OnCollisionExit(Collision collision)
-    {
-        if(collision.transform.tag == "Bounce")
-        {
-            gameObject.GetComponent<Rigidbody>().velocity *= 10;
-        }
-    }
+    
 
     public void setPlayerState(PlayerState newState)
     {
         currentState = newState;
     }
 
-
+    public void setPlayerState(PlayerState newState, float timer)
+    {
+        StartCoroutine(setState(newState, timer));
+    }
 
     public PlayerState getState()
     {
         return currentState;
     }
+
 
     private IEnumerator setState(PlayerState newState, float time)
     {
@@ -132,7 +110,7 @@ public class PlayerController : MonoBehaviour {
         currentState = newState;
     }
 
-  
+
 
     public void disableInput()
     {
@@ -162,21 +140,17 @@ public class PlayerController : MonoBehaviour {
 
     private void Move()
     {
-        //protect us from insane speed, set which moving animation we're using
-        if (GetComponent<Rigidbody>().velocity.magnitude > 60)
-        {
-            GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * 0.75f;
-        }
-        else if (GetComponent<Rigidbody>().velocity.magnitude > 45 && GetComponent<Rigidbody>().velocity.magnitude < 60)
+        
+        if (GetComponent<Rigidbody>().velocity.magnitude > 45 && GetComponent<Rigidbody>().velocity.magnitude < 60)
         {
             setPlayerState(PlayerState.MaxSpeed);
 
         }
-        
+
         animations.SetBool("fastSwim", false);
         animations.SetBool("slowSwim", true);
 
-        
+
 
 
         //Cat facing direction of movement used for anim
@@ -189,10 +163,16 @@ public class PlayerController : MonoBehaviour {
     }
     private void MaxSpeed()
     {
+
         animations.SetBool("fastSwim", true);
         animations.SetBool("slowSwim", false);
 
-        
+
+        //protect us from insane speed, set which moving animation we're using
+        if (GetComponent<Rigidbody>().velocity.magnitude > 80)
+        {
+            GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * 0.75f;
+        }
         //Cat facing direction of movement used for anim
         playerDirection = GetComponent<Rigidbody>().velocity.normalized;
         gameObject.GetComponentInChildren<Rigidbody>().transform.rotation = Quaternion.LookRotation(playerDirection); //transform.rotation =  Quaternion.LookRotation(playerDirection);
@@ -208,10 +188,10 @@ public class PlayerController : MonoBehaviour {
     }
     private void Stuck()
     {
-        
+
         playerDirection = GetComponent<Rigidbody>().velocity.normalized;
 
         gameObject.GetComponentInChildren<Rigidbody>().transform.rotation = Quaternion.LookRotation(-playerDirection); //transform.rotation =  Quaternion.LookRotation(playerDirection);
-        
+
     }
 }

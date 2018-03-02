@@ -385,6 +385,7 @@ GameObject:
   - component: {fileID: 856652851}
   - component: {fileID: 856652850}
   - component: {fileID: 856652845}
+  - component: {fileID: 856652848}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -461,6 +462,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 180, y: 180, z: 90}
+--- !u!114 &856652848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 856652843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ce6b2afd87d643499f4dc23a5873396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialForce: {x: 20, y: 0, z: 0}
+  startedWhirl: 0
+  canSpawn: 1
+  ImpulsePower: 20
+  animations: {fileID: 0}
 --- !u!54 &856652849
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -499,11 +516,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3937edfe923c7f944bbb6592f7e580b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialForce: {x: 20, y: 0, z: 0}
-  startedWhirl: 0
-  canSpawn: 1
-  ImpulsePower: 25
-  animations: {fileID: 0}
 --- !u!1 &937390229
 GameObject:
   m_ObjectHideFlags: 0
@@ -1676,15 +1688,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 1628398187827906, guid: c67f565d94d73544d833222d246d7daf, type: 2}
-      propertyPath: m_Name
-      value: GenericCubeTrigger
-      objectReference: {fileID: 0}
     - target: {fileID: 114177397921815996, guid: c67f565d94d73544d833222d246d7daf,
         type: 2}
       propertyPath: ChildCanvas
       value: 
       objectReference: {fileID: 1542559770}
+    - target: {fileID: 1628398187827906, guid: c67f565d94d73544d833222d246d7daf, type: 2}
+      propertyPath: m_Name
+      value: GenericCubeTrigger
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c67f565d94d73544d833222d246d7daf, type: 2}
   m_IsPrefabParent: 0

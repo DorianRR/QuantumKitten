@@ -28,6 +28,11 @@ public class TutorialController : MonoBehaviour {
         StartCoroutine(FadeSlow());
     }
 
+    public void CallFadeSlow(GameObject toPass)
+    {
+        StartCoroutine(FadeSlow(toPass));
+    }
+
     public void CallFadeToNormalSpeed()
     {
         StartCoroutine(FadeToNormalSpeed());
@@ -42,6 +47,20 @@ public class TutorialController : MonoBehaviour {
             Time.timeScale -= 0.02f;
             yield return new WaitForSecondsRealtime(0.01f);
         }
+        Time.timeScale = 0;
+        yield return null;
+    }
+
+    private IEnumerator FadeSlow(GameObject toActivate)
+    {
+        Player.GetComponent<PlayerController>().canSpawn = false;
+
+        while (Time.timeScale > 0.5f)
+        {
+            Time.timeScale -= 0.02f;
+            yield return new WaitForSecondsRealtime(0.01f);
+        }
+        toActivate.SetActive(true);
         Time.timeScale = 0;
         yield return null;
     }
