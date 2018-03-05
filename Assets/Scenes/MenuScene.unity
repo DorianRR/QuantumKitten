@@ -1134,6 +1134,143 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1228443643}
+--- !u!1001 &1359017775
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 114869530530156660, guid: 07ef441b686557f4697ea3ea53adec1b,
+        type: 2}
+      propertyPath: m_Trigger.m_Rules.m_Rules.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114869530530156660, guid: 07ef441b686557f4697ea3ea53adec1b,
+        type: 2}
+      propertyPath: m_Trigger.m_Rules.m_Rules.Array.data[0].m_Value.m_Target.m_ValidTypeNames.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4680953146133894, guid: 07ef441b686557f4697ea3ea53adec1b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4680953146133894, guid: 07ef441b686557f4697ea3ea53adec1b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4680953146133894, guid: 07ef441b686557f4697ea3ea53adec1b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4680953146133894, guid: 07ef441b686557f4697ea3ea53adec1b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4680953146133894, guid: 07ef441b686557f4697ea3ea53adec1b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4680953146133894, guid: 07ef441b686557f4697ea3ea53adec1b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4680953146133894, guid: 07ef441b686557f4697ea3ea53adec1b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4680953146133894, guid: 07ef441b686557f4697ea3ea53adec1b, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114869530530156660, guid: 07ef441b686557f4697ea3ea53adec1b,
+        type: 2}
+      propertyPath: m_Trigger.m_ApplyRules
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114869530530156660, guid: 07ef441b686557f4697ea3ea53adec1b,
+        type: 2}
+      propertyPath: m_Trigger.m_Rules.m_Rules.Array.data[0].m_Value.m_PropertyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114869530530156660, guid: 07ef441b686557f4697ea3ea53adec1b,
+        type: 2}
+      propertyPath: m_Trigger.m_Rules.m_Rules.Array.data[0].m_Value.m_ValueType
+      value: System.Boolean
+      objectReference: {fileID: 0}
+    - target: {fileID: 114869530530156660, guid: 07ef441b686557f4697ea3ea53adec1b,
+        type: 2}
+      propertyPath: m_Trigger.m_Rules.m_Rules.Array.data[0].m_Value.m_Target.m_ValidTypeNames.Array.data[0]
+      value: System.Boolean
+      objectReference: {fileID: 0}
+    - target: {fileID: 114869530530156660, guid: 07ef441b686557f4697ea3ea53adec1b,
+        type: 2}
+      propertyPath: m_Trigger.m_Rules.m_Rules.Array.data[0].m_Value.m_Target.m_ValidTypeNames.Array.data[1]
+      value: System.Boolean
+      objectReference: {fileID: 0}
+    - target: {fileID: 114869530530156660, guid: 07ef441b686557f4697ea3ea53adec1b,
+        type: 2}
+      propertyPath: m_Trigger.m_Rules.m_Rules.Array.data[0].m_Value.m_Target.m_ValidTypeNames.Array.data[2]
+      value: System.Decimal
+      objectReference: {fileID: 0}
+    - target: {fileID: 114869530530156660, guid: 07ef441b686557f4697ea3ea53adec1b,
+        type: 2}
+      propertyPath: m_Trigger.m_Rules.m_Rules.Array.data[0].m_Value.m_Target.m_ValidTypeNames.Array.data[3]
+      value: System.Double
+      objectReference: {fileID: 0}
+    - target: {fileID: 114869530530156660, guid: 07ef441b686557f4697ea3ea53adec1b,
+        type: 2}
+      propertyPath: m_Trigger.m_Rules.m_Rules.Array.data[0].m_Value.m_Target.m_ValidTypeNames.Array.data[4]
+      value: System.Single
+      objectReference: {fileID: 0}
+    - target: {fileID: 114869530530156660, guid: 07ef441b686557f4697ea3ea53adec1b,
+        type: 2}
+      propertyPath: m_Trigger.m_Rules.m_Rules.Array.data[0].m_Value.m_Target.m_ValidTypeNames.Array.data[5]
+      value: System.Int64
+      objectReference: {fileID: 0}
+    - target: {fileID: 114869530530156660, guid: 07ef441b686557f4697ea3ea53adec1b,
+        type: 2}
+      propertyPath: m_Trigger.m_Rules.m_Rules.Array.data[0].m_Value.m_Target.m_ValidTypeNames.Array.data[6]
+      value: System.Int16
+      objectReference: {fileID: 0}
+    - target: {fileID: 114869530530156660, guid: 07ef441b686557f4697ea3ea53adec1b,
+        type: 2}
+      propertyPath: m_Trigger.m_Rules.m_Rules.Array.data[0].m_Value.m_Target.m_ValidTypeNames.Array.data[7]
+      value: System.String
+      objectReference: {fileID: 0}
+    - target: {fileID: 114869530530156660, guid: 07ef441b686557f4697ea3ea53adec1b,
+        type: 2}
+      propertyPath: m_Trigger.m_Rules.m_Rules.Array.data[0].m_Value.m_Target.m_Type
+      value: System.Boolean
+      objectReference: {fileID: 0}
+    - target: {fileID: 114869530530156660, guid: 07ef441b686557f4697ea3ea53adec1b,
+        type: 2}
+      propertyPath: m_Trigger.m_Rules.m_Rules.Array.data[0].m_Target.m_Target
+      value: 
+      objectReference: {fileID: 2094407239}
+    - target: {fileID: 114869530530156660, guid: 07ef441b686557f4697ea3ea53adec1b,
+        type: 2}
+      propertyPath: m_Trigger.m_Rules.m_Rules.Array.data[0].m_Target.m_Path
+      value: isInstiantiated
+      objectReference: {fileID: 0}
+    - target: {fileID: 114869530530156660, guid: 07ef441b686557f4697ea3ea53adec1b,
+        type: 2}
+      propertyPath: m_Trigger.m_Rules.m_Rules.Array.data[0].m_Target.m_Type
+      value: System.Boolean
+      objectReference: {fileID: 0}
+    - target: {fileID: 114869530530156660, guid: 07ef441b686557f4697ea3ea53adec1b,
+        type: 2}
+      propertyPath: m_Trigger.m_Rules.m_Rules.Array.data[0].m_Value.m_FixedType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114869530530156660, guid: 07ef441b686557f4697ea3ea53adec1b,
+        type: 2}
+      propertyPath: m_Trigger.m_Rules.m_Rules.Array.data[0].m_Value.m_Value
+      value: True
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 07ef441b686557f4697ea3ea53adec1b, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1647475322
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,3 +1547,9 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1819837310}
+--- !u!114 &2094407239 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114775627963157934, guid: 07ef441b686557f4697ea3ea53adec1b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1359017775}
+  m_Script: {fileID: 11500000, guid: 35f06e96d6b501f41845a9cc22af82eb, type: 3}

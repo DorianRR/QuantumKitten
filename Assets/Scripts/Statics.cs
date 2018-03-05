@@ -29,21 +29,43 @@ public class Statics : MonoBehaviour {
     [HideInInspector]
     public bool beenToGame;
 
+
+    [HideInInspector]
+    public bool isInstiantiated = false;
+
     
-    void Awake ()
+    void Start ()
     {
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
+
+        if(Instance == null)
+        {
+            Instance = this;
+            isInstiantiated = true;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+
+            Destroy(gameObject);
+        }
+
 	}
 
-    void Start()
-    {
-        SceneManager.LoadScene(0);
-    }
+    //void Start()
+    //{
+    //    SceneManager.LoadScene(0);
+    //}
 	
 	void Update ()
     {
         fullGameSessionTimer += Time.unscaledDeltaTime;
+
+        if(Input.GetKeyDown(KeyCode.D))
+        {
+            Destroy(gameObject);
+        }
     }
+
+
 
 }
