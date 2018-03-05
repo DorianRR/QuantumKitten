@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class A_MenuController : MonoBehaviour {
 
-    private Statics staticInfo = Statics.Instance;
+    //private Statics staticInfo = Statics.Instance;
 
     [HideInInspector]
     public float timer = 0f;
@@ -28,33 +28,27 @@ public class A_MenuController : MonoBehaviour {
     }
 
 
-
-
-
-
-
-
     public void checkWentBackToTutorial()
     {
-        if (staticInfo.beenToGame)
+        if (Statics.Instance.beenToGame)
         {
-            staticInfo.wentBackToTutorial = true;
+            Statics.Instance.wentBackToTutorial = true;
         }
     }
 
     public void SetBeenToGame()
     {
-        staticInfo.beenToGame = true;
+        Statics.Instance.beenToGame = true;
     }
 
     public void SetClickTutorial(bool setBool)
     {
-        staticInfo.clickedTutorial = setBool;
+        Statics.Instance.clickedTutorial = setBool;
     }
 
     public void SetLeftTutorialEarly(bool setBool)
     {
-        staticInfo.leftTutorialEarly = setBool;
+        Statics.Instance.leftTutorialEarly = setBool;
     }
 
 
