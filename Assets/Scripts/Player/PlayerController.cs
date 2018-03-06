@@ -79,6 +79,30 @@ public class PlayerController : MonoBehaviour
             spinCountDown = 0.5f;
             animations.SetBool("hitAsteroid", true);
         }
+        else if (coll.transform.tag == "SpeedAsteroid")
+        {
+           
+            if(currentState == PlayerState.MaxSpeed)
+            {
+                spinCountDown = 0.5f;
+                animations.SetBool("hitAsteroid", true);
+            }
+            else
+            {
+                animations.SetBool("justBounced", true);
+                Vector3 collisionPoint = coll.contacts[0].point;
+                Vector3 reverseCollisionVector = -coll.contacts[0].normal;
+                Vector3 collisionNormal = new Vector3();
+                collisionPoint -= reverseCollisionVector;
+                RaycastHit hitInfo;
+                if (coll.collider.Raycast(new Ray(collisionPoint, reverseCollisionVector), out hitInfo, 4))
+                {
+                    collisionNormal = hitInfo.normal;
+                }
+                Vector3 newVelocity = Vector3.Reflect(GetComponent<Rigidbody>().velocity, collisionNormal);
+                GetComponent<Rigidbody>().velocity = newVelocity * 0.8f;
+            }
+        }
         else if (coll.transform.tag == "WormHole")
         {
             animations.SetBool("hitBlackHole", true);

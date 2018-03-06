@@ -558,7 +558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ccd1e8e992ce44d90d39004fd46b61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroid: {fileID: 1145007694099684, guid: 59928e43025fa244fa40be0faaaf610d, type: 2}
+  asteroid: {fileID: 1145007694099684, guid: fe8c1a5a45f623046b3cb740a286f3f7, type: 2}
   maxAsteroids: 50
   startingAsteroids: 20
   waveSize: 10
@@ -590,7 +590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a6207a3e935f84889e0571cfb5a4b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cube: {fileID: 1145007694099684, guid: 64e1ef2828aea26498a91cd55dfa8ab2, type: 2}
+  cube: {fileID: 1145007694099684, guid: fe8c1a5a45f623046b3cb740a286f3f7, type: 2}
   numberOfObjects: 25
   upperXBounds: 80
   lowerXBounds: -80
