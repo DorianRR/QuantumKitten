@@ -37,12 +37,12 @@ public class tutorianGravityEffect : MonoBehaviour
     private void realGravity(Collider player)
     {
         Rigidbody playerRB = player.GetComponent<Rigidbody>();
-        //PlayerController playerPC = player.GetComponent<PlayerController>();
+        PlayerController playerPC = player.GetComponent<PlayerController>();
 
         Vector3 playerDirection = playerRB.velocity.normalized;
         Vector3 distanceToWell = transform.position - player.transform.position;
         Vector3 directionToWell = distanceToWell.normalized;
-        //float angle = Vector3.Angle(directionToWell, playerDirection);
+        float angle = Vector3.Angle(directionToWell, playerDirection);
         playerRB.AddForce(playerRB.velocity.magnitude * gravityModifier / distanceToWell.magnitude * directionToWell, ForceMode.Force);
     }
 

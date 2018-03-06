@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 playerDirection;
 
     private float bounceCD = 0.1f;
+    private bool reversed = false;
     private float spinCountDown;
 
 
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(currentState);
         if (currentState == PlayerState.Bouncing)
         {
             bounceCD -= Time.deltaTime;
@@ -154,6 +156,10 @@ public class PlayerController : MonoBehaviour
         animations.SetBool("justBounced", false);
     }
 
+    public void setReversed(bool set)
+    {
+        reversed = set;
+    }
 
     private void Move()
     {
