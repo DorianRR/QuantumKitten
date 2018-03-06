@@ -6,7 +6,14 @@ public class Asteroid : MonoBehaviour {
 
     public ParticleSystem explosion;
 
+    private A_GameController GameModeAnalytics;
+    
 
+    private void Awake()
+    {
+        GameModeAnalytics = GameObject.Find("GameController").GetComponent<A_GameController>();
+
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.transform.tag == "Player")
@@ -26,6 +33,7 @@ public class Asteroid : MonoBehaviour {
         Instantiate(explosion, transform.position, Quaternion.identity);
 
         yield return new WaitForSeconds(0.0f);
+        GameModeAnalytics.numAsteroidsDestroyed++;
         Destroy(gameObject);
 
 
