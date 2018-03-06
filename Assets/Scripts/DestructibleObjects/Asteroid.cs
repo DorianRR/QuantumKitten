@@ -18,6 +18,7 @@ public class Asteroid : MonoBehaviour {
     {
         if(collision.transform.tag == "Player")
         {
+            Debug.Log("TestHIt");
             StartCoroutine(DestroyAst());
         }
     }
@@ -25,9 +26,9 @@ public class Asteroid : MonoBehaviour {
     IEnumerator DestroyAst()
     {
 
-        Vector3 tempV = gameObject.transform.localScale;
-        GameObject temp = transform.GetChild(0).gameObject;
-        Vector3 currentPosition = temp.transform.position;
+        //Vector3 tempV = gameObject.transform.localScale;
+        //GameObject temp = transform.GetChild(0).gameObject;
+        //Vector3 currentPosition = temp.transform.position;
         //temp.SetActive(true);
 
         Instantiate(explosion, transform.position, Quaternion.identity);

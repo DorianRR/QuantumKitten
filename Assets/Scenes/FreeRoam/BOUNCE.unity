@@ -592,8 +592,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a6207a3e935f84889e0571cfb5a4b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cube: {fileID: 1145007694099684, guid: fe8c1a5a45f623046b3cb740a286f3f7, type: 2}
-  numberOfObjects: 25
+  asteroids:
+  - {fileID: 1145007694099684, guid: 64e1ef2828aea26498a91cd55dfa8ab2, type: 2}
+  - {fileID: 1274014975013128, guid: d55ee3c0289c7014ea5a248a5fe837e0, type: 2}
+  - {fileID: 1735375744684762, guid: ba3c3aa3d9154204d9a925b044dcc4d5, type: 2}
+  - {fileID: 1218117113382796, guid: 08f6aafff957d864d8a3323aace70a3e, type: 2}
+  numberOfObjects: 30
   upperXBounds: 80
   lowerXBounds: -80
   upperYBounds: 36
