@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class A_GameController : MonoBehaviour {
 
+    [HideInInspector]
+    public float timer = 0f;
+
+    [HideInInspector]
+    public int numAsteroidsDestroyed = 0;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -13,6 +19,7 @@ public class A_GameController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        timer += Time.unscaledDeltaTime;
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene(0);
