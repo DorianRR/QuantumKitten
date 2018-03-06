@@ -2,16 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Asteroid : MonoBehaviour {
+public class speedAsteroid : MonoBehaviour
+{
 
     public ParticleSystem explosion;
 
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.tag == "Player")
+        if (collision.transform.tag == "Player")
         {
-            StartCoroutine(DestroyAst());
+            if (collision.transform.GetComponent<PlayerController>().getState() == PlayerController.PlayerState.MaxSpeed)
+            {
+                StartCoroutine(DestroyAst());
+            }
         }
     }
 
@@ -33,7 +37,7 @@ public class Asteroid : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.transform.tag == "WormHole")
+        if (other.transform.tag == "WormHole")
         {
             Destroy(this.gameObject);
         }

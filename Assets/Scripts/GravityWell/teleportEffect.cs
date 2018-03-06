@@ -21,14 +21,14 @@ public class teleportEffect : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
-            
+
 
             int holeNumber = Random.Range(0, exitHoles.Length);
             collision.transform.GetComponent<Rigidbody>().velocity = Vector3.zero;
             Vector3 newDirection = calculateTrajectory(exitHoles[holeNumber].transform.position);
             newDirection.Normalize();
-            collision.transform.position = exitHoles[holeNumber].transform.position + new Vector3(0, 0, 205);
-            StartCoroutine(WaitABit(collision.gameObject, newDirection));
+            collision.transform.position += new Vector3(0, 0, 100);
+            StartCoroutine(WaitABit(collision.gameObject, newDirection, collision.transform.position,exitHoles[holeNumber].transform.position + new Vector3(0,0,100)));
         }
     }
 
@@ -49,18 +49,23 @@ public class teleportEffect : MonoBehaviour
         return newDirection;
     }
 
-    private IEnumerator WaitABit(GameObject collision, Vector3 direction)
+
+    private IEnumerator WaitABit(GameObject other, Vector3 direction, Vector3 source, Vector3 destination)
     {
-        collision.GetComponent<PlayerController>().animations.SetBool("hitBlackHole", false);
-        yield return new WaitForSeconds(2f);
+        other.GetComponent<PlayerController>().animations.SetBool("hitBlackHole", false);
+        float startTime = Time.time;
+        while (Time.time < startTime + 2.0f)
+        {
+            other.transform.position = Vector3.Lerp(source, destination, (Time.time - startTime) / 2.0f);
+            yield return null;
+        }
+        popOut(other, direction);
         
-        popOut(collision, direction);
-        collision.GetComponent<PlayerController>().setPlayerState(PlayerController.PlayerState.Moving);
     }
 
     private void popOut(GameObject collision, Vector3 newDirection)
     {
-        collision.transform.position += new Vector3(0, 0, -205);
+        collision.transform.position += new Vector3(0, 0, -100);
         collision.transform.GetComponent<Rigidbody>().AddForce(newDirection * 20, ForceMode.Impulse);
 
         collision.transform.GetComponent<PlayerController>().setPlayerState(PlayerController.PlayerState.Moving);

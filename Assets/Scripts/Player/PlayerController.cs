@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     public bool canSpawn = true;
     public float ImpulsePower = 20;
     public Animator animations;
-
 
     public enum PlayerState { Moving, Bouncing, Stuck, MaxSpeed, Teleporting }
     private PlayerState currentState;
@@ -80,6 +79,30 @@ public class PlayerController : MonoBehaviour
             spinCountDown = 0.5f;
             animations.SetBool("hitAsteroid", true);
         }
+        else if (coll.transform.tag == "SpeedAsteroid")
+        {
+           
+            if(currentState == PlayerState.MaxSpeed)
+            {
+                spinCountDown = 0.5f;
+                animations.SetBool("hitAsteroid", true);
+            }
+            else
+            {
+                animations.SetBool("justBounced", true);
+                Vector3 collisionPoint = coll.contacts[0].point;
+                Vector3 reverseCollisionVector = -coll.contacts[0].normal;
+                Vector3 collisionNormal = new Vector3();
+                collisionPoint -= reverseCollisionVector;
+                RaycastHit hitInfo;
+                if (coll.collider.Raycast(new Ray(collisionPoint, reverseCollisionVector), out hitInfo, 4))
+                {
+                    collisionNormal = hitInfo.normal;
+                }
+                Vector3 newVelocity = Vector3.Reflect(GetComponent<Rigidbody>().velocity, collisionNormal);
+                GetComponent<Rigidbody>().velocity = newVelocity * 0.8f;
+            }
+        }
         else if (coll.transform.tag == "WormHole")
         {
             animations.SetBool("hitBlackHole", true);
@@ -140,8 +163,12 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        
-        if (GetComponent<Rigidbody>().velocity.magnitude > 45 && GetComponent<Rigidbody>().velocity.magnitude < 60)
+        //protect us from insane speed, set which moving animation we're using
+        if (GetComponent<Rigidbody>().velocity.magnitude > 60)
+        {
+            GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * 0.75f;
+        }
+        else if (GetComponent<Rigidbody>().velocity.magnitude > 45 && GetComponent<Rigidbody>().velocity.magnitude < 60)
         {
             setPlayerState(PlayerState.MaxSpeed);
 
@@ -163,16 +190,10 @@ public class PlayerController : MonoBehaviour
     }
     private void MaxSpeed()
     {
-
         animations.SetBool("fastSwim", true);
         animations.SetBool("slowSwim", false);
 
 
-        //protect us from insane speed, set which moving animation we're using
-        if (GetComponent<Rigidbody>().velocity.magnitude > 80)
-        {
-            GetComponent<Rigidbody>().velocity = GetComponent<Rigidbody>().velocity * 0.75f;
-        }
         //Cat facing direction of movement used for anim
         playerDirection = GetComponent<Rigidbody>().velocity.normalized;
         gameObject.GetComponentInChildren<Rigidbody>().transform.rotation = Quaternion.LookRotation(playerDirection); //transform.rotation =  Quaternion.LookRotation(playerDirection);

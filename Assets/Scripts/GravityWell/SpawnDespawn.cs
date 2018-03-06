@@ -19,11 +19,11 @@ public class SpawnDespawn : MonoBehaviour
     {
         MainCamera = GameObject.Find("Main Camera");
     }
-    
+
     void Update()
     {
 
-        if (!activeWell && Input.GetMouseButtonDown(0) && (gameObject.GetComponent<PlayerController>().getState() == PlayerController.PlayerState.Moving  || gameObject.GetComponent<PlayerController>().getState() == PlayerController.PlayerState.MaxSpeed))
+        if (!activeWell && Input.GetMouseButtonDown(0) && (gameObject.GetComponent<PlayerController>().getState() == PlayerController.PlayerState.Moving || gameObject.GetComponent<PlayerController>().getState() == PlayerController.PlayerState.MaxSpeed))
         {
             activeWell = true;
             gameObject.GetComponent<ObjectiveIndicator>().externalPause = true;
@@ -66,7 +66,7 @@ public class SpawnDespawn : MonoBehaviour
 
 
                 //Destroy(spawnedWell);
-                ForcedDeSpawn();    
+                ForcedDeSpawn();
 
                 //MainCamera.GetComponent<CameraController>().setCenteredOnGW(false);
 

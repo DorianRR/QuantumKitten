@@ -12,15 +12,30 @@ public class TutorialTrigger : MonoBehaviour {
     {
         controller = GameObject.Find("Test").GetComponent<TutorialController>();
 	}
-
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
 
     void OnTriggerEnter(Collider other)
     {
         if(other.transform.tag == "Player")
         {
+            StartCoroutine(ThereHasToBeABetterWayToWait());
 
-            controller.CallFadeSlow(ChildCanvas);
+            controller.CallFadeSlow();
         }
     }
 
+    IEnumerator ThereHasToBeABetterWayToWait()
+    {
+        //WHY IS THIS NOT WORKING WAAAAT TERMINATING AT THE YIELD
+        Debug.Log("Start");
+       
+        yield return new WaitForSeconds(0.5f);
+        Debug.Log("Stop");
+        ChildCanvas.SetActive(true);
+
+    }
 }
