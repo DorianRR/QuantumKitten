@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 509d38ffe41e7af41bbf7584bba41c54
-timeCreated: 1519967526
+timeCreated: 1520359743
 licenseType: Free
 SubstanceImporter:
   externalObjects: {}
@@ -26,7 +26,7 @@ SubstanceImporter:
     materialInformation:
       serializedVersion: 5
       offset: {x: 0, y: 0}
-      scale: {x: 5, y: 5}
+      scale: {x: 10, y: 10}
       generateMipmaps: 1
       generateAllOutputs: 0
       animationUpdateRate: 42
