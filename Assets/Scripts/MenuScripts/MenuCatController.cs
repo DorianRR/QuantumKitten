@@ -5,17 +5,20 @@ using UnityEngine.UI;
 
 public class MenuCatController : MonoBehaviour {
 
-    private float rotationDegrees = 0;
+    private A_MenuController Analytics;
 
+    private float rotationDegrees = 0;
     private Vector3 rotationVector;
+    
     private float x, y;
-    float speed = 10f;
+    private float speed = 10f;
 
 
     // Use this for initialization
     void Start ()
     {
         rotationVector = gameObject.transform.position;
+        Analytics = GameObject.Find("Controller").GetComponentInChildren<A_MenuController>();
 
     }
 
@@ -34,7 +37,12 @@ public class MenuCatController : MonoBehaviour {
     {
         speed = 10f;
         x = -Input.GetAxis("Mouse X");
-        y = Input.GetAxis("Mouse Y");        
-       
+        y = Input.GetAxis("Mouse Y");
+    }
+
+    void OnMouseUp()
+    {
+        Analytics.incrementCatSpins();
+
     }
 }
