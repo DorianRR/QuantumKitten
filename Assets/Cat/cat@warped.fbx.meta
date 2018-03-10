@@ -1,0 +1,304 @@
+fileFormatVersion: 2
+guid: 78e38608259845847aa71cdcda39f91c
+timeCreated: 1519324182
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: antenna1
+    100002: antenna1_grp
+    100004: antenna2
+    100006: antenna2_grp
+    100008: antenna3
+    100010: antenna3_grp
+    100012: antenna4
+    100014: antenna4_grp
+    100016: antenna5
+    100018: antenna5_grp
+    100020: antenna_ctrl
+    100022: antenna_ctrl2
+    100024: antenna_ctrl3
+    100026: antenna_ctrl4
+    100028: antenna_ctrl5
+    100030: backhips
+    100032: BL_ctrl
+    100034: BL_ctrl3FK2
+    100036: BL_ctrl3FK2 1
+    100038: BL_ctrlFK1
+    100040: BL_ctrlFK2
+    100042: BL_ctrlFK2 1
+    100044: BL_ctrlFK3
+    100046: BL_leg2_BOUND
+    100048: BL_leg2_FK
+    100050: BL_leg2_IK
+    100052: BL_leg3_BOUND
+    100054: BL_leg3_FK
+    100056: BL_leg3_IK
+    100058: BL_leg_BOUND
+    100060: BL_leg_FK
+    100062: BL_leg_IK
+    100064: bobble
+    100066: body
+    100068: body 1
+    100070: BR_ctrl
+    100072: BR_leg2_FK
+    100074: BR_leg2_IK
+    100076: BR_leg2_IK_BOUND
+    100078: BR_leg3_FK
+    100080: BR_leg3_IK
+    100082: BR_leg3_IK_BOUND
+    100084: BR_leg_FK
+    100086: BR_leg_FK1_BOUND
+    100088: BR_leg_IK
+    100090: //RootNode
+    100092: FL_ctrl
+    100094: FL_ctrl2IK
+    100096: FL_ctrl3FK
+    100098: FL_ctrlFK
+    100100: FL_leg2_bound
+    100102: FL_leg2_FK
+    100104: FL_leg2_IK
+    100106: FL_leg3_bound
+    100108: FL_leg3_FK
+    100110: FL_leg3_IK
+    100112: FL_leg4_bound
+    100114: FL_leg5_FK
+    100116: FL_leg_IK
+    100118: FR_ctrl
+    100120: FR_ctrl2IK
+    100122: FR_ctrl3FK
+    100124: FR_ctrlFK1
+    100126: FR_leg2_BOUND
+    100128: FR_leg2_FK
+    100130: FR_leg2_IK
+    100132: FR_leg3_BOUND
+    100134: FR_leg3_FK
+    100136: FR_leg3_IK
+    100138: FR_leg_BOUND
+    100140: FR_leg_FK
+    100142: FR_leg_IK
+    100144: frontHips_ctrl
+    100146: geo
+    100148: Head
+    100150: head
+    100152: head_ctrl
+    100154: helmet
+    100156: IK_BL_leg
+    100158: IK_BR_leg
+    100160: IK_FL_leg
+    100162: IK_FR_leg
+    100164: IKFKSwitch_BL
+    100166: IKFKSwitch_BR
+    100168: IKFKSwitch_FL
+    100170: IKFKSwitch_FR
+    100172: neck
+    100174: neck_ctrl
+    100176: root
+    100178: root_ctrl
+    100180: spine1
+    100182: spine2
+    100184: tail
+    100186: tail2
+    100188: tail2_grp
+    100190: tail3
+    100192: tail3_grp
+    100194: tail4
+    100196: tail4_grp
+    100198: tail5
+    100200: tail5_grp
+    100202: tail_grp
+    400000: antenna1
+    400002: antenna1_grp
+    400004: antenna2
+    400006: antenna2_grp
+    400008: antenna3
+    400010: antenna3_grp
+    400012: antenna4
+    400014: antenna4_grp
+    400016: antenna5
+    400018: antenna5_grp
+    400020: antenna_ctrl
+    400022: antenna_ctrl2
+    400024: antenna_ctrl3
+    400026: antenna_ctrl4
+    400028: antenna_ctrl5
+    400030: backhips
+    400032: BL_ctrl
+    400034: BL_ctrl3FK2
+    400036: BL_ctrl3FK2 1
+    400038: BL_ctrlFK1
+    400040: BL_ctrlFK2
+    400042: BL_ctrlFK2 1
+    400044: BL_ctrlFK3
+    400046: BL_leg2_BOUND
+    400048: BL_leg2_FK
+    400050: BL_leg2_IK
+    400052: BL_leg3_BOUND
+    400054: BL_leg3_FK
+    400056: BL_leg3_IK
+    400058: BL_leg_BOUND
+    400060: BL_leg_FK
+    400062: BL_leg_IK
+    400064: bobble
+    400066: body
+    400068: body 1
+    400070: BR_ctrl
+    400072: BR_leg2_FK
+    400074: BR_leg2_IK
+    400076: BR_leg2_IK_BOUND
+    400078: BR_leg3_FK
+    400080: BR_leg3_IK
+    400082: BR_leg3_IK_BOUND
+    400084: BR_leg_FK
+    400086: BR_leg_FK1_BOUND
+    400088: BR_leg_IK
+    400090: //RootNode
+    400092: FL_ctrl
+    400094: FL_ctrl2IK
+    400096: FL_ctrl3FK
+    400098: FL_ctrlFK
+    400100: FL_leg2_bound
+    400102: FL_leg2_FK
+    400104: FL_leg2_IK
+    400106: FL_leg3_bound
+    400108: FL_leg3_FK
+    400110: FL_leg3_IK
+    400112: FL_leg4_bound
+    400114: FL_leg5_FK
+    400116: FL_leg_IK
+    400118: FR_ctrl
+    400120: FR_ctrl2IK
+    400122: FR_ctrl3FK
+    400124: FR_ctrlFK1
+    400126: FR_leg2_BOUND
+    400128: FR_leg2_FK
+    400130: FR_leg2_IK
+    400132: FR_leg3_BOUND
+    400134: FR_leg3_FK
+    400136: FR_leg3_IK
+    400138: FR_leg_BOUND
+    400140: FR_leg_FK
+    400142: FR_leg_IK
+    400144: frontHips_ctrl
+    400146: geo
+    400148: Head
+    400150: head
+    400152: head_ctrl
+    400154: helmet
+    400156: IK_BL_leg
+    400158: IK_BR_leg
+    400160: IK_FL_leg
+    400162: IK_FR_leg
+    400164: IKFKSwitch_BL
+    400166: IKFKSwitch_BR
+    400168: IKFKSwitch_FL
+    400170: IKFKSwitch_FR
+    400172: neck
+    400174: neck_ctrl
+    400176: root
+    400178: root_ctrl
+    400180: spine1
+    400182: spine2
+    400184: tail
+    400186: tail2
+    400188: tail2_grp
+    400190: tail3
+    400192: tail3_grp
+    400194: tail4
+    400196: tail4_grp
+    400198: tail5
+    400200: tail5_grp
+    400202: tail_grp
+    2100000: lambert4
+    2100002: lambert1
+    2100004: catSkin
+    4300000: helmet
+    4300002: bobble
+    4300004: body
+    4300006: Head
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: bobble
+    13700002: body
+    13700004: Head
+    13700006: helmet
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
