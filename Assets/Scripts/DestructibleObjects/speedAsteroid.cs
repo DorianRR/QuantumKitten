@@ -33,12 +33,16 @@ public class speedAsteroid : MonoBehaviour
         Vector3 currentPosition = temp.transform.position;
         //temp.SetActive(true);
 
-        Instantiate(explosion, transform.position, Quaternion.identity);
+        ParticleSystem newExplosion = Instantiate(explosion, transform.position, Quaternion.identity);
         Debug.Log("destroy speed ast");
         GameModeAnalytics.numAsteroidsDestroyed++;
-        yield return new WaitForSeconds(0.0f);
-        Destroy(gameObject);
+        // destroy particle system after play
 
+
+        //Destroy(explosion);
+        //Destroy(newExplosion);
+        Destroy(gameObject);
+        yield return null;
 
     }
 

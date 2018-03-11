@@ -17,10 +17,10 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         transform.position = (player.GetComponent<Rigidbody>().transform.position);
-        transform.position.Set(transform.position.x, transform.position.y, -22f);
+        transform.position.Set(transform.position.x, transform.position.y, -70f);
 
         offset = transform.position - player.transform.position;
-        offset = new Vector3(offset.x, offset.y, -22f);
+        offset = new Vector3(offset.x, offset.y, -70f);
 
     }
 

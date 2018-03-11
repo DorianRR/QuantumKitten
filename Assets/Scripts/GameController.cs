@@ -5,30 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
-	// Use this for initialization
+	public enum Level { Start, Middle, Boss}
+    private bool objectiveState;
+    private Level currentLevel;
+    
+    // Use this for initialization
 	void Start () {
-		
+        currentLevel = Level.Start;
+        objectiveState = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyUp(KeyCode.A))
-            puzzle1();
-        if (Input.GetKeyUp(KeyCode.S))
-            puzzle2();
-        if (Input.GetKeyUp(KeyCode.D))
-            freeRoam();
+       
     }
-    public void puzzle1()
+
+    public void changeLevel(Level newLevel)
     {
-        SceneManager.LoadScene("testLevel1");
+        currentLevel = newLevel;
+        objectiveState = false;
     }
-    public void puzzle2()
-    {
-        SceneManager.LoadScene("testLevel2");
-    }
-    public void freeRoam()
-    {
-        SceneManager.LoadScene("FreeRoam");
-    }
+  
 }
