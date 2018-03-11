@@ -36,5 +36,13 @@ public class S_ButtonController : MonoBehaviour {
         answer3 = input;
     }
 
+    public void FourthButton(string input)
+    {
+        answer4 = input;
+    }
+    public void FifthButton(string input)
+    {
+        answer5 = input;
+    }
 
 }
