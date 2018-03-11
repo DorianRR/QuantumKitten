@@ -40,7 +40,7 @@ public class A_GameController : MonoBehaviour {
         if(Input.GetMouseButtonUp(0))
         {
             clickCadenceCalculator++;
-            clickArray.Add()
+            //clickArray.Add();
         }
 
 
