@@ -7,6 +7,12 @@ public class speedAsteroid : MonoBehaviour
 
     public ParticleSystem explosion;
 
+    private A_GameController GameModeAnalytics;
+    private void Awake()
+    {
+        GameModeAnalytics = GameObject.Find("GameController").GetComponent<A_GameController>();
+
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -28,7 +34,8 @@ public class speedAsteroid : MonoBehaviour
         //temp.SetActive(true);
 
         Instantiate(explosion, transform.position, Quaternion.identity);
-
+        Debug.Log("destroy speed ast");
+        GameModeAnalytics.numAsteroidsDestroyed++;
         yield return new WaitForSeconds(0.0f);
         Destroy(gameObject);
 
