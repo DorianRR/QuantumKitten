@@ -39,7 +39,7 @@ public class speedAsteroid : MonoBehaviour
         // destroy particle system after play
 
 
-        //Destroy(explosion);
+        //Destroy(explosion.transform);
         //Destroy(newExplosion);
         Destroy(gameObject);
         yield return null;

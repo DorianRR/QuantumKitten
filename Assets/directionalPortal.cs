@@ -10,7 +10,7 @@ public class directionalPortal : MonoBehaviour
     public Vector3 exitDirection;
     public float moveTime;
     public bool destroyObject;
-
+    public GameController.Level changeLevel;
     void Start()
     {
 
@@ -66,7 +66,8 @@ public class directionalPortal : MonoBehaviour
         other.GetComponent<Rigidbody>().velocity = exitDirection.normalized * savedVelocity.magnitude;
         if(destroyObject)
         {
-            Destroy(exitPortal);
+            Destroy(exitPortal.transform);
         }
+            GameController.instance.changeLevel(changeLevel);
     }
 }
