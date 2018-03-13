@@ -5,7 +5,7 @@ using UnityEngine;
 public class RandomSpawn : MonoBehaviour
 {
 
-    public GameObject cube;
+    public GameObject[] asteroids;
 
     public int numberOfObjects;
 
@@ -31,7 +31,7 @@ public class RandomSpawn : MonoBehaviour
             position = new Vector3(Random.Range(upperXBounds, lowerXBounds), Random.Range(upperYBounds, lowerYBounds), 0);
             scale = new Vector3(Random.Range(upperSizeBounds, lowerSizeBounds), Random.Range(upperSizeBounds, lowerSizeBounds), Random.Range(upperSizeBounds, lowerSizeBounds));
 
-            GameObject newCube = Instantiate(cube, position, Quaternion.identity);
+            GameObject newCube = Instantiate(asteroids[Random.Range(0,asteroids.Length)], position, Quaternion.identity);
             newCube.transform.SetParent(GameObject.Find("FloatingObjects").transform);
 
 
