@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: e6ad12fd1ca434690bd9a8d9f0e2d2f4
-timeCreated: 1519759111
+guid: a780d72a8fc7948409719d67a00273b1
+timeCreated: 1520964060
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Sand Face_0
-    21300002: Sand Face_1
-    21300004: Sand Face_2
+    21300000: Lava Face_0
+    21300002: Lava Face_1
+    21300004: Lava Face_2
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -103,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sand Face_0
+      name: Lava Face_0
       rect:
         serializedVersion: 2
-        x: 112
-        y: 476
-        width: 392
-        height: 332
+        x: 0
+        y: 58
+        width: 43
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,13 +117,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sand Face_1
+      name: Lava Face_1
       rect:
         serializedVersion: 2
-        x: 524
-        y: 476
-        width: 392
-        height: 336
+        x: 71
+        y: 60
+        width: 41
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,13 +131,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sand Face_2
+      name: Lava Face_2
       rect:
         serializedVersion: 2
-        x: 312
-        y: 132
-        width: 420
-        height: 292
+        x: 36
+        y: 0
+        width: 49
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
