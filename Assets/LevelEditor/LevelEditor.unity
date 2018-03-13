@@ -290,6 +290,14 @@ MonoBehaviour:
   colorMappings:
   - color: {r: 0, g: 0, b: 0, a: 1}
     prefab: {fileID: 1803590382584134, guid: 34ace1fb4fbeeb340b89e408a32f6d2b, type: 2}
+  - color: {r: 1, g: 1, b: 0, a: 1}
+    prefab: {fileID: 1803590382584134, guid: 34ace1fb4fbeeb340b89e408a32f6d2b, type: 2}
+  - color: {r: 1, g: 0, b: 1, a: 1}
+    prefab: {fileID: 1803590382584134, guid: 34ace1fb4fbeeb340b89e408a32f6d2b, type: 2}
+  - color: {r: 0, g: 1, b: 1, a: 1}
+    prefab: {fileID: 1803590382584134, guid: 34ace1fb4fbeeb340b89e408a32f6d2b, type: 2}
+  - color: {r: 0.78431374, g: 0.19607843, b: 0.39215687, a: 1}
+    prefab: {fileID: 1803590382584134, guid: 34ace1fb4fbeeb340b89e408a32f6d2b, type: 2}
 --- !u!4 &1201229732
 Transform:
   m_ObjectHideFlags: 0

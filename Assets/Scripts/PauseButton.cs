@@ -12,6 +12,7 @@ public class PauseButton : MonoBehaviour
 
     }
 
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))

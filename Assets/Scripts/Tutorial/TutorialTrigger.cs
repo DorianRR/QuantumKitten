@@ -33,7 +33,7 @@ public class TutorialTrigger : MonoBehaviour {
         //WHY IS THIS NOT WORKING WAAAAT TERMINATING AT THE YIELD
         Debug.Log("Start");
        
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSecondsRealtime(0.5f);
         Debug.Log("Stop");
         ChildCanvas.SetActive(true);
 
