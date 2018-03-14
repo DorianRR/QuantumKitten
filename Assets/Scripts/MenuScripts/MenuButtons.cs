@@ -15,6 +15,11 @@ public class MenuButtons : MonoBehaviour {
 		
 	}
 
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     public void PlayButton()
     {
         SceneManager.LoadScene(1);
@@ -23,5 +28,10 @@ public class MenuButtons : MonoBehaviour {
     public void TutorialButton()
     {
         SceneManager.LoadScene(2);
+    }
+
+    public void SurveyButton()
+    {
+        SceneManager.LoadScene(3);
     }
 }
