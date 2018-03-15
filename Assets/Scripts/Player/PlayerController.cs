@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
         gameObject.GetComponent<Rigidbody>().AddForce(initialForce, ForceMode.Impulse);
         animations = gameObject.GetComponentInChildren<Animator>();
         currentState = PlayerState.Moving;
+        Time.timeScale = 1f;
     }
 
     void Update()
