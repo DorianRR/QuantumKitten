@@ -8,9 +8,8 @@ public class directionalPortal : MonoBehaviour
     public GameObject exitPortal;
     Vector3 savedVelocity;
     public Vector3 exitDirection;
-    public float moveTime;
-    public bool destroyObject;
-    public GameController.Level changeLevel;
+
+
     void Start()
     {
 
@@ -49,7 +48,7 @@ public class directionalPortal : MonoBehaviour
         {
             if (other.GetComponent<PlayerController>().getState() == PlayerController.PlayerState.Teleporting)
             {
-                other.GetComponent<PlayerController>().setPlayerState(PlayerController.PlayerState.Moving, moveTime);
+                other.GetComponent<PlayerController>().setPlayerState(PlayerController.PlayerState.Moving, 0.8f);
             }
         }
     }
@@ -57,17 +56,13 @@ public class directionalPortal : MonoBehaviour
     private IEnumerator WaitABit(Collider other, Vector3 source, Vector3 destination)
     {
         float startTime = Time.time;
-        while (Time.time < startTime + moveTime)
+        while (Time.time < startTime + 0.8f)
         {
-            other.transform.position = Vector3.Lerp(source, destination, (Time.time - startTime) / moveTime);
+            other.transform.position = Vector3.Lerp(source, destination, (Time.time - startTime) / 0.8f);
             yield return null;
         }
         other.transform.position -= new Vector3(0, 0, 100);
         other.GetComponent<Rigidbody>().velocity = exitDirection.normalized * savedVelocity.magnitude;
-        if(destroyObject)
-        {
-            Destroy(exitPortal.transform);
-        }
-            GameController.instance.changeLevel(changeLevel);
+
     }
 }
