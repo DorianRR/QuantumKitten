@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
+    public GameObject mainCamera;
     public static GameController instance = null;
     public enum Level { Start, Middle, Boss}
     private bool objectiveState;
@@ -56,7 +57,18 @@ public class GameController : MonoBehaviour {
        {
 
        }
+
+       if(Input.GetKeyDown(KeyCode.A))
+        {
+            Debug.Log("testint");
+            mainCamera.GetComponent<BlackHoleEffect>().gameObject.SetActive(true);
+
+        }
+
+
     }
+
+
 
     public void changeLevel(Level newLevel)
     {
@@ -67,7 +79,7 @@ public class GameController : MonoBehaviour {
 
     private bool checkAsteroids()
     {
-        if(level2Asteroids.transform.childCount == 0)
+        if (level2Asteroids.transform.childCount == 0) 
         {
             return true;
         }

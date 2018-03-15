@@ -32,7 +32,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(currentState);
         if (currentState == PlayerState.Bouncing)
         {
             bounceCD -= Time.deltaTime;
