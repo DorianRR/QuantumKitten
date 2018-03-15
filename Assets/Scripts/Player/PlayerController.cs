@@ -193,10 +193,7 @@ public class PlayerController : MonoBehaviour
         animations.SetBool("fastSwim", true);
         animations.SetBool("slowSwim", false);
 
-        if(GetComponent<Rigidbody>().velocity.magnitude < 45)
-        {
-            setPlayerState(PlayerState.Moving);
-        }
+
         //Cat facing direction of movement used for anim
         playerDirection = GetComponent<Rigidbody>().velocity.normalized;
         gameObject.GetComponentInChildren<Rigidbody>().transform.rotation = Quaternion.LookRotation(playerDirection); //transform.rotation =  Quaternion.LookRotation(playerDirection);
