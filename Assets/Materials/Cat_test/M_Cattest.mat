@@ -82,7 +82,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _ShadowCoverage: 0
+    - _ShadowCoverage: 0.16
     - _SmoothnessTextureChannel: 0
     - _SpecularCoverageArea: 1
     - _SpecularHighlights: 1
@@ -94,5 +94,5 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _NotLitColor: {r: 0, g: 0, b: 0, a: 1}
+    - _NotLitColor: {r: 0.44117647, g: 0.44117647, b: 0.44117647, a: 1}
     - _SpecularHighlightColor: {r: 0, g: 0, b: 0, a: 1}
