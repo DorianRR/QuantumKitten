@@ -17,7 +17,7 @@ public class Glow : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        temp.a = Mathf.PingPong(Time.time * .15f, .23f) + .1f;
+        temp.a = Mathf.PingPong(Time.time * .15f, 1f) + 0.6f;
 
         rend.material.color = temp;
 
