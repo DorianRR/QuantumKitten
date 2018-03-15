@@ -17,30 +17,24 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         transform.position = (player.GetComponent<Rigidbody>().transform.position);
-
+        transform.position = new Vector3(transform.position.x, transform.position.y, -22f);
 
         offset = transform.position - player.transform.position;
-        offset = new Vector3(offset.x, offset.y, -70f);
+
 
     }
 
     void LateUpdate()
     {
         transform.position = (player.GetComponent<Rigidbody>().transform.position + offset);
-        // CAMERA BOUNDS
+        //CAMERA BOUNDS
         float temp = ((Mathf.Abs(player.GetComponent<Rigidbody>().velocity.magnitude) - 10f) / (25f - 10f)) * 20f;
         temp = Mathf.Clamp(temp, 10f, 25f);
         gameObject.GetComponent<Camera>().orthographicSize =
             Mathf.Lerp(gameObject.GetComponent<Camera>().orthographicSize, temp, lerpRatio / 5 * Time.deltaTime);
         float tempOrthSize = gameObject.GetComponent<Camera>().orthographicSize;
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, (((tempOrthSize - 10)) * 2f) - 250, (-(tempOrthSize - 10) * 2f) + 250), Mathf.Clamp(transform.position.y, ((tempOrthSize - 10) - 200), (200 - (tempOrthSize - 10))), -22);
-        // CAMERA BOUNDS
-        //float temp = ((Mathf.Abs(player.GetComponent<Rigidbody>().velocity.magnitude) - 10f) / (25f - 10f)) * 20f;
-        //temp = Mathf.Clamp(temp, 10f, 25f);
-        //gameObject.GetComponent<Camera>().orthographicSize = 
-        //    Mathf.Lerp(gameObject.GetComponent<Camera>().orthographicSize, temp, lerpRatio/5 * Time.deltaTime);
-        //float tempOrthSize = gameObject.GetComponent<Camera>().orthographicSize;
-        //transform.position = new Vector3(Mathf.Clamp(transform.position.x, (((tempOrthSize-10))*2f)-70, (-(tempOrthSize - 10) * 2f) + 70), Mathf.Clamp(transform.position.y, ((tempOrthSize-10)-34), (35 - (tempOrthSize - 10))), -22);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, (((tempOrthSize - 10)) * 2f) - 300, (-(tempOrthSize - 10) * 2f) + 300), Mathf.Clamp(transform.position.y, ((tempOrthSize - 10) - 250), (250 - (tempOrthSize - 10))), -22);
+
 
     }
 

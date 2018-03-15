@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        //Debug.Log(currentState);
+        Debug.Log(currentState);
         if (currentState == PlayerState.Bouncing)
         {
             bounceCD -= Time.deltaTime;
@@ -193,7 +193,10 @@ public class PlayerController : MonoBehaviour
         animations.SetBool("fastSwim", true);
         animations.SetBool("slowSwim", false);
 
-
+        if(GetComponent<Rigidbody>().velocity.magnitude < 45)
+        {
+            setPlayerState(PlayerState.Moving);
+        }
         //Cat facing direction of movement used for anim
         playerDirection = GetComponent<Rigidbody>().velocity.normalized;
         gameObject.GetComponentInChildren<Rigidbody>().transform.rotation = Quaternion.LookRotation(playerDirection); //transform.rotation =  Quaternion.LookRotation(playerDirection);

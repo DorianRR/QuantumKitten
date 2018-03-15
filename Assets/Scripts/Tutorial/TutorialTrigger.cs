@@ -6,11 +6,13 @@ public class TutorialTrigger : MonoBehaviour {
 
     private TutorialController controller;
     public GameObject ChildCanvas;
+    public GameObject gWell1;
 
 	// Use this for initialization
 	void Start ()
     {
         controller = GameObject.Find("Test").GetComponent<TutorialController>();
+        gWell1.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -30,12 +32,15 @@ public class TutorialTrigger : MonoBehaviour {
 
     IEnumerator ThereHasToBeABetterWayToWait()
     {
-        //WHY IS THIS NOT WORKING WAAAAT TERMINATING AT THE YIELD
-        Debug.Log("Start");
-       
         yield return new WaitForSecondsRealtime(0.5f);
-        Debug.Log("Stop");
         ChildCanvas.SetActive(true);
 
+    }
+
+    public void spawnWell()
+    {
+        gWell1.SetActive(true);
+        controller.CallFadeToNormalSpeed();
+        ChildCanvas.SetActive(false);
     }
 }
