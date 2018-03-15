@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: b112dd403f5f7844b9bbb4daae1fef84
-timeCreated: 1520815653
+guid: 47b5b3a2607aa7f409d3da980b2f3e5a
+timeCreated: 1521141937
 licenseType: Pro
 ModelImporter:
   serializedVersion: 22
@@ -29,7 +29,7 @@ ModelImporter:
     400018: vac_fLeft_jt_07
     400020: vac_fLeft_jt_08
     400022: vac_fLeft_jt_09
-    2100000: lambert1
+    2100000: lambert2
     4300000: vac_fLeft
     9500000: //RootNode
     13700000: vac_fLeft
