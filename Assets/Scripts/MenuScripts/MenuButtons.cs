@@ -34,4 +34,10 @@ public class MenuButtons : MonoBehaviour {
     {
         SceneManager.LoadScene(2);
     }
+
+    public void QuitApp()
+    {
+        Debug.Log("Quit");
+        Application.Quit();
+    }
 }
