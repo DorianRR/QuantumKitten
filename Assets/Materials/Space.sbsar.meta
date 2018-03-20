@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 509d38ffe41e7af41bbf7584bba41c54
-timeCreated: 1520359743
+timeCreated: 1521481917
 licenseType: Free
 SubstanceImporter:
   externalObjects: {}
@@ -17,7 +17,7 @@ SubstanceImporter:
     inputs:
     - name: $randomseed
       value:
-        scalar[0]: 0
+        scalar[0]: 8726
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -26,7 +26,7 @@ SubstanceImporter:
     materialInformation:
       serializedVersion: 5
       offset: {x: 0, y: 0}
-      scale: {x: 15, y: 15}
+      scale: {x: 10, y: 10}
       generateMipmaps: 1
       generateAllOutputs: 0
       animationUpdateRate: 42

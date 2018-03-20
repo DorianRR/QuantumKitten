@@ -8,6 +8,7 @@ public class directionalPortal : MonoBehaviour
     public GameObject exitPortal;
     Vector3 savedVelocity;
     public Vector3 exitDirection;
+    public GameController.Level newLevel;
 
 
     void Start()
@@ -63,6 +64,6 @@ public class directionalPortal : MonoBehaviour
         }
         other.transform.position -= new Vector3(0, 0, 100);
         other.GetComponent<Rigidbody>().velocity = exitDirection.normalized * savedVelocity.magnitude;
-
+        GameController.instance.changeLevel(newLevel);
     }
 }

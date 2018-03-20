@@ -81,7 +81,9 @@ public class GameController : MonoBehaviour {
     {
         if (level2Asteroids.transform.childCount == 0) 
         {
+            Debug.Log("asteroids down");
             return true;
+
         }
         else
         {
