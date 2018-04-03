@@ -33,7 +33,6 @@ public class GameController : MonoBehaviour {
         level2Asteroids = GameObject.Find("Level2Asteroids");
         level2Exit = GameObject.Find("level2Exit");
         level2Exit.SetActive(false);
-        Debug.Log(level2Asteroids.transform.childCount);
 	}
 	
 	// Update is called once per frame
