@@ -67,18 +67,26 @@ public class TutorialSpawn : MonoBehaviour
         }
     }
 
-    public void ForcedDeSpawn()
+    public void ButtonSpawn()
     {
-        onSpawn = true;
-        //gameObject.GetComponent<PlayerController>().setWhirl(false);
-        gameObject.GetComponent<PlayerController>().Launch();
+        //touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //Physics.Raycast(touchRay, out touchHit);
+        spawnedWell = Instantiate(GravityWell, new Vector3(-45, 0, 0), Quaternion.identity);
 
-
-        Destroy(spawnedWell);
-        MainCamera.GetComponent<CameraController>().setCenteredOnGW(false);
-
-        //MainCamera.GetComponent<CameraController>().reCenter();
     }
 
+    public void ForcedDeSpawn()
+        {
+            onSpawn = true;
+            //gameObject.GetComponent<PlayerController>().setWhirl(false);
+            gameObject.GetComponent<PlayerController>().Launch();
 
-}
+
+            Destroy(spawnedWell);
+            MainCamera.GetComponent<CameraController>().setCenteredOnGW(false);
+
+            //MainCamera.GetComponent<CameraController>().reCenter();
+        }
+
+
+    }

@@ -8,8 +8,9 @@ public class TutorialController : MonoBehaviour {
 
 	void Start () 
     {
+        Player.GetComponent<PlayerController>().disableInput();
 
-	}
+    }
 
     void Update ()
     {

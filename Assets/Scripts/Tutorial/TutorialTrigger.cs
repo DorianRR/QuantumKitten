@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class TutorialTrigger : MonoBehaviour {
 
-    private TutorialController controller;
     public GameObject ChildCanvas;
     public GameObject gWell1;
 
-	// Use this for initialization
-	void Start ()
+    private TutorialController controller;
+    private GameObject Player;
+
+
+
+    // Use this for initialization
+    void Start ()
     {
-        controller = GameObject.Find("Test").GetComponent<TutorialController>();
+        controller = GameObject.Find("TutorialController").GetComponent<TutorialController>();
+        Player = GameObject.Find("Player");
+
         gWell1.SetActive(false);
+
+        Player.GetComponent<PlayerController>().canSpawn = false;
 	}
 	
 	// Update is called once per frame
