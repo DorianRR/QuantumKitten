@@ -115,7 +115,7 @@
                 
                 float3 combinedLight = (ambientLight + diffuseReflection) * blackLine + specularReflection + (textureEmissive.xyz * _EmitStrength);
 
-                fixed4 combinedTexture = float4(combinedLight, 1.0) * tex2D(_MainTex, i.uv); 
+                fixed4 combinedTexture = float4(combinedLight, 1.0) + tex2D(_MainTex, i.uv); 
 
 
                 return combinedTexture;
