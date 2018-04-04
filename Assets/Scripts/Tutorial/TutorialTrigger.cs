@@ -20,7 +20,6 @@ public class TutorialTrigger : MonoBehaviour {
 
         gWell1.SetActive(false);
 
-        Player.GetComponent<PlayerController>().canSpawn = false;
 	}
 	
 	// Update is called once per frame
