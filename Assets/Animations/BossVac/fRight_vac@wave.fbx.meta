@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: f54afedc0f24e744fbb8b8ff6f04689f
-timeCreated: 1521141516
-licenseType: Pro
+guid: ee33a8940fc27bd44b70e8a7e5a6dded
+timeCreated: 1522944979
+licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -58,7 +58,7 @@ ModelImporter:
       name: wave
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 100
+      lastFrame: 101
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
