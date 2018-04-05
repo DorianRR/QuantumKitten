@@ -12,10 +12,15 @@ public class CameraController : MonoBehaviour
     private bool centeredOnGW = false;
     private Vector3 offset;
     private Vector3 GWPosition;
-      
 
+
+    private void Awake()
+    {
+        player = GameObject.Find("Player");
+    }
     void Start()
     {
+        
         transform.position = (player.GetComponent<Rigidbody>().transform.position);
         transform.position = new Vector3(transform.position.x, transform.position.y, -22f);
 

@@ -20,7 +20,7 @@ public class VacuumScript : MonoBehaviour {
         {
             Debug.Log("vac");
             Vector3 forceDirection = transform.position - other.transform.position;
-            other.GetComponent<Rigidbody>().AddForce(forceDirection * 30, ForceMode.Force);
+            other.GetComponent<Rigidbody>().AddForce(forceDirection * 15, ForceMode.Force);
         }
     }
 }

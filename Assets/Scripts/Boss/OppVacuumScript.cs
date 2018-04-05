@@ -13,13 +13,13 @@ public class OppVacuumScript : MonoBehaviour {
 	void Update () {
 		
 	}
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
         {
             Debug.Log("oppvac");
             Vector3 forceDirection = other.transform.position - transform.position;
-            other.GetComponent<Rigidbody>().AddForce(forceDirection * 10, ForceMode.Force);
+            other.GetComponent<Rigidbody>().AddForce(forceDirection * 15, ForceMode.Force);
         }
     }
 }

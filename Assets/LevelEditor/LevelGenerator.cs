@@ -17,19 +17,25 @@ public class LevelGenerator : MonoBehaviour
     public ColorToPrefab Portal;
     public ColorToPrefab ExitHole;
     private ColorToPrefab[] colorMappings;
+    private Quaternion[] rotations;
 
     // Use this for initialization
     void Start () 
 	{
-		
-		GenerateLevel();
+        colorMappings = new ColorToPrefab[7];
+        rotations = new Quaternion[7];
+        for (int i = 0; i < 7; i++)
+            rotations[i] = Quaternion.identity;
         colorMappings[0] = Player;
         colorMappings[1] = Asteroid;
         colorMappings[2] = SpeedAsteroid;
         colorMappings[3] = Bumper;
         colorMappings[4] = SlowBumper;
         colorMappings[5] = NoTouchZone;
+        rotations[5] = Quaternion.Euler(-90, 0, 0);
         colorMappings[6] = Wall;
+        Debug.Log(colorMappings[6].color);
+        GenerateLevel();
     }
 
 	void GenerateLevel ()
@@ -50,21 +56,19 @@ public class LevelGenerator : MonoBehaviour
 	{
 		Color pixelColor = map.GetPixel(x,y);
 
-        Debug.Log("TEST TEST");
-
 		if (pixelColor.a == 0)
 		{
-			//The pixel is transparrent.  Let's ignor it!
 			return;
 		}
 
 
-		foreach (ColorToPrefab colorMapping in colorMappings)
+		for (int i=0;i<7;i++)
 		{
-			if (colorMapping.color.Equals(pixelColor))
+            if (colorMappings[i].color.Equals(pixelColor))
 			{
-				Vector2 position = new Vector2(x,y);
-				Instantiate(colorMapping.prefab, position, Quaternion.identity, transform);
+                Debug.Log("equal color");
+                Vector2 position = new Vector2(x,y);
+				Instantiate(colorMappings[i].prefab, position, rotations[i], transform);
 			}
 		}
 	}
