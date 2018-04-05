@@ -8,9 +8,11 @@ ModelImporter:
     100000: //RootNode
     400000: //RootNode
     2100000: lambert1
+    2100002: No Name
     2300000: //RootNode
     3300000: //RootNode
     4300000: Sphere.005
+    4300002: Sphere.000
   externalObjects: {}
   materials:
     importMaterials: 1

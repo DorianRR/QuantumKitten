@@ -1,16 +1,17 @@
 fileFormatVersion: 2
-guid: c336b58ecd780d24c9b37ea7d2de5e53
-timeCreated: 1520962594
+guid: b3d3a665da0766444b56e9b116f96174
+timeCreated: 1522343510
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: No Name
+    2100000: lambert1
+    2100002: lambert2
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Sphere.000
+    4300000: Sphere.005
   externalObjects: {}
   materials:
     importMaterials: 1

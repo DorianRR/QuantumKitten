@@ -45,7 +45,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 65
+  controlID: 124
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -88,7 +88,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 401
-    height: 426
+    height: 560
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 15}
@@ -111,9 +111,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 426
+    y: 560
     width: 1369
-    height: 521
+    height: 387
   m_MinSize: {x: 232, y: 271}
   m_MaxSize: {x: 10002, y: 10021}
   m_ActualView: {fileID: 13}
@@ -143,7 +143,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &7
 MonoBehaviour:
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 66
+  controlID: 78
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -229,11 +229,11 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1369
-    height: 426
+    height: 560
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 67
+  controlID: 53
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -251,7 +251,7 @@ MonoBehaviour:
     x: 401
     y: 0
     width: 968
-    height: 426
+    height: 560
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 16}
@@ -311,9 +311,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 518
+    y: 652
     width: 1367
-    height: 500
+    height: 366
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -327,19 +327,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/UIAssets
+    - Assets/Prefabs/Clouds+Wall
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/UIAssets
+  - Assets/Prefabs/Clouds+Wall
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\u0825896\Desktop\QuantumKitten\QuantumKitten\QuantumKitten
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 9c310000
-    m_LastClickedID: 12700
-    m_ExpandedIDs: 00000000f62f00001e3100004e310000843100007a330000ba3b0000bc3b000000ca9a3bffffff7f
+    m_SelectedIDs: 8c2e0100
+    m_LastClickedID: 77452
+    m_ExpandedIDs: 000000000e28000070290000b8290000fa290000282a00007c2a0000762c0000963100009831000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -367,7 +367,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f62f00001e3100004e3100008431000096310000e0310000263300007a330000ba3b0000bc3b0000
+    m_ExpandedIDs: 000000000e28000070290000b8290000fa290000762c00009631000098310000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -481,13 +481,13 @@ MonoBehaviour:
     x: 0
     y: 92
     width: 399
-    height: 405
+    height: 539
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 7a10f9ff84a5faff4a7afbffc292fbff00c1feff501cffff4691ffffe892ffffbea9ffffccacffff88c2ffffe2d1ffff46eeffff00000000064600004a4600006a460000
+    m_SelectedIDs: d8220100
+    m_LastClickedID: 74456
+    m_ExpandedIDs: 48d7f6ff9ed9f6ffa801f7ff664ef9ff0a8af9ff3a64fdff5a64fdff6064fdff0cccffff84fbffff00000000ee2d00001c2e00004a2e00008e2e0000f2e600009ae800003aee00008aee0000ceee00003cef000098ef0000baef00006c2301002a240100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -535,17 +535,17 @@ MonoBehaviour:
     x: 403
     y: 92
     width: 964
-    height: 405
+    height: 539
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 6132.25643373302
+  lastFramingTime: 7614.157987699191
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -90.440796, y: 3.7336931, z: -2.480236}
+    m_Target: {x: 31.69627, y: -15.294157, z: -22.033928}
     speed: 2
-    m_Value: {x: -90.440796, y: 3.7336931, z: -2.480236}
+    m_Value: {x: 31.69627, y: -15.294157, z: -22.033928}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -569,13 +569,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.18223415, y: 0.025660932, z: -0.0047577415, w: -0.9829088}
+    m_Target: {x: 0.11244665, y: 0.25687778, z: 0.030106818, w: -0.95940775}
     speed: 2
-    m_Value: {x: -0.18223415, y: 0.025660932, z: -0.0047577415, w: -0.9829088}
+    m_Value: {x: 0.11244665, y: 0.25687778, z: 0.030106818, w: -0.95940775}
   m_Size:
-    m_Target: 44.498478
+    m_Target: 118.97152
     speed: 2
-    m_Value: 44.498478
+    m_Value: 118.97152
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -612,7 +612,7 @@ MonoBehaviour:
     x: 403
     y: 92
     width: 964
-    height: 405
+    height: 539
   m_PersistentViewDataDictionary: {fileID: 0}
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
@@ -624,8 +624,8 @@ MonoBehaviour:
     m_VRangeLocked: 0
     m_HBaseRangeMin: -482
     m_HBaseRangeMax: 482
-    m_VBaseRangeMin: -194
-    m_VBaseRangeMax: 194
+    m_VBaseRangeMin: -261
+    m_VBaseRangeMax: 261
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -643,9 +643,9 @@ MonoBehaviour:
       x: 0
       y: 17
       width: 964
-      height: 388
+      height: 522
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 482, y: 194}
+    m_Translation: {x: 482, y: 261}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -653,14 +653,14 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -482
-      y: -194
+      y: -261
       width: 964
-      height: 388
+      height: 522
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 964, y: 405}
+  m_LastWindowPixelSize: {x: 964, y: 539}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -687,7 +687,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 518
+    y: 652
     width: 1367
-    height: 500
+    height: 366
   m_PersistentViewDataDictionary: {fileID: 0}

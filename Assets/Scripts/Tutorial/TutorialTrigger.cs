@@ -5,28 +5,20 @@ using UnityEngine;
 public class TutorialTrigger : MonoBehaviour {
 
     public GameObject ChildCanvas;
-    public GameObject gWell1;
 
     private TutorialController controller;
     private GameObject Player;
 
 
 
-    // Use this for initialization
     void Start ()
     {
         controller = GameObject.Find("TutorialController").GetComponent<TutorialController>();
         Player = GameObject.Find("Player");
 
-        gWell1.SetActive(false);
-
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
+	
     void OnTriggerEnter(Collider other)
     {
         if(other.transform.tag == "Player")
@@ -34,6 +26,11 @@ public class TutorialTrigger : MonoBehaviour {
             StartCoroutine(ThereHasToBeABetterWayToWait());
 
             controller.CallFadeSlow();
+        }
+
+        if(gameObject.name == "TriggerZone2")
+        {
+            StartCoroutine(LerpWall());
         }
     }
 
@@ -44,9 +41,20 @@ public class TutorialTrigger : MonoBehaviour {
 
     }
 
+    IEnumerator LerpWall()
+    {
+        GameObject temp = GameObject.Find("MovingBound");
+
+        while (Mathf.Abs(temp.transform.position.y) > 10f)
+        {
+            temp.transform.position = new Vector3(temp.transform.position.x, temp.transform.position.y - 0.15f, temp.transform.position.z);
+            yield return new WaitForSeconds(0.01f);
+
+        }
+    }
+
     public void spawnWell()
     {
-        gWell1.SetActive(true);
         controller.CallFadeToNormalSpeed();
         ChildCanvas.SetActive(false);
     }

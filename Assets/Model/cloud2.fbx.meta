@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: a4e078321d5858042b9d2e55c9a7fad5
-timeCreated: 1520962223
+guid: 772e5c200d546f64387d0010f5b2598d
+timeCreated: 1522343509
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -8,6 +8,7 @@ ModelImporter:
     100000: //RootNode
     400000: //RootNode
     2100000: No Name
+    2100002: lambert1
     2300000: //RootNode
     3300000: //RootNode
     4300000: Sphere.002
