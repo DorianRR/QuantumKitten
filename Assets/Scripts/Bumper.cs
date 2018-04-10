@@ -7,7 +7,7 @@ public class Bumper : MonoBehaviour {
 
     Animator anim;
 
-
+    
 
 
     // Use this for initialization

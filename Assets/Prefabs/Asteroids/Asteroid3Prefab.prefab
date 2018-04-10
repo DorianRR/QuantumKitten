@@ -56,6 +56,9 @@ GameObject:
   - component: {fileID: 33542702316707030}
   - component: {fileID: 23338783310015834}
   - component: {fileID: 95357994694766066}
+  - component: {fileID: 54235955881198292}
+  - component: {fileID: 135123754502831404}
+  - component: {fileID: 114768003955330328}
   m_Layer: 0
   m_Name: Asteroid3Prefab
   m_TagString: Asteroid
@@ -103,8 +106,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1816191270842362}
-  m_LocalRotation: {x: 0.000000081460335, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.341507, y: -30.163193, z: 0}
+  m_LocalRotation: {x: 0.000000081460335, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 22, y: 0.5, z: 57.5}
   m_LocalScale: {x: 300, y: 300, z: 300}
   m_Children:
   - {fileID: 4586415630232896}
@@ -207,6 +210,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1816191270842362}
   m_Mesh: {fileID: 4300000, guid: 07e6b493547020d4d986e18910b2878e, type: 3}
+--- !u!54 &54235955881198292
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1816191270842362}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 120
+  m_CollisionDetection: 0
 --- !u!95 &95357994694766066
 Animator:
   serializedVersion: 3
@@ -224,6 +242,31 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114768003955330328
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1816191270842362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2abe76a71f4a8447965deadc34b8714, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 198910663463996420, guid: 1091393c52b0cdf49b3f6cf66e030ddc,
+    type: 2}
+--- !u!135 &135123754502831404
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1816191270842362}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.018101927
+  m_Center: {x: -0.0022144176, y: 0.0050026393, z: 0.004062276}
 --- !u!198 &198080950693044022
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -71,7 +71,7 @@ public class TutorialSpawn : MonoBehaviour
     {
         //touchRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         //Physics.Raycast(touchRay, out touchHit);
-        spawnedWell = Instantiate(GravityWell, new Vector3(-45, 0, 0), Quaternion.identity);
+        spawnedWell = Instantiate(GravityWell, new Vector3(-55, 0, 0), Quaternion.identity);
 
     }
 

@@ -106,7 +106,7 @@ Material:
     - _OcclusionStrength: 1
     - _OutlineThickness: 0.288
     - _Parallax: 0.02
-    - _ShadowCoverage: 0
+    - _ShadowCoverage: -0.035
     - _Shininess: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularCoverageArea: 1

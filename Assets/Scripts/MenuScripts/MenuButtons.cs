@@ -25,14 +25,14 @@ public class MenuButtons : MonoBehaviour {
         SceneManager.LoadScene(1);
     }
 
-    //public void TutorialButton()
-    //{
-    //    SceneManager.LoadScene(2);
-    //}
+    public void TutorialButton()
+    {
+        SceneManager.LoadScene(2);
+    }
 
     public void SurveyButton()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 
     public void QuitApp()
