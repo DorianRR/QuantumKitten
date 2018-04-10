@@ -3661,7 +3661,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4977859479259556, guid: 33e5b596bfdfaae45ba312b79f9da710, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -10.1
+      value: -7.9
       objectReference: {fileID: 0}
     - target: {fileID: 4977859479259556, guid: 33e5b596bfdfaae45ba312b79f9da710, type: 2}
       propertyPath: m_LocalPosition.y
@@ -4773,7 +4773,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
