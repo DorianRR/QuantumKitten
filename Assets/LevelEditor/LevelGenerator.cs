@@ -18,10 +18,12 @@ public class LevelGenerator : MonoBehaviour
     public ColorToPrefab ExitHole;
     private ColorToPrefab[] colorMappings;
     private Quaternion[] rotations;
+    public CameraController testCam;
 
     // Use this for initialization
     void Start () 
 	{
+        testCam = GameObject.Find("Main Camera").GetComponent<CameraController>();
         colorMappings = new ColorToPrefab[7];
         rotations = new Quaternion[7];
         for (int i = 0; i < 7; i++)
@@ -55,6 +57,7 @@ public class LevelGenerator : MonoBehaviour
 	void GenerateTile (int x, int y)
 	{
 		Color pixelColor = map.GetPixel(x,y);
+        Debug.Log(pixelColor.GetHashCode());
 
 		if (pixelColor.a == 0)
 		{
@@ -68,7 +71,12 @@ public class LevelGenerator : MonoBehaviour
 			{
                 Debug.Log("equal color");
                 Vector2 position = new Vector2(x,y);
-				Instantiate(colorMappings[i].prefab, position, rotations[i], transform);
+				GameObject newObject = Instantiate(colorMappings[i].prefab, position, rotations[i], transform);
+                if(i==0)
+                {
+                    newObject.transform.name = "Player";
+                    testCam.player = newObject;
+                }
 			}
 		}
 	}

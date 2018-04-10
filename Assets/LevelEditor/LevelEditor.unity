@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  lerpRatio: 0
+  lerpRatio: 5
 --- !u!1 &960739585
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,16 +304,16 @@ MonoBehaviour:
   clickWall: {fileID: 1548909652659124, guid: c420010f0e36e734f88bfb1fbbec3f9d, type: 2}
   bgWall: {fileID: 1470478958902396, guid: b7fc616a743d4d24c99700c6552172d9, type: 2}
   Player:
-    color: {r: 0.97647065, g: 0.7254902, b: 0.054901965, a: 1}
+    color: {r: 1, g: 0.7254902, b: 0, a: 1}
     prefab: {fileID: 1437010891995358, guid: 18bf7fef32240d4419afa73d72bcdd35, type: 2}
   Asteroid:
-    color: {r: 0.9607844, g: 0, b: 0, a: 1}
+    color: {r: 1, g: 0, b: 0, a: 1}
     prefab: {fileID: 1145007694099684, guid: 64e1ef2828aea26498a91cd55dfa8ab2, type: 2}
   SpeedAsteroid:
-    color: {r: 0.8941177, g: 0, b: 0.97647065, a: 1}
+    color: {r: 0.91764706, g: 0, b: 0.9882353, a: 1}
     prefab: {fileID: 1145007694099684, guid: fe8c1a5a45f623046b3cb740a286f3f7, type: 2}
   Bumper:
-    color: {r: 0.21568629, g: 0, b: 0.9921569, a: 0}
+    color: {r: 0.15686275, g: 0, b: 1, a: 0}
     prefab: {fileID: 1762717845094188, guid: 6c07ea6c2aeec5a41bc7c78c82f43850, type: 2}
   SlowBumper:
     color: {r: 0, g: 0.5034485, b: 1, a: 1}
@@ -325,11 +325,12 @@ MonoBehaviour:
     color: {r: 0, g: 0, b: 0, a: 1}
     prefab: {fileID: 1090880108066608, guid: f043af9fc18199d41a4eded270714623, type: 2}
   Portal:
-    color: {r: 0.28235295, g: 1, b: 0.2627451, a: 1}
+    color: {r: 0, g: 1, b: 0.17254902, a: 1}
     prefab: {fileID: 1343059851238896, guid: 8163ced497bc538448958f3ad546725d, type: 2}
   ExitHole:
     color: {r: 0.6965518, g: 1, b: 0, a: 1}
     prefab: {fileID: 1589409101720882, guid: 770322afb9541b8408bdbcfc79a0e622, type: 2}
+  testCam: {fileID: 0}
 --- !u!4 &1201229732
 Transform:
   m_ObjectHideFlags: 0
