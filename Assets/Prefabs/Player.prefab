@@ -776,7 +776,6 @@ GameObject:
   - component: {fileID: 114387154049333198}
   - component: {fileID: 114597781190564526}
   - component: {fileID: 114534143228294826}
-  - component: {fileID: 136245570833421266}
   - component: {fileID: 135819154065071306}
   m_Layer: 0
   m_Name: Player
@@ -3200,19 +3199,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.0000002
   m_Center: {x: 0, y: 0.98, z: 0}
---- !u!136 &136245570833421266
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1437010891995358}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 1
-  m_Height: 2.5
-  m_Direction: 2
-  m_Center: {x: 0, y: 1, z: 0.58}
 --- !u!137 &137185897125079020
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
