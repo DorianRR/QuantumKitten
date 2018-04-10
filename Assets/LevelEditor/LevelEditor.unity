@@ -194,6 +194,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
+=======
+--- !u!114 &675519736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 675519731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f0e63e5c6fd209448992a4dd1a466fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  lerpRatio: 5
+>>>>>>> origin/idek
 --- !u!1 &960739585
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,6 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77728700851869d4b9cc7f7f7654ab4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   map: {fileID: 2800000, guid: b93e0d93d2a95614f8d30ec27f072c98, type: 3}
   colorMappings:
   - color: {r: 0, g: 0, b: 0, a: 1}
@@ -298,6 +315,39 @@ MonoBehaviour:
     prefab: {fileID: 1803590382584134, guid: 34ace1fb4fbeeb340b89e408a32f6d2b, type: 2}
   - color: {r: 0.78431374, g: 0.19607843, b: 0.39215687, a: 1}
     prefab: {fileID: 1803590382584134, guid: 34ace1fb4fbeeb340b89e408a32f6d2b, type: 2}
+=======
+  map: {fileID: 2800000, guid: d7bdd071ccd696a4197a27d650d9af77, type: 3}
+  clickWall: {fileID: 1548909652659124, guid: c420010f0e36e734f88bfb1fbbec3f9d, type: 2}
+  bgWall: {fileID: 1470478958902396, guid: b7fc616a743d4d24c99700c6552172d9, type: 2}
+  Player:
+    color: {r: 1, g: 0.7254902, b: 0, a: 1}
+    prefab: {fileID: 1437010891995358, guid: 18bf7fef32240d4419afa73d72bcdd35, type: 2}
+  Asteroid:
+    color: {r: 1, g: 0, b: 0, a: 1}
+    prefab: {fileID: 1145007694099684, guid: 64e1ef2828aea26498a91cd55dfa8ab2, type: 2}
+  SpeedAsteroid:
+    color: {r: 0.91764706, g: 0, b: 0.9882353, a: 1}
+    prefab: {fileID: 1145007694099684, guid: fe8c1a5a45f623046b3cb740a286f3f7, type: 2}
+  Bumper:
+    color: {r: 0.15686275, g: 0, b: 1, a: 0}
+    prefab: {fileID: 1762717845094188, guid: 6c07ea6c2aeec5a41bc7c78c82f43850, type: 2}
+  SlowBumper:
+    color: {r: 0, g: 0.5034485, b: 1, a: 1}
+    prefab: {fileID: 1165316087545406, guid: be7c1c0a32d7f0140b2d155a92c57d5e, type: 2}
+  NoTouchZone:
+    color: {r: 1, g: 1, b: 1, a: 1}
+    prefab: {fileID: 1486718958815410, guid: 6ed23c8904dbb4b4fb23e26a1df0e603, type: 2}
+  Wall:
+    color: {r: 0, g: 0, b: 0, a: 1}
+    prefab: {fileID: 1090880108066608, guid: f043af9fc18199d41a4eded270714623, type: 2}
+  Portal:
+    color: {r: 0, g: 1, b: 0.17254902, a: 1}
+    prefab: {fileID: 1343059851238896, guid: 8163ced497bc538448958f3ad546725d, type: 2}
+  ExitHole:
+    color: {r: 0.6965518, g: 1, b: 0, a: 1}
+    prefab: {fileID: 1589409101720882, guid: 770322afb9541b8408bdbcfc79a0e622, type: 2}
+  testCam: {fileID: 0}
+>>>>>>> origin/idek
 --- !u!4 &1201229732
 Transform:
   m_ObjectHideFlags: 0
