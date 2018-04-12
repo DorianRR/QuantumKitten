@@ -28,7 +28,7 @@ public class TutorialTrigger : MonoBehaviour {
             controller.CallFadeSlow();
         }
 
-        if(gameObject.name == "TriggerZone2")
+        if(gameObject.name == "TriggerZone2" && gameObject.name == "Player")
         {
             StartCoroutine(LerpWall());
         }

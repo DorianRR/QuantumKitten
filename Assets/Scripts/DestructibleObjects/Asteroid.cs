@@ -11,13 +11,16 @@ public class Asteroid : MonoBehaviour
     private void Awake()
     {
         GameModeAnalytics = GameObject.Find("GameController").GetComponent<A_GameController>();
-
+        gameObject.GetComponent<Rigidbody>().AddTorque(new Vector3(Random.Range(-2, 2), Random.Range(-2, 2), Random.Range(-2, 2)));
+        gameObject.GetComponent<Rigidbody>().velocity = new Vector3(Random.Range(-2, 2), Random.Range(-2, 2), 0);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.tag == "Player")
         {
+            gameObject.GetComponent<Rigidbody>().freezeRotation = true;
+
             StartCoroutine(DestroyAst());
            
         }
@@ -42,12 +45,5 @@ public class Asteroid : MonoBehaviour
         yield return null;
 
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.transform.tag == "WormHole")
-        {
-            Destroy(this.gameObject);
-        }
-    }
+  
 }
