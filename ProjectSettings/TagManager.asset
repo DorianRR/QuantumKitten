@@ -11,6 +11,7 @@ TagManager:
   - Asteroid
   - Clickable
   - SpeedAsteroid
+  - Bumper
   layers:
   - Default
   - TransparentFX

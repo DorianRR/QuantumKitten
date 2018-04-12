@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 4036043609927380}
   - component: {fileID: 198350759414203208}
   - component: {fileID: 199370870632647282}
+  - component: {fileID: 114744526967023514}
   m_Layer: 0
   m_Name: Prefab_P_Splosion_VFX
   m_TagString: Untagged
@@ -257,6 +258,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114744526967023514
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1246316298651750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 002b3ae5c0ff75642bf2af714ddd9b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114992048315471044
 MonoBehaviour:
   m_ObjectHideFlags: 1
