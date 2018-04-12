@@ -74,8 +74,8 @@ GameObject:
   - component: {fileID: 23970485276166986}
   - component: {fileID: 95551351238058922}
   - component: {fileID: 54789088942643880}
-  - component: {fileID: 114086183423405712}
   - component: {fileID: 135284036750836256}
+  - component: {fileID: 114533729717729854}
   m_Layer: 0
   m_Name: SpawnedAsteroid2
   m_TagString: Asteroid
@@ -242,7 +242,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114086183423405712
+--- !u!114 &114533729717729854
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1656970403431990}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2abe76a71f4a8447965deadc34b8714, type: 3}
+  m_Script: {fileID: 11500000, guid: c14f402eecd6fd44ab6819549d5a56ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 198910663463996420, guid: 1091393c52b0cdf49b3f6cf66e030ddc,

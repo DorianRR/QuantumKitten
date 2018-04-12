@@ -10,7 +10,9 @@ public class SpawnedAsteroid : MonoBehaviour {
 
     private void Awake()
     {
-        Debug.Log("!!!");
+        gameObject.transform.localScale = Vector3.zero;
+        gameObject.GetComponent<Rigidbody>().velocity = new Vector3(Random.Range(-3, 3), Random.Range(-3, 3), 0);
+
         FadeInAndScoot();
     }
 
@@ -47,6 +49,7 @@ public class SpawnedAsteroid : MonoBehaviour {
 
     public void FadeInAndScoot()
     {
+
         GameModeAnalytics = GameObject.Find("GameController").GetComponent<A_GameController>();
         gameObject.GetComponent<Rigidbody>().AddTorque(new Vector3(Random.Range(-2, 2), Random.Range(-2, 2), Random.Range(-2, 2)));
 
@@ -58,15 +61,15 @@ public class SpawnedAsteroid : MonoBehaviour {
     IEnumerator Fade()
     {
 
-        Debug.Log("Made it into fade");
-        while (gameObject.transform.localScale.x < 300)
+        while (gameObject.transform.localScale.x < 250)
         {
+            Debug.Log("Made it into fade");
+
             gameObject.transform.localScale += new Vector3(3, 3, 3);
             yield return new WaitForSeconds(0.01f);
         }
 
-        gameObject.GetComponent<Rigidbody>().velocity = new Vector3(Random.Range(-2, 2), Random.Range(-2, 2), 0);
-        gameObject.GetComponent<Rigidbody>().velocity = new Vector3(Random.Range(-2, 2), Random.Range(-2, 2), 0);
+        gameObject.GetComponent<Rigidbody>().velocity = new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0);
 
     }
 
