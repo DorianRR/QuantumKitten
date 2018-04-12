@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23228715764384606}
   - component: {fileID: 95499282202015470}
   - component: {fileID: 135952583635264114}
+  - component: {fileID: 135018138493792432}
   m_Layer: 0
   m_Name: Bumper 2
   m_TagString: Untagged
@@ -93,7 +94,7 @@ Animator:
   m_GameObject: {fileID: 1762717845094188}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: bc7752a446dcd0c4da4528d6464482b9, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 46a6507bb03884c4696720d8b47b556a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -101,6 +102,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!135 &135018138493792432
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1762717845094188}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.009999996
+  m_Center: {x: -9.313226e-10, y: 0.0000000041909516, z: 0.004830814}
 --- !u!135 &135952583635264114
 SphereCollider:
   m_ObjectHideFlags: 1

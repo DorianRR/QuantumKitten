@@ -17,7 +17,7 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         transform.position = (player.GetComponent<Rigidbody>().transform.position);
-        transform.position = new Vector3(transform.position.x, transform.position.y, -22f);
+        transform.position = new Vector3(transform.position.x, transform.position.y, -86f);
 
         offset = transform.position - player.transform.position;
 
@@ -33,7 +33,7 @@ public class CameraController : MonoBehaviour
         gameObject.GetComponent<Camera>().orthographicSize =
             Mathf.Lerp(gameObject.GetComponent<Camera>().orthographicSize, temp, lerpRatio / 5 * Time.deltaTime);
         float tempOrthSize = gameObject.GetComponent<Camera>().orthographicSize;
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, (((tempOrthSize - 10)) * 2f) - 300, (-(tempOrthSize - 10) * 2f) + 300), Mathf.Clamp(transform.position.y, ((tempOrthSize - 10) - 250), (250 - (tempOrthSize - 10))), -22);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, (((tempOrthSize - 10)) * 2f) - 300, (-(tempOrthSize - 10) * 2f) + 300), Mathf.Clamp(transform.position.y, ((tempOrthSize - 10) - 250), (250 - (tempOrthSize - 10))), -86);
 
 
     }
