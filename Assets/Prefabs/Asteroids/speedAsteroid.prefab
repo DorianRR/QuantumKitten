@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 4036043609927380}
   - component: {fileID: 198350759414203208}
   - component: {fileID: 199370870632647282}
+  - component: {fileID: 114409211740208038}
   m_Layer: 0
   m_Name: Prefab_P_Splosion_VFX
   m_TagString: Untagged
@@ -150,7 +151,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1145007694099684}
   m_LocalRotation: {x: 0.00000008146034, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -44.049652, y: 120.07629, z: 52.50215}
+  m_LocalPosition: {x: -416.80963, y: 243.72083, z: 52.50215}
   m_LocalScale: {x: 250, y: 250, z: 250}
   m_Children:
   - {fileID: 4036043609927380}
@@ -224,7 +225,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 8
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!64 &64772455994075404
 MeshCollider:
@@ -257,6 +258,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114409211740208038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1246316298651750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 002b3ae5c0ff75642bf2af714ddd9b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114992048315471044
 MonoBehaviour:
   m_ObjectHideFlags: 1

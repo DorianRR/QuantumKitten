@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4777978654909646}
   - component: {fileID: 198910663463996420}
   - component: {fileID: 199547453685781182}
+  - component: {fileID: 114598912929072192}
   m_Layer: 0
   m_Name: Prefab_P_Splosion_VFX
   m_TagString: Untagged
@@ -134,6 +135,17 @@ Transform:
   m_Father: {fileID: 4777978654909646}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114598912929072192
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1181994136895060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 002b3ae5c0ff75642bf2af714ddd9b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198434840182531538
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class destroyParticles : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+
+
+    // Use this for initialization
+    void OnEnable() {
+
         StartCoroutine(Kill());
 	}
 	
