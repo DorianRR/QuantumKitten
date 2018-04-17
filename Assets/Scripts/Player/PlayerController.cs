@@ -17,9 +17,13 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 playerDirection;
 
+    private float boostAmount;
     private float bounceCD = 0.1f;
     private bool reversed = false;
     private float spinCountDown;
+
+    public delegate void changeBoost(float boostChange);
+    public static event changeBoost UpdateBoost; 
 
 
     void Start()
@@ -28,12 +32,14 @@ public class PlayerController : MonoBehaviour
         animations = gameObject.GetComponentInChildren<Animator>();
         currentState = PlayerState.Moving;
         Time.timeScale = 1f;
+        boostAmount = 10;
     }
 
     void Update()
     {
         if (currentState == PlayerState.Bouncing)
         {
+            
             bounceCD -= Time.deltaTime;
             if (bounceCD <= 0f)
             {
@@ -78,6 +84,7 @@ public class PlayerController : MonoBehaviour
         {
             spinCountDown = 0.5f;
             animations.SetBool("hitAsteroid", true);
+            updateBoost(2.0f);
         }
         else if (coll.transform.tag == "SpeedAsteroid")
         {
@@ -86,6 +93,7 @@ public class PlayerController : MonoBehaviour
             {
                 spinCountDown = 0.5f;
                 animations.SetBool("hitAsteroid", true);
+                updateBoost(4.0f);
             }
             else
             {
@@ -101,11 +109,17 @@ public class PlayerController : MonoBehaviour
                 }
                 Vector3 newVelocity = Vector3.Reflect(GetComponent<Rigidbody>().velocity, collisionNormal);
                 GetComponent<Rigidbody>().velocity = newVelocity * 0.8f;
+                updateBoost(-5.0f);
             }
         }
         else if (coll.transform.tag == "WormHole")
         {
             animations.SetBool("hitBlackHole", true);
+        }
+
+        else if(coll.transform.tag == "Bumper")
+        {
+            updateBoost(1.0f);
         }
     }
 
@@ -177,7 +191,7 @@ public class PlayerController : MonoBehaviour
         animations.SetBool("fastSwim", false);
         animations.SetBool("slowSwim", true);
 
-
+        updateBoost(-2.0f * Time.deltaTime);
 
 
         //Cat facing direction of movement used for anim
@@ -217,5 +231,19 @@ public class PlayerController : MonoBehaviour
 
         gameObject.GetComponentInChildren<Rigidbody>().transform.rotation = Quaternion.LookRotation(-playerDirection); //transform.rotation =  Quaternion.LookRotation(playerDirection);
 
+    }
+
+    private void updateBoost(float boostChange)
+    {
+        boostAmount += boostChange;
+        if(boostAmount>100)
+        {
+            boostAmount = 100;
+        }
+        if(boostAmount < 0)
+        {
+            boostAmount = 0;
+        }
+        UpdateBoost(boostAmount);
     }
 }

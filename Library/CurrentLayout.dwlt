@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 34
+  controlID: 143
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 10
+  controlID: 27
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 11
+  controlID: 28
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -176,8 +176,8 @@ MonoBehaviour:
     y: 0
     width: 355
     height: 573
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -366,21 +366,21 @@ MonoBehaviour:
     height: 552
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
-    scrollPos: {x: 0, y: 169}
-    m_SelectedIDs: c43d0000
-    m_LastClickedID: 15812
-    m_ExpandedIDs: ccddf7ffe2ddf7fff8ddf7ff0edef7ff16f0f8ff1af0f8ff1ef0f8ff6895fcff7cbdfcff0c60fdffd0c1fdffdc57ffffde57ffffb260ffffb460ffffb473ffff74a4ffff7ed9ffffaee9ffff92f7ffff000000006a3e0000743e0000603f0000
+    scrollPos: {x: 0, y: 297}
+    m_SelectedIDs: 7cf1ffff
+    m_LastClickedID: -3716
+    m_ExpandedIDs: 7c8dfeff12ccfeffb0f5ffff9efbffff00000000aa2e0000542f0000a82f0000dc2f0000ba300000ca300000f4300000543100007e310000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Bumper(Clone)
-      m_OriginalName: Bumper(Clone)
+      m_Name: unClickable
+      m_OriginalName: unClickable
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: -533022
+      m_UserData: 12740
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -420,14 +420,14 @@ MonoBehaviour:
     height: 552
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 4393.135316831128
+  lastFramingTime: 512.5990278891311
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -198.72604, y: -1.8013868, z: 17.470184}
+    m_Target: {x: -124.403, y: 23.077803, z: 772.83734}
     speed: 2
-    m_Value: {x: -198.72604, y: -1.8013868, z: 17.470184}
+    m_Value: {x: -124.403, y: 23.077803, z: 772.83734}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -451,13 +451,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.046918176, y: 0.2985989, z: 0.014699999, w: -0.95311135}
+    m_Target: {x: 0.004180536, y: 0.05307854, z: 0.00022341526, w: -0.9985816}
     speed: 2
-    m_Value: {x: 0.04691818, y: 0.29859892, z: 0.0147, w: -0.9531114}
+    m_Value: {x: 0.004180536, y: 0.05307854, z: 0.00022341526, w: -0.9985816}
   m_Size:
-    m_Target: 195.56734
+    m_Target: 996.5806
     speed: 2
-    m_Value: 195.56734
+    m_Value: 996.5806
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -535,19 +535,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Prefabs/Asteroids/SpawnerAsteroids
+    - Assets/Scripts/DestructibleObjects/Spawn
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs/Asteroids/SpawnerAsteroids
+  - Assets/Scripts/DestructibleObjects/Spawn
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\u0825896\Desktop\QuantumKitten\QuantumKitten\QuantumKitten
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 60}
-    m_SelectedIDs: 5a2d0000
-    m_LastClickedID: 11610
-    m_ExpandedIDs: 00000000722b0000382c0000482c0000e42c00002e2d0000782d0000a42d0000182e0000422e0000d22e0000002f000036300000763700007837000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 224}
+    m_SelectedIDs: 7a290000
+    m_LastClickedID: 10618
+    m_ExpandedIDs: 00000000f4270000c0280000d02800006c290000b8290000062a0000362a0000ac2a0000b02b0000f62c00009a3700009c3700009e370000a037000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -575,7 +575,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000722b0000382c0000482c0000e42c00002e2d0000782d0000a42d0000182e0000002f0000363000007637000078370000
+    m_ExpandedIDs: 00000000f4270000c0280000d02800006c290000b8290000062a0000362a0000ac2a0000b02b0000f62c00009a3700009c3700009e370000a0370000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
