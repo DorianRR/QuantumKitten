@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class SpawnDespawn : MonoBehaviour
 {
-
+    public AudioClip[] Clips;
     public GameObject GravityWell;
     Ray touchRay;
     RaycastHit touchHit;
     //public float cooldown = 2f;
 
+    private AudioSource Source;
     private GameObject spawnedWell;
     private GameObject MainCamera;
 
@@ -17,6 +18,7 @@ public class SpawnDespawn : MonoBehaviour
 
     private void Start()
     {
+        Source = gameObject.GetComponent<AudioSource>();
         MainCamera = GameObject.Find("Main Camera");
     }
 
@@ -31,7 +33,7 @@ public class SpawnDespawn : MonoBehaviour
             Physics.Raycast(touchRay, out touchHit);
             if (touchHit.transform.tag == "Clickable")
             {
-
+                Source.PlayOneShot(Clips[0]);
                 spawnedWell = Instantiate(GravityWell, touchHit.point, Quaternion.identity);
 
                 //MainCamera.GetComponent<CameraController>().CenterOnSpawnedGW(touchHit.point);

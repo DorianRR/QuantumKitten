@@ -13,8 +13,11 @@ public class PlayerController : MonoBehaviour
     public Animator animations;
 
     public enum PlayerState { Moving, Bouncing, Stuck, MaxSpeed, Teleporting }
-    private PlayerState currentState;
 
+    public AudioClip[] Clips;
+
+    private PlayerState currentState;
+    private AudioSource Source;
     private Vector3 playerDirection;
 
     private float boostAmount;
@@ -28,6 +31,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        Source = gameObject.GetComponent<AudioSource>();
         gameObject.GetComponent<Rigidbody>().AddForce(initialForce, ForceMode.Impulse);
         animations = gameObject.GetComponentInChildren<Animator>();
         currentState = PlayerState.Moving;

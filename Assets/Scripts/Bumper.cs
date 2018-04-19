@@ -5,16 +5,17 @@ using UnityEngine;
 public class Bumper : MonoBehaviour
 {
 
+    public AudioClip[] Clips;
 
     Animator anim;
 
-
+    private AudioSource Source;
 
 
     // Use this for initialization
     void Start()
     {
-
+        Source = gameObject.GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
 
     }
@@ -31,7 +32,7 @@ public class Bumper : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
-
+            Source.PlayOneShot(Clips[Random.Range(0, Clips.Length)]);
             if (!anim.GetBool("Hit"))
             {
                 anim.SetBool("Hit", true);
