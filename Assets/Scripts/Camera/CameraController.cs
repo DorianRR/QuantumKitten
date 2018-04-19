@@ -33,7 +33,7 @@ public class CameraController : MonoBehaviour
         gameObject.GetComponent<Camera>().orthographicSize =
             Mathf.Lerp(gameObject.GetComponent<Camera>().orthographicSize, temp, lerpRatio / 5 * Time.deltaTime);
         float tempOrthSize = gameObject.GetComponent<Camera>().orthographicSize;
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, (((tempOrthSize - 10)) * 2f) - 300, (-(tempOrthSize - 10) * 2f) + 300), Mathf.Clamp(transform.position.y, ((tempOrthSize - 10) - 250), (250 - (tempOrthSize - 10))), -22);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, (((tempOrthSize - 10)) * 2f) - 500, (-(tempOrthSize - 10) * 2f) + 500), Mathf.Clamp(transform.position.y, ((tempOrthSize - 10) - 250), (250 - (tempOrthSize - 10))), -22);
 
 
     }
@@ -52,6 +52,37 @@ public class CameraController : MonoBehaviour
     public void setCenteredOnGW(bool set)
     {
         centeredOnGW = set;
+    }
+
+    public void callHover(Vector3 loc)
+    {
+        StartCoroutine(highlightLocation(loc));
+    }
+
+    IEnumerator highlightLocation(Vector3 hoverLocation)
+    {
+        TutorialController tut = GameObject.Find("GameController").GetComponent<TutorialController>();
+        Vector3 currentLocation = transform.position;
+        tut.CallFadeSlow();
+
+        Vector3 moveDirection = hoverLocation - currentLocation;
+        float lerpFactor = 0.1f;
+        while ((transform.position - hoverLocation).magnitude > 1f)
+        {
+            transform.position += (lerpFactor * moveDirection);
+            Debug.Log(transform.position);
+            yield return null;
+        }
+       // yield return new WaitForSeconds(3f);
+        moveDirection = currentLocation - transform.position;
+        lerpFactor = 0.1f;
+        while ((transform.position - currentLocation).magnitude > 1f)
+        {
+            transform.position = Vector3.Lerp(hoverLocation, currentLocation, lerpFactor);
+            lerpFactor += 0.1f;
+            yield return null;
+        }
+        tut.CallFadeToNormalSpeed();
     }
 
 }
