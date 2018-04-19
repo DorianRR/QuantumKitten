@@ -22,23 +22,26 @@ public class Bumper : MonoBehaviour {
 		
 	}
 
-    private void OnCollisionExit(Collision collision)
-    {
-        
-        anim.SetBool("Hit", false);
-
-    }
 
     private void OnCollisionEnter(Collision collision)
     {
         
         if (collision.gameObject.tag == "Player") {
 
-            anim.SetBool("Hit", true);
-
+            if (!anim.GetBool("Hit"))
+            {
+                anim.SetBool("Hit", true);
+                StartCoroutine(endAnimation());
+            }
         }
         
 
+    }
+
+    IEnumerator endAnimation()
+    {
+        yield return new WaitForSeconds(0.2f);
+        anim.SetBool("Hit", false);
     }
 
 }

@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
         animations = gameObject.GetComponentInChildren<Animator>();
         currentState = PlayerState.Moving;
         Time.timeScale = 1f;
-        boostAmount = 50;
+        boostAmount = 10;
     }
 
     void Update()
@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
         {
             spinCountDown = 0.5f;
             animations.SetBool("hitAsteroid", true);
-            updateBoost(5.0f);
+            updateBoost(2.0f);
         }
         else if (coll.transform.tag == "SpeedAsteroid")
         {
@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
             {
                 spinCountDown = 0.5f;
                 animations.SetBool("hitAsteroid", true);
-                updateBoost(10.0f);
+                updateBoost(4.0f);
             }
             else
             {
@@ -119,7 +119,7 @@ public class PlayerController : MonoBehaviour
 
         else if(coll.transform.tag == "Bumper")
         {
-            updateBoost(2.0f);
+            updateBoost(1.0f);
         }
     }
 
