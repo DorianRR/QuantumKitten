@@ -11,7 +11,7 @@ public class speedAsteroid : MonoBehaviour
     private void Awake()
     {
         GameModeAnalytics = GameObject.Find("GameController").GetComponent<A_GameController>();
-        gameObject.GetComponent<Rigidbody>().AddTorque(new Vector3(Random.Range(-2, 2), Random.Range(-2, 2), Random.Range(-2, 2)));
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -20,9 +20,6 @@ public class speedAsteroid : MonoBehaviour
         {
             if (collision.transform.GetComponent<PlayerController>().getState() == PlayerController.PlayerState.MaxSpeed)
             {
-                gameObject.GetComponent<Rigidbody>().freezeRotation = true;
-               
-                
                 StartCoroutine(DestroyAst());
             }
         }

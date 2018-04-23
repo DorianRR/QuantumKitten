@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 64772455994075404}
   - component: {fileID: 136592960893910720}
   - component: {fileID: 114352048704073608}
+  - component: {fileID: 114521241836147716}
   m_Layer: 0
   m_Name: SpawnedAsteroid1
   m_TagString: Asteroid
@@ -60,6 +61,7 @@ GameObject:
   - component: {fileID: 4036043609927380}
   - component: {fileID: 198350759414203208}
   - component: {fileID: 199370870632647282}
+  - component: {fileID: 114721560736510236}
   m_Layer: 0
   m_Name: Prefab_P_Splosion_VFX
   m_TagString: Untagged
@@ -270,6 +272,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 198910663463996420, guid: 1091393c52b0cdf49b3f6cf66e030ddc,
     type: 2}
+--- !u!114 &114521241836147716
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1145007694099684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e575009f8e695cb449911629cf3edf08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Source: {fileID: 0}
+  Clips:
+  - {fileID: 8300000, guid: 2bb3a0d410022944fa889a8f57cbf7f3, type: 3}
+  - {fileID: 8300000, guid: 20f72dd1309a22244a2c80acd194d2f9, type: 3}
+  - {fileID: 8300000, guid: d97bcab5d2619054fad1a35e433f0a09, type: 3}
+  - {fileID: 8300000, guid: 83ff6d8768d1cd94884c416710fb9204, type: 3}
+--- !u!114 &114721560736510236
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1246316298651750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 002b3ae5c0ff75642bf2af714ddd9b07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Clips: []
 --- !u!136 &136592960893910720
 CapsuleCollider:
   m_ObjectHideFlags: 1

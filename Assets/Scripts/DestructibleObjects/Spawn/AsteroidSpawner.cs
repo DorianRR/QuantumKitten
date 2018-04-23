@@ -17,7 +17,7 @@ public class AsteroidSpawner : MonoBehaviour {
 	void Update ()
     {
         timer += Time.deltaTime;
-        if(timer > 3)
+        if(timer > 5.5)
         {
             timer = 0;
             SpawnAsteroid();
