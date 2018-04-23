@@ -20,6 +20,7 @@ public class SpawnedAsteroid : MonoBehaviour {
     {
         if (collision.transform.tag == "Player")
         {
+            //gameObject.GetComponent<AudioSource>().Play();
             gameObject.GetComponent<Rigidbody>().freezeRotation = true;
 
             StartCoroutine(DestroyAst());
