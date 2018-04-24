@@ -4413,11 +4413,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 05d9e3ad6a7251a4da84df860137fb1e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -8664,7 +8664,7 @@ Prefab:
         type: 2}
       propertyPath: Clips.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 7233d6e54389e6d45ac5dd63c4c51791, type: 3}
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 136245570833421266, guid: 18bf7fef32240d4419afa73d72bcdd35, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 18bf7fef32240d4419afa73d72bcdd35, type: 2}
@@ -11709,11 +11709,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4968543118489600, guid: 0def02c8eecd68f42aaf97e6116d155a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 14.6
+      value: -94.7
       objectReference: {fileID: 0}
     - target: {fileID: 4968543118489600, guid: 0def02c8eecd68f42aaf97e6116d155a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 18.965868
+      value: 36.2
       objectReference: {fileID: 0}
     - target: {fileID: 4968543118489600, guid: 0def02c8eecd68f42aaf97e6116d155a, type: 2}
       propertyPath: m_LocalPosition.z
