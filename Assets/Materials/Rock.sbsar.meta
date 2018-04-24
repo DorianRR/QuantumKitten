@@ -63,7 +63,7 @@ SubstanceImporter:
       - _Mode: 0
       - _OcclusionStrength: 1
       - _Parallax: 0.02
-      - _ShadowCoverage: 0.17
+      - _ShadowCoverage: 0.53
       - _SmoothnessTextureChannel: 0
       - _SpecularCoverageArea: 1
       - _SpecularHighlights: 1

@@ -16,8 +16,8 @@ public class destroyParticles : MonoBehaviour {
 	
 	IEnumerator Kill()
     {
-        AudioSource source = gameObject.GetComponent<AudioSource>();
-        source.PlayOneShot(Clips[Random.Range(0, Clips.Length)]);
+        //AudioSource source = gameObject.GetComponent<AudioSource>();
+        //source.PlayOneShot(Clips[Random.Range(0, Clips.Length)]);
         yield return new WaitForSeconds(2);
         Destroy(gameObject);
     }
