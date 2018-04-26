@@ -6,6 +6,8 @@ public class UVPaner : MonoBehaviour {
 
     public float speed = 1;
 
+    public float maxColor;
+
     Renderer rend;
 
     Color MatColor;
@@ -32,7 +34,7 @@ public class UVPaner : MonoBehaviour {
 
         //rend.material.SetTextureOffset("_DetailAlbedoMap", new Vector2(Time.time * speed, 0));
 
-        tempColor = Color.Lerp(new Color (MatColor.r, MatColor.g, MatColor.b, 0f), new Color(MatColor.r, MatColor.g, MatColor.b, .5f), Mathf.PingPong(Time.time, .75f) * 2);
+        tempColor = Color.Lerp(new Color (MatColor.r, MatColor.g, MatColor.b, 0f), new Color(MatColor.r, MatColor.g, MatColor.b, maxColor), Mathf.PingPong(Time.time, .75f) * 2);
 
         rend.material.color = tempColor;
     }
