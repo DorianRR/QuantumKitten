@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: 195284089a165f440992add27732a07f
-timeCreated: 1519324072
-licenseType: Pro
+guid: aa35e406697606644aa27846a2197527
+timeCreated: 1524777326
+licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -79,34 +79,36 @@ ModelImporter:
     100142: FR_leg_IK
     100144: frontHips_ctrl
     100146: geo
-    100148: Head
-    100150: head
-    100152: head_ctrl
-    100154: helmet
-    100156: IK_BL_leg
-    100158: IK_BR_leg
-    100160: IK_FL_leg
-    100162: IK_FR_leg
-    100164: IKFKSwitch_BL
-    100166: IKFKSwitch_BR
-    100168: IKFKSwitch_FL
-    100170: IKFKSwitch_FR
-    100172: neck
-    100174: neck_ctrl
-    100176: root
-    100178: root_ctrl
-    100180: spine1
-    100182: spine2
-    100184: tail
-    100186: tail2
-    100188: tail2_grp
-    100190: tail3
-    100192: tail3_grp
-    100194: tail4
-    100196: tail4_grp
-    100198: tail5
-    100200: tail5_grp
-    100202: tail_grp
+    100148: geo1
+    100150: Head
+    100152: head
+    100154: head_ctrl
+    100156: helmet
+    100158: helmet 1
+    100160: IK_BL_leg
+    100162: IK_BR_leg
+    100164: IK_FL_leg
+    100166: IK_FR_leg
+    100168: IKFKSwitch_BL
+    100170: IKFKSwitch_BR
+    100172: IKFKSwitch_FL
+    100174: IKFKSwitch_FR
+    100176: neck
+    100178: neck_ctrl
+    100180: root
+    100182: root_ctrl
+    100184: spine1
+    100186: spine2
+    100188: tail
+    100190: tail2
+    100192: tail2_grp
+    100194: tail3
+    100196: tail3_grp
+    100198: tail4
+    100200: tail4_grp
+    100202: tail5
+    100204: tail5_grp
+    100206: tail_grp
     400000: antenna1
     400002: antenna1_grp
     400004: antenna2
@@ -181,52 +183,55 @@ ModelImporter:
     400142: FR_leg_IK
     400144: frontHips_ctrl
     400146: geo
-    400148: Head
-    400150: head
-    400152: head_ctrl
-    400154: helmet
-    400156: IK_BL_leg
-    400158: IK_BR_leg
-    400160: IK_FL_leg
-    400162: IK_FR_leg
-    400164: IKFKSwitch_BL
-    400166: IKFKSwitch_BR
-    400168: IKFKSwitch_FL
-    400170: IKFKSwitch_FR
-    400172: neck
-    400174: neck_ctrl
-    400176: root
-    400178: root_ctrl
-    400180: spine1
-    400182: spine2
-    400184: tail
-    400186: tail2
-    400188: tail2_grp
-    400190: tail3
-    400192: tail3_grp
-    400194: tail4
-    400196: tail4_grp
-    400198: tail5
-    400200: tail5_grp
-    400202: tail_grp
-    2100000: lambert4
-    2100002: lambert1
-    2100004: catSkin
+    400148: geo1
+    400150: Head
+    400152: head
+    400154: head_ctrl
+    400156: helmet
+    400158: helmet 1
+    400160: IK_BL_leg
+    400162: IK_BR_leg
+    400164: IK_FL_leg
+    400166: IK_FR_leg
+    400168: IKFKSwitch_BL
+    400170: IKFKSwitch_BR
+    400172: IKFKSwitch_FL
+    400174: IKFKSwitch_FR
+    400176: neck
+    400178: neck_ctrl
+    400180: root
+    400182: root_ctrl
+    400184: spine1
+    400186: spine2
+    400188: tail
+    400190: tail2
+    400192: tail2_grp
+    400194: tail3
+    400196: tail3_grp
+    400198: tail4
+    400200: tail4_grp
+    400202: tail5
+    400204: tail5_grp
+    400206: tail_grp
+    2100000: helmet1
+    2100002: catSkin
+    2100004: lambert1
+    2300000: bobble
+    2300002: helmet 1
+    3300000: bobble
+    3300002: helmet 1
     4300000: helmet
     4300002: bobble
     4300004: body
     4300006: Head
+    4300008: helmet
+    4300010: geo1
     9500000: //RootNode
-    13700000: bobble
-    13700002: body
+    13700000: body
+    13700002: geo1
     13700004: Head
     13700006: helmet
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: catSkin
-    second: {fileID: 2100000, guid: cb08d22d2ab7cea44908f1e5bb4f26a1, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -281,7 +286,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
