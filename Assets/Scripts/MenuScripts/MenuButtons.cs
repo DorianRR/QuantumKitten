@@ -2,18 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class MenuButtons : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [SerializeField]
+    private VideoClip VP = null;
+
+    [SerializeField]
+    private GameObject VideoPanel = null;
 
     public void BackToMenu()
     {
@@ -22,8 +19,7 @@ public class MenuButtons : MonoBehaviour {
 
     public void PlayButton()
     {
-        
-        SceneManager.LoadScene("MainLevel");
+        StartCoroutine(StartMainLevel());
     }
 
     public void TutorialButton()
@@ -45,5 +41,17 @@ public class MenuButtons : MonoBehaviour {
     {
         Debug.Log("Quit");
         Application.Quit();
+    }
+
+    IEnumerator StartMainLevel()
+    {
+        VideoPanel.SetActive(true);
+        yield return new WaitForSeconds((float)VP.length);
+        //VideoPanel.SetActive(false);
+        //yield return new WaitForSeconds(0.25f);
+
+        SceneManager.LoadScene("MainLevel");
+
+        yield return null;
     }
 }
