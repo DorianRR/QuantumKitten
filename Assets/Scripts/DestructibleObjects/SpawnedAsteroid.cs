@@ -64,7 +64,7 @@ public class SpawnedAsteroid : MonoBehaviour {
 
         while (gameObject.transform.localScale.x < 250)
         {
-            Debug.Log("Made it into fade");
+            //Debug.Log("Made it into fade");
 
             gameObject.transform.localScale += new Vector3(3, 3, 3);
             yield return new WaitForSeconds(0.01f);

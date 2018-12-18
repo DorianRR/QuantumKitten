@@ -33,7 +33,8 @@ public class CameraController : MonoBehaviour
         gameObject.GetComponent<Camera>().orthographicSize =
             Mathf.Lerp(gameObject.GetComponent<Camera>().orthographicSize, temp, lerpRatio / 5 * Time.deltaTime);
         float tempOrthSize = gameObject.GetComponent<Camera>().orthographicSize;
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, (((tempOrthSize - 10)) * 2f) - 300, (-(tempOrthSize - 10) * 2f) + 300), Mathf.Clamp(transform.position.y, ((tempOrthSize - 10) - 250), (250 - (tempOrthSize - 10))), -22);
+
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, (((tempOrthSize - 10)) * 2f) - 470, (-(tempOrthSize - 10) * 2f) + 470), Mathf.Clamp(transform.position.y, ((tempOrthSize - 10) - 250), (250 - (tempOrthSize - 10))), -22);
 
 
     }

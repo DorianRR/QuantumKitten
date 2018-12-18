@@ -22,12 +22,18 @@ public class MenuButtons : MonoBehaviour {
 
     public void PlayButton()
     {
-        SceneManager.LoadScene(1);
+        
+        SceneManager.LoadScene("MainLevel");
     }
 
     public void TutorialButton()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Tutorial");
+    }
+
+    public void FreePlayButton()
+    {
+        SceneManager.LoadScene("FreePlay");
     }
 
     public void SurveyButton()

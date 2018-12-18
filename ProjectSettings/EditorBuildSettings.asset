@@ -9,11 +9,12 @@ EditorBuildSettings:
     path: Assets/_Scenes/MenuScene.unity
     guid: 79dcbd0198d958f4aa97ea1c2d8613f0
   - enabled: 1
-    path: Assets/_Scenes/DorianTestLevel.unity
+    path: Assets/_Scenes/MainLevel.unity
     guid: 43b6bc62df3e62b459c797489b5798dd
   - enabled: 1
     path: Assets/_Scenes/Tutorial.unity
     guid: 856bfc60e97998f44990b1de528c25b7
   - enabled: 1
-    path: Assets/_Scenes/SurveyScene.unity
-    guid: e915ffffc4ec32b49989637cd744e581
+    path: Assets/_Scenes/FreePlay.unity
+    guid: a39eb32333cc7074a9889990efb8c285
+  m_configObjects: {}
